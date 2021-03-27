@@ -1,0 +1,629 @@
+<html xml:lang="en" ng-app="sam.app" ng-controller="AppCtrl" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+   <title ng-bind-html="getTitle()" class="ng-binding">Array1 - SANtricity System Manager</title>
+   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+   <meta content="text/html;charset=utf-8" http-equiv="content-type">
+   <meta content="" name="description">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+   <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+   <!-- compiled CSS -->
+   <link rel="stylesheet" type="text/css" href="SAMClient-11.30.0G00.0001.css">
+   
+
+   <!-- compiled JavaScript -->
+   <!-- <script type="text/javascript" src="SAMClient-11.30.0G00.0001.js"></script> -->
+   
+
+<style type="text/css" rel="stylesheet"></style></head>
+<body class="contrast-blue" ng-class="::{'fullscreen': APP_CONSTANTS.FULLSCREEN}">
+   <!--JavaScript is enabled-->
+   <!-- ngInclude: getCtrlState() --><div ng-include="getCtrlState()" class="ng-scope"><!-- ngInclude: 'header.tpl.html' --><div ng-include="'header.tpl.html'" class="ng-scope"><header class="ng-scope">
+   <nav class="navbar navbar-default">
+      <div class="nav-indenting">
+         <div class="override-margin-right row">
+            <div class="col-xs-4">
+               <button class="toggle-nav btn pull-left" title="Toggle expanded navigation" aria-label="Toggle expanded navigation" d-nav-control="" id="nav-control">
+                 <span>&#9776;</span>
+               </button>
+               <span class="navbar-branding ng-binding" ng-bind-html="'SANTRICITY_SYSTEM_MANAGER_NAME'|localize">SANtricity<sup>&#174;</sup> System Manager</span>
+            </div>
+            <div class="col-xs-4 navbar-array">
+               <span class="ng-binding">Array1</span>
+            </div>
+            <div class="col-xs-4">
+               <ul class="navbar-link">
+                  <li class="dropdown">
+                     <a class="dropdown-toggle ng-binding cursor-pointer" data-toggle="dropdown" id="preferences" d-link="" aria-disabled="false" tabindex="0">
+                        Preferences<span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li>
+                           <a d-link="" d-dialog-open="changePassword" id="changePassword" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                              Change password
+                           </a>
+                        </li>
+                        <li>
+                           <a d-link="" d-dialog-open="setDisplayPreferences" id="setDisplayPreferences" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                              Set preferences
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <span class="navbar-divider">|</span>
+                  <li class="dropdown">
+                     <a class="dropdown-toggle ng-binding cursor-pointer" data-toggle="dropdown" id="help" d-link="" aria-disabled="false" tabindex="0">
+                        Help<span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li>
+                           <a d-link="" ng-click="launchOnlineHelp()" id="online-help" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                              Help Contents
+                           </a>
+                        </li>
+                        <li>
+                           <a d-link="" ng-click="launchApiDocumentation()" id="api-documentation" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                              API Documentation
+                           </a>
+                        </li>
+                        <li>
+                           <a d-link="" d-dialog-open="aboutDialog" id="about" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                              About
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <span class="navbar-divider">|</span>
+                  <li>
+                     <a d-link="" ng-click="logOut()" id="logout" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                        Log Out
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </nav>
+</header></div>
+<div id="wrapper" ng-controller="ViewCtrl" class="ng-scope">
+   <div id="main-nav-bg"></div>
+   <nav id="main-nav">
+      <div class="navigation">
+         <ul d-nav-update="" class="nav nav-stacked">
+            <li data-nav-key="home" class="active">
+               <a href="santricity.html" id="home" aria-label="Home">
+
+                  <i class="icon-home status-icon-container" aria-hidden="true">
+                     <div class="status-dot" ng-class="statusDotClass" aria-hidden="true">
+                     </div>
+                  </i>
+                  <span class="ng-binding">Home</span>
+               </a>
+            </li>
+            <li data-nav-key="storage">
+               <a href="storage.html" id="storage" aria-label="Storage">
+                  <i class="icon-storage" aria-hidden="true"></i>
+                  <span class="ng-binding">Storage</span>
+               </a>
+            </li>
+            <li data-nav-key="hardware">
+               <a href="hardware.html" id="hardware" aria-label="Hardware">
+                  <i class="icon-hardware" aria-hidden="true"></i>
+                  <span class="ng-binding">Hardware</span>
+               </a>
+            </li>
+            <li data-nav-key="settings">
+               <a href="settings.html" id="settings" aria-label="Settings">
+                  <i class="icon-gear" aria-hidden="true"></i>
+                  <span class="ng-binding">Settings</span>
+               </a>
+            </li>
+            <!-- TODO: Re-enable the Add-ons page when needed -->
+            <!--<li data-nav-key="addons">-->
+               <!--<a href="#/addons" id="addons" aria-label="{{'NAVIGATION_ADDONS_LABEL' | localize}}">-->
+                  <!--<i class="icon-addons" aria-hidden="true"></i>-->
+                  <!--<span>{{'NAVIGATION_ADDONS_LABEL' | localize}}</span>-->
+               <!--</a>-->
+            <!--</li>-->
+            <li data-nav-key="support">
+               <a href="support.html" id="support" aria-label="Support">
+                  <i class="icon-support" aria-hidden="true"></i>
+                  <span class="ng-binding">Support</span>
+               </a>
+            </li>
+         </ul>
+      </div>
+   </nav>
+   <section id="content">
+      <div class="container">
+         <div class="row" id="content-wrapper">
+            <div d-notification-container="main" class="ng-isolate-scope"><div class="notification-container">
+<!-- ngRepeat: notificationData in notifications | orderBy:'id':true -->
+</div></div>
+            <!-- ngView:  --><div ng-controller="notificationAreaCtrl" ng-view="" class="ng-scope"><div d-notification-area="" class="ng-scope"><div class="notification-area-panel">
+   <div class="col-xs-3"></div>
+   <div class="col-xs-6">
+      <div class="notification-area">
+         <!--Array status-->
+         <div class="notification-area-status">
+         <span class="status-icon-container">
+            <i class="status-icon graphic-optimal" aria-hidden="true"></i>
+         </span>
+            <span class="status-text ng-binding" ng-bind-html="events.statusText">Your storage array is optimal.</span>
+         </div>
+
+         <!--Welcome link for creating volume-->
+         <!-- ngIf: showWelcome.withCreatePoolLink || showWelcome.withCreateVolumeLink --><div ng-if="showWelcome.withCreatePoolLink || showWelcome.withCreateVolumeLink" class="row welcome-container ng-scope">
+            <!-- ngIf: showWelcome.withCreatePoolLink --><div ng-if="showWelcome.withCreatePoolLink" class="ng-scope">
+               <div class="col-xs-12 welcome-sub-title ng-binding" ng-bind-html="'NOTIFICATION_AREA_WELCOME_TEXT_POOL' | localize: ('SANTRICITY_SYSTEM_MANAGER_NAME' | localize)">Welcome to SANtricity<sup>&#174;</sup> System Manager. Get started by creating a pool or a volume group for your storage array.</div>
+               <div class="col-xs-12 welcome-links">
+                  <div d-link="" d-dialog-open="createPoolDialog" data-dialog-data="{type: typePool}" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                     Create a pool
+                  </div>
+                  <div class="link-separator-visible"></div>
+                  <div d-link="" d-dialog-open="createPoolDialog" data-dialog-data="{type: typeVolumeGroup}" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                     Create a volume group
+                  </div>
+               </div>
+            </div><!-- end ngIf: showWelcome.withCreatePoolLink -->
+            <!-- ngIf: showWelcome.withCreateVolumeLink -->
+         </div><!-- end ngIf: showWelcome.withCreatePoolLink || showWelcome.withCreateVolumeLink -->
+
+         <!--Events-->
+         <div class="row">
+            <!-- ngRepeat: currentEvent in events.list --><div ng-repeat="currentEvent in events.list" ng-hide="currentEvent.ignore &amp;&amp; !currentEvent.showUndo || currentEvent.isHidden " class="ng-scope ng-hide">
+               <div class="col-xs-12 event-container">
+                  <!--The current event: show if they have not ignored this event during this session.-->
+                  <div ng-class="{ 'col-xs-9': currentEvent.showUndo || currentEvent.useIgnore,
+                               'col-xs-12': !currentEvent.showUndo &amp;&amp; !currentEvent.useIgnore}" class="col-xs-9">
+                     <!-- ngIf: !currentEvent.showUndo --><div ng-if="!currentEvent.showUndo" class="notification-area-event ng-scope cursor-pointer" ng-class="{'event-highlight': currentEvent.highlight}" ng-click="events.executeAction(currentEvent)" d-link="" aria-disabled="false" tabindex="0">
+                        <div class="event-icon-wrapper">
+                           <i class="event-icon graphic-service" aria-hidden="true" ng-class="currentEvent.level === 'warning' ?
+                           'graphic-service' : 'graphic-failed'">
+                           </i>
+                        </div>
+                        <div class="event-text ng-binding" ng-bind-html="currentEvent.text">View Pool Auto-Configuration.</div>
+                        <div class="event-separator-not-visible"></div>
+                     </div><!-- end ngIf: !currentEvent.showUndo -->
+                  </div>
+
+                  <!--Undo ignore: show if they ignored this event during this session.-->
+                  <!-- ngIf: currentEvent.showUndo === true -->
+
+                  <!--Ignore: Show if the event allows ignore and they have not ignored this event.-->
+                  <!-- ngIf: currentEvent.useIgnore && !currentEvent.showUndo --><div class="col-xs-3 ng-scope" ng-if="currentEvent.useIgnore &amp;&amp; !currentEvent.showUndo">
+                     <div class="notification-area-event">
+                        <div class="event-separator-visible"></div>
+                        <div ng-click="events.ignoreEvent(currentEvent)" d-link="" aria-disabled="false" tabindex="0" class="cursor-pointer">
+                           <span class="ng-binding"> Ignore</span>
+                        </div>
+                     </div>
+                  </div><!-- end ngIf: currentEvent.useIgnore && !currentEvent.showUndo -->
+               </div>
+            </div><!-- end ngRepeat: currentEvent in events.list -->
+         </div>
+      </div>
+   </div>
+   <div class="operation-in-progress col-xs-3">
+      <a d-link="" d-dispatch="{view: 'operationsInProgress'}" ng-bind-html="'NOTIFICATION_AREA_OPS_IN_PROGRESS_LINK' | localize" class="ng-binding ng-isolate-scope cursor-pointer" tabindex="0" aria-disabled="false">View Operations in Progress <span>&gt;</span></a>
+   </div>
+</div>
+</div>
+<div d-panel-container="home" class="ng-scope ng-isolate-scope"><div class="row">  <div class="panel-container">     <!-- ngRepeat: tile in tiles --><div ng-repeat="tile in tiles" class="ng-scope">        <!-- ngInclude: tile.url --><div ng-include="tile.url" class="ng-scope"><div class="col-xs-12 performance performance-panel ng-scope" ng-controller="PerformancePanelCtrl" ng-show="showPanel">
+   <div class="panel panel-default performance-panel-body">
+      <div class="panel-title ng-binding">STORAGE ARRAY LEVEL PERFORMANCE</div>
+      <div class="panel-body" d-loading-overlay="loading" aria-disabled="false" style="position: relative;">
+         <!-- ngIf: isDataLoaded --><div ng-if="isDataLoaded" class="ng-scope">
+            <!-- Button link to performance tile -->
+            <div class="performance-panel-detail">
+               <button type="button" class="btn btn-primary btn-md ng-binding ng-isolate-scope" d-dispatch="{view: 'storage', tile: 'S-Performance'}" ng-bind-html="'PERFORMANCE_PANEL_VIEW_DETAIL_LINK' | localize" tabindex="0">View Performance Details <span>&gt;</span></button>
+            </div>
+            <!-- Chart -->
+            <div class="chart-body ng-isolate-scope" d-performance-charts="performanceChartOptions"><!-- ngRepeat: chart in charts --><div class="chart-row ng-scope" ng-repeat="chart in charts">
+   <div d-collapsible-panel="getCollapsiblePanelOptions(chart)" class="ng-isolate-scope"><div class="collapsible-panel" id="collapsiblePanel1">
+   <!-- ngIf: !panel.options.hideHeader -->
+   <div class="angular-animate collapsible-panel-content-container show-panel">
+      <!-- ngIf: panel.expanded || panel.keepLoaded --><div class="collapsible-panel-content ng-scope" ng-transclude="" ng-if="panel.expanded || panel.keepLoaded">
+      <div class="chart-row-body ng-scope" d-loading-overlay="loadingOverlay.show" aria-disabled="false">
+         <div class="chart-settings-controls">
+            <div class="chart-settings-controls-left">
+               <span d-faq-help="" data-content="FAQ_PERFORMANCE_CHART_IOPS" class="ng-isolate-scope"><span class="faqHelp cursor-pointer" d-link="" ng-click="launchOnlineHelp($event)" aria-disabled="false" tabindex="0"><ng-transclude><span class="ng-binding ng-scope">What does the IOPS graph show?</span></ng-transclude></span></span>
+            </div>
+            <div class="chart-settings-controls-right">
+               <!-- Buttons to select the time frame to show in the charts -->
+               <div d-button-selector="chart.rangeSelector.options" data-selected="chart.rangeSelector.selectedIndex" class="ng-isolate-scope"><div class="button-selector">
+   <!-- ngRepeat: button in options.buttons --><button class="btn button-selector-button ng-binding ng-scope" ng-repeat="button in options.buttons" ng-class="{'active': selectedIndex === $index}" title="Set time frame to 5 minutes" aria-label="Set time frame to 5 minutes">
+      5 m
+   </button><!-- end ngRepeat: button in options.buttons --><button class="btn button-selector-button ng-binding ng-scope active" ng-repeat="button in options.buttons" ng-class="{'active': selectedIndex === $index}" title="Set time frame to 1 hour" aria-label="Set time frame to 1 hour">
+      1 h
+   </button><!-- end ngRepeat: button in options.buttons --><button class="btn button-selector-button ng-binding ng-scope" ng-repeat="button in options.buttons" ng-class="{'active': selectedIndex === $index}" title="Set time frame to 8 hours" aria-label="Set time frame to 8 hours">
+      8 h
+   </button><!-- end ngRepeat: button in options.buttons --><button class="btn button-selector-button ng-binding ng-scope" ng-repeat="button in options.buttons" ng-class="{'active': selectedIndex === $index}" title="Set time frame to 1 day" aria-label="Set time frame to 1 day">
+      1 d
+   </button><!-- end ngRepeat: button in options.buttons --><button class="btn button-selector-button ng-binding ng-scope" ng-repeat="button in options.buttons" ng-class="{'active': selectedIndex === $index}" title="Set time frame to 7 days" aria-label="Set time frame to 7 days">
+      7 d
+   </button><!-- end ngRepeat: button in options.buttons --><button class="btn button-selector-button ng-binding ng-scope" ng-repeat="button in options.buttons" ng-class="{'active': selectedIndex === $index}" title="Set time frame to 30 days" aria-label="Set time frame to 30 days">
+      30 d
+   </button><!-- end ngRepeat: button in options.buttons -->
+</div></div>
+
+               <!-- Dropdown to select metric overlay -->
+               <!-- ngIf: chart.comparisonChartOptions.length --><select class="form-control ng-pristine ng-untouched ng-valid ng-scope" ng-if="chart.comparisonChartOptions.length" ng-model="chart.comparisonChartKey" ng-change="addComparisonChart(chart)" ng-options="option.type as option.text for option in chart.comparisonChartOptions" title="Add a comparison metric to the graph"><option value="" ng-bind="'PERFORMANCE_CHART_METRIC_PLACEHOLDER' | localize : chart.title" selected="selected" class="ng-binding">Compare IOPS with...</option><option value="string:bandwidth" label="MiB/s">MiB/s</option></select><!-- end ngIf: chart.comparisonChartOptions.length -->
+            </div>
+         </div>
+         <!-- The chart -->
+         <div class="chart-area">
+            <div d-chart="chart.chartOptions" data-chart-control="chart.chartControl" data-stock-chart="true" class="ng-isolate-scope" data-highcharts-chart="2"><div class="highcharts-container" id="highcharts-6" style="position: relative; overflow: hidden; width: 1087px; height: 230px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; color: rgb(102, 102, 102);"><svg version="1.1" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#666666;fill:#666666;" xmlns="http://www.w3.org/2000/svg" width="1087" height="230" focusable="false"><desc>Created with Highstock 2.1.6</desc><defs><clipPath id="highcharts-7"><rect x="0" y="0" width="907" height="126"></rect></clipPath><clipPath id="highcharts-9"><rect x="0" y="0" width="907" height="126"></rect></clipPath><clipPath id="highcharts-11"><rect x="0" y="0" width="879" height="20"></rect></clipPath></defs><rect x="0" y="0" width="1087" height="230" strokeWidth="0" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-scrollbar" transform="translate(40,202)"><rect x="0" y="-0.5" fill="#eeeeee" stroke="#eeeeee" stroke-width="1" rx="0" ry="0" height="14" width="907"></rect><rect y="-0.5" height="14" fill="#bfc8d1" stroke="#bfc8d1" stroke-width="1" rx="0" ry="0" x="14.5" width="878"></rect><path fill="none" stroke="#666" stroke-width="1" visibility="visible" d="M 450 3.5 L 450 9.333333333333334 M 453 3.5 L 453 9.333333333333334 M 456 3.5 L 456 9.333333333333334"></path><g><rect x="-0.5" y="-0.5" width="14" height="14" strokeWidth="1" stroke="#bbb" stroke-width="1" fill="#ebe7e8"></rect><path fill="#666" d="M 8 4 L 8 10 5 7"></path></g><g transform="translate(893,0)"><rect x="-0.5" y="-0.5" width="14" height="14" strokeWidth="1" stroke="#bbb" stroke-width="1" fill="#ebe7e8"></rect><path fill="#666" d="M 6 4 L 6 10 9 7"></path></g></g><g class="highcharts-grid" zIndex="1"></g><g class="highcharts-grid" zIndex="1"><path fill="none" d="M 108.5 181 L 108.5 201" stroke="#EEE" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 281.5 181 L 281.5 201" stroke="#EEE" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 455.5 181 L 455.5 201" stroke="#EEE" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 628.5 181 L 628.5 201" stroke="#EEE" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 802.5 181 L 802.5 201" stroke="#EEE" stroke-width="1" zIndex="1" opacity="1"></path></g><g class="highcharts-grid" zIndex="1"><path fill="none" d="M 40 136.5 L 947 136.5" stroke="#D8D8D8" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 40 94.5 L 947 94.5" stroke="#D8D8D8" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 40 52.5 L 947 52.5" stroke="#D8D8D8" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 40 9.5 L 947 9.5" stroke="#D8D8D8" stroke-width="1" zIndex="1" opacity="1"></path></g><g class="highcharts-grid" zIndex="1"></g><g class="highcharts-axis" zIndex="2"><path fill="none" d="M 633.5 136 L 633.5 146" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 96.5 136 L 96.5 146" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 185.5 136 L 185.5 146" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 275.5 136 L 275.5 146" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 364.5 136 L 364.5 146" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 454.5 136 L 454.5 146" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 543.5 136 L 543.5 146" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 722.5 136 L 722.5 146" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 812.5 136 L 812.5 146" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 901.5 136 L 901.5 146" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 40 136.5 L 947 136.5" stroke="#C0D0E0" stroke-width="1" zIndex="7" visibility="visible"></path></g><g class="highcharts-axis" zIndex="2"></g><g class="highcharts-axis" zIndex="2"></g><g class="highcharts-axis" zIndex="2"></g><path fill="none" d="M 1001.5 10 L 1001.5 136" stroke="#C0C0C0" stroke-width="1" zIndex="2" visibility="hidden"></path><g class="highcharts-series-group" zIndex="3"><path fill="rgba(97,152,197,0.25)" d="M 0 0"></path><path fill="rgba(229,176,158,0.25)" d="M 0 0"></path><g class="highcharts-series" visibility="visible" zIndex="0.1" transform="translate(40,10) scale(1 1)" clip-path="url(#highcharts-9)"><path fill="none" d="M 713.0690789473684 126 C 713.0690789473684 126 739.921052631579 126 757.8223684210527 126 C 775.7236842105265 126 784.6743421052632 126 802.5756578947369 126 C 820.4769736842106 126 829.4276315789473 126 847.3289473684212 126 C 865.2302631578948 126 874.1809210526317 126 892.0822368421053 126 C 898.0493421052631 126 907 126 907 126" stroke="#6198C5" stroke-width="2" zIndex="1" stroke-linejoin="round" stroke-linecap="round"></path><path fill="none" d="M 703.0690789473684 126 L 713.0690789473684 126 C 713.0690789473684 126 739.921052631579 126 757.8223684210527 126 C 775.7236842105265 126 784.6743421052632 126 802.5756578947369 126 C 820.4769736842106 126 829.4276315789473 126 847.3289473684212 126 C 865.2302631578948 126 874.1809210526317 126 892.0822368421053 126 C 898.0493421052631 126 907 126 907 126 L 917 126" stroke-linejoin="round" visibility="visible" stroke="rgba(192,192,192,0.0001)" stroke-width="22" zIndex="2" class=" highcharts-tracker" style=""></path></g><g class="highcharts-markers highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(40,10) scale(1 1)" clip-path="url(#highcharts-8)" style=""><path fill="#6198C5" d="M 962 122 C 967.328 122 967.328 130 962 130 C 956.672 130 956.672 122 962 122 Z" stroke="#FFFFFF" stroke-width="1" visibility="hidden"></path></g><g class="highcharts-series" visibility="visible" zIndex="0.1" transform="translate(40,10) scale(1 1)" clip-path="url(#highcharts-9)"><path fill="none" d="M 713.0690789473684 126 C 713.0690789473684 126 739.921052631579 126 757.8223684210527 126 C 775.7236842105265 126 784.6743421052632 126 802.5756578947369 126 C 820.4769736842106 126 829.4276315789473 126 847.3289473684212 126 C 865.2302631578948 126 874.1809210526317 126 892.0822368421053 126 C 898.0493421052631 126 907 126 907 126" stroke="#E5B09E" stroke-width="2" zIndex="1" stroke-linejoin="round" stroke-linecap="round"></path><path fill="none" d="M 703.0690789473684 126 L 713.0690789473684 126 C 713.0690789473684 126 739.921052631579 126 757.8223684210527 126 C 775.7236842105265 126 784.6743421052632 126 802.5756578947369 126 C 820.4769736842106 126 829.4276315789473 126 847.3289473684212 126 C 865.2302631578948 126 874.1809210526317 126 892.0822368421053 126 C 898.0493421052631 126 907 126 907 126 L 917 126" stroke-linejoin="round" visibility="visible" stroke="rgba(192,192,192,0.0001)" stroke-width="22" zIndex="2" class=" highcharts-tracker" style=""></path></g><g class="highcharts-markers highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(40,10) scale(1 1)" clip-path="url(#highcharts-8)" style=""><path fill="#E5B09E" d="M 962 122 L 966 126 962 130 958 126 Z" stroke="#FFFFFF" stroke-width="1" visibility="hidden"></path></g><g class="highcharts-series" visibility="visible" zIndex="0.1" transform="translate(54,181) scale(1 1)" clip-path="url(#highcharts-11)"><path fill="rgba(69,114,167,0.05)" d="M 0 0" zIndex="0"></path></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(54,181) scale(1 1)" clip-path="url(#highcharts-10)"></g></g><g class="highcharts-navigator" zIndex="3"><rect fill="rgba(128,179,236,0.3)" style="cursor:ew-resize ;" x="54" y="181" width="879" height="20"></rect><path fill="none" stroke="#b2b1b6" stroke-width="1" d="M 40 181.5 L 53.5 181.5 53.5 215.5 L 932.5 215.5 L 932.5 181.5 947 181.5 M 54.5 181.5 L 932.5 181.5"></path></g><g class="highcharts-navigator-handle-right" style="cursor:ew-resize;" zIndex="3" transform="translate(933,183)"><rect x="-4.5" y="0.5" width="8" height="15" strokeWidth="1" fill="#ebe7e8" stroke="#b2b1b6" stroke-width="1"></rect><path fill="#ebe7e8" d="M -1.5 4 L -1.5 12 M 0.5 4 L 0.5 12" stroke="#b2b1b6" stroke-width="1"></path></g><g class="highcharts-navigator-handle-left" style="cursor:ew-resize;" zIndex="4" transform="translate(54,183)"><rect x="-4.5" y="0.5" width="8" height="15" strokeWidth="1" fill="#ebe7e8" stroke="#b2b1b6" stroke-width="1"></rect><path fill="#ebe7e8" d="M -1.5 4 L -1.5 12 M 0.5 4 L 0.5 12" stroke="#b2b1b6" stroke-width="1"></path></g><path fill="none" d="M 752.5 10 L 752.5 136" stroke="#666666" stroke-width="1" stroke-dasharray="3,1" zIndex="5"></path><text x="757" text-anchor="undefined" zIndex="5" transform="translate(0,0) rotate(90 757 20)" style="" y="20" visibility="visible"><tspan>Live updating</tspan></text><g class="highcharts-legend" zIndex="7" transform="translate(967,73)"><g zIndex="1"><g><g class="highcharts-legend-item" zIndex="1" transform="translate(8,3)"><path fill="none" d="M 0 21 L 16 21" stroke="#6198C5" stroke-width="2"></path><text x="21" style="color:#666666;font-size:12px;font-weight:normal;cursor:pointer;width:90;fill:#666666;" text-anchor="start" zIndex="2" y="25"><tspan>IOPS (Reads)</tspan></text></g><g class="highcharts-legend-item" zIndex="1" transform="translate(8,37)"><path fill="none" d="M 0 21 L 16 21" stroke="#E5B09E" stroke-width="2"></path><text x="21" y="25" style="color:#666666;font-size:12px;font-weight:normal;cursor:pointer;width:90;fill:#666666;" text-anchor="start" zIndex="2"><tspan>IOPS (Writes)</tspan></text></g></g></g></g><g class="highcharts-axis-labels highcharts-xaxis-labels" zIndex="7"><text x="633.7269736842105" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="155" opacity="1"><tspan>6:20:00 PM</tspan></text><text x="96.6875" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="155" opacity="1"><tspan>6:17:00 PM</tspan></text><text x="186.19407894736844" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="155" opacity="1"><tspan>6:17:30 PM</tspan></text><text x="275.7006578947369" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="155" opacity="1"><tspan>6:18:00 PM</tspan></text><text x="365.20723684210526" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="155" opacity="1"><tspan>6:18:30 PM</tspan></text><text x="454.7138157894737" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="155" opacity="1"><tspan>6:19:00 PM</tspan></text><text x="544.2203947368421" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="155" opacity="1"><tspan>6:19:30 PM</tspan></text><text x="723.233552631579" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="155" opacity="1"><tspan>6:20:30 PM</tspan></text><text x="812.7401315789474" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="155" opacity="1"><tspan>6:21:00 PM</tspan></text><text x="902.2467105263158" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:91px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="155" opacity="1"><tspan>6:21:30 PM</tspan></text></g><g class="highcharts-axis-labels highcharts-xaxis-labels" zIndex="7"><text x="111.9375" style="color:#888;cursor:default;font-size:11px;fill:#888;width:217px;text-overflow:clip;" text-anchor="start" transform="translate(0,0)" y="197" opacity="1">18:17</text><text x="285.4243421052631" style="color:#888;cursor:default;font-size:11px;fill:#888;width:217px;text-overflow:clip;" text-anchor="start" transform="translate(0,0)" y="197" opacity="1">18:18</text><text x="458.9111842105263" style="color:#888;cursor:default;font-size:11px;fill:#888;width:217px;text-overflow:clip;" text-anchor="start" transform="translate(0,0)" y="197" opacity="1">18:19</text><text x="632.3980263157895" style="color:#888;cursor:default;font-size:11px;fill:#888;width:217px;text-overflow:clip;" text-anchor="start" transform="translate(0,0)" y="197" opacity="1">18:20</text><text x="805.8848684210526" style="color:#888;cursor:default;font-size:11px;fill:#888;width:217px;text-overflow:clip;" text-anchor="start" transform="translate(0,0)" y="197" opacity="1">18:21</text></g><g class="highcharts-axis-labels highcharts-yaxis-labels" zIndex="7"><text x="25" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:349px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="139" opacity="1">0</text><text x="25" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:349px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="97" opacity="1">0.5</text><text x="25" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:349px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="55" opacity="1">1</text><text x="25" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:349px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="13" opacity="1">1.5</text></g><g class="highcharts-axis-labels highcharts-yaxis-labels" zIndex="7"></g><g class="highcharts-tooltip" zIndex="8" style="cursor:default;padding:0;white-space:nowrap;" transform="translate(847,-9999)" opacity="0"><path fill="none" d="M 3.5 0.5 L 136.5 0.5 C 139.5 0.5 139.5 0.5 139.5 3.5 L 139.5 49.5 C 139.5 52.5 139.5 52.5 136.5 52.5 L 3.5 52.5 C 0.5 52.5 0.5 52.5 0.5 49.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)" width="139" height="52"></path><path fill="none" d="M 3.5 0.5 L 136.5 0.5 C 139.5 0.5 139.5 0.5 139.5 3.5 L 139.5 49.5 C 139.5 52.5 139.5 52.5 136.5 52.5 L 3.5 52.5 C 0.5 52.5 0.5 52.5 0.5 49.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)" width="139" height="52"></path><path fill="none" d="M 3.5 0.5 L 136.5 0.5 C 139.5 0.5 139.5 0.5 139.5 3.5 L 139.5 49.5 C 139.5 52.5 139.5 52.5 136.5 52.5 L 3.5 52.5 C 0.5 52.5 0.5 52.5 0.5 49.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)" width="139" height="52"></path><path fill="rgba(249, 249, 249, .85)" d="M 3.5 0.5 L 136.5 0.5 C 139.5 0.5 139.5 0.5 139.5 3.5 L 139.5 49.5 C 139.5 52.5 139.5 52.5 136.5 52.5 L 3.5 52.5 C 0.5 52.5 0.5 52.5 0.5 49.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke="#6198C5" stroke-width="1"></path></g></svg><div class="highcharts-tooltip" style="position: absolute; left: 847px; top: -9999px; visibility: visible;"><span style="position: absolute; font-family: Arial, Helvetica, sans-serif; font-size: 11px; white-space: nowrap; color: rgb(51, 51, 51); margin-left: 0px; margin-top: 0px; left: 8px; top: 8px;" zindex="1">Mar 2, 2021 6:21:10 PM<table class="tooltipTable"><tbody><tr class="seriesHeader"><th>Reads</th><th>Writes</th><th>Total</th></tr><tr><td style="color:#6198C5">0</td><td style="color:#E5B09E">0</td><td style="color:#666666">0</td></tr></tbody></table></span></div></div></div>
+         </div>
+      <div class="ng-scope">   <!-- ngInclude: 'widget/loadingOverlay/loadingOverlay.tpl.html' --><div ng-include="'widget/loadingOverlay/loadingOverlay.tpl.html'" class="ng-scope"><div ng-class="classes" class="loading-overlay ng-scope">
+   <div class="loading-overlay-backdrop"></div>
+   <div class="loading-overlay-graphic-text-container">
+      <div class="loading-overlay-graphic-text-background"></div>
+      <!-- ngIf: !!cancelCallback -->
+      <div class="loading-overlay-graphic" ng-switch="type">
+         <!-- ngSwitchWhen: spinner --><div ng-switch-when="spinner" class="loading-overlay-spinner ng-scope">
+            <i class="icon-spinner icon-spin icon-pulse"></i>
+         </div><!-- end ngSwitchWhen: -->
+         <!-- ngSwitchWhen: progressBar -->
+      </div>
+      <div class="loading-overlay-text ng-binding" ng-bind-html="text"></div>
+      <div ng-bind-html="srText" class="sr-only ng-binding" tabindex="-1"></div>
+   </div>
+</div></div></div></div>
+   </div><!-- end ngIf: panel.expanded || panel.keepLoaded -->
+   </div>
+</div>
+</div>
+</div><!-- end ngRepeat: chart in charts --></div>
+            <!-- Mini-portlets -->
+            <div class="mini-portlet-container">
+               <!-- ngRepeat: portlet in portlets --><div class="mini-portlet ng-scope active cursor-pointer" ng-repeat="portlet in portlets" d-link="" ng-click="changeChart(portlet.chartType)" ng-class="{'active': selectedChartType === portlet.chartType}" aria-disabled="false" tabindex="0">
+                  <!-- ngIf: selectedChartType === portlet.chartType --><span class="active-icon icon-top-caret-down ng-scope">&#9663;</span><!-- end ngIf: selectedChartType === portlet.chartType -->
+                  <div class="mini-portlet-body center-element">
+                     <span class="ng-binding">IOPS</span> <span style="color:#fff; font-weight: bold; font-size:25px;">&larr;</span>
+                  </div>
+               </div><!-- end ngRepeat: portlet in portlets --><div class="mini-portlet ng-scope cursor-pointer" ng-repeat="portlet in portlets" d-link="" ng-click="changeChart(portlet.chartType)" ng-class="{'active': selectedChartType === portlet.chartType}" aria-disabled="false" tabindex="0">
+                  <!-- ngIf: selectedChartType === portlet.chartType -->
+                  <div class="mini-portlet-body center-element">
+                     <span class="ng-binding">MiB/s</span> <i ng-class="portlet.icon" class="icon-mbps"></i>
+                  </div>
+               </div><!-- end ngRepeat: portlet in portlets --><div class="mini-portlet ng-scope cursor-pointer" ng-repeat="portlet in portlets" d-link="" ng-click="changeChart(portlet.chartType)" ng-class="{'active': selectedChartType === portlet.chartType}" aria-disabled="false" tabindex="0">
+                  <!-- ngIf: selectedChartType === portlet.chartType -->
+                  <div class="mini-portlet-body center-element">
+                     <span class="ng-binding">CPU</span> <i ng-class="portlet.icon" class="icon-cpu"></i>
+                  </div>
+               </div><!-- end ngRepeat: portlet in portlets -->
+            </div>
+         </div><!-- end ngIf: isDataLoaded -->
+      <div class="ng-scope">   <!-- ngInclude: 'widget/loadingOverlay/loadingOverlay.tpl.html' --><div ng-include="'widget/loadingOverlay/loadingOverlay.tpl.html'" class="ng-scope"><div ng-class="classes" class="loading-overlay ng-scope">
+   <div class="loading-overlay-backdrop"></div>
+   <div class="loading-overlay-graphic-text-container">
+      <div class="loading-overlay-graphic-text-background"></div>
+      <!-- ngIf: !!cancelCallback -->
+      <div class="loading-overlay-graphic" ng-switch="type">
+         <!-- ngSwitchWhen: spinner --><div ng-switch-when="spinner" class="loading-overlay-spinner ng-scope">
+            <i class="icon-spinner icon-spin icon-pulse"></i>
+         </div><!-- end ngSwitchWhen: -->
+         <!-- ngSwitchWhen: progressBar -->
+      </div>
+      <div class="loading-overlay-text ng-binding" ng-bind-html="text"></div>
+      <div ng-bind-html="srText" class="sr-only ng-binding" tabindex="-1"></div>
+   </div>
+</div></div></div></div>
+   </div>
+</div></div>     </div><!-- end ngRepeat: tile in tiles --><div ng-repeat="tile in tiles" class="ng-scope">        <!-- ngInclude: tile.url --><div ng-include="tile.url" class="ng-scope"><div class="col-xs-5 capacity-panel ng-scope" ng-controller="capacityPanelCtrl">
+   <div class="panel panel-default capacity-panel-body">
+      <!-- Panel header -->
+      <div class="panel-title ng-binding">CAPACITY</div>
+      <!-- Panel body -->
+      <div class="panel-body" d-loading-overlay="!isDataLoaded" aria-disabled="false">
+         <!-- ngIf: isDataLoaded && capacityChart.series.data.length > 0 --><div ng-if="isDataLoaded &amp;&amp; capacityChart.series.data.length > 0" class="ng-scope">
+            <div class="details-link">
+               <button type="button" class="btn btn-primary btn-md ng-binding ng-isolate-scope" d-dispatch="{view: 'storage', tile: 'S-Pools'}" ng-bind-html="'CAPACITY_PANEL_VIEW_DETAIL_LINK' | localize" tabindex="0">View Capacity Details <span>&gt;</span></button>
+            </div>
+            <div class="panel-content">
+               <div d-capacity-donut-chart="capacityWidgetChart" class="panel-chart-container ng-scope" data-series="capacityChart.series" data-show-legend="capacityChart.legend" id="capacityWidgetChart"><div class="capacity-donut-chart-container">
+   <div class="chart-area toggle-chart-area" ng-class="showChartLegend ? 'toggle-chart-area' : ''">
+      <div d-chart="chartOptions" data-async="true" class="chart-container ng-isolate-scope chart-total-shown" ng-class="showTotal ? 'chart-total-shown' : ''" data-highcharts-chart="0"><div class="highcharts-container" id="highcharts-0" style="position: relative; overflow: hidden; width: 254px; height: 180px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; color: rgb(102, 102, 102);"><svg version="1.1" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#666666;fill:#666666;" xmlns="http://www.w3.org/2000/svg" width="254" height="180" focusable="false"><desc>Created with Highstock 2.1.6</desc><defs><clipPath id="highcharts-1"><rect x="0" y="0" width="254" height="180"></rect></clipPath></defs><rect x="0" y="0" width="254" height="180" strokeWidth="0" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)" style=""><path fill="#C3DCED" d="M 126.98370614370438 10.000001659310968 A 80 80 0 0 1 126.90370616684396 10.000057953160393 L 126.92296493347517 26.00004636252831 A 64 64 0 0 0 126.98696491496351 26.00000132744878 Z" stroke="#055281" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#FFFFFF" d="M 126.98370614370438 10.000001659310968 A 80 80 0 0 1 126.90370616684396 10.000057953160393 L 126.92296493347517 26.00004636252831 A 64 64 0 0 0 126.98696491496351 26.00000132744878 Z" stroke="#055281" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#DCDCDC" d="M 126.98370614370438 10.000001659310968 A 80 80 0 1 1 126.88888160495428 10.000077170647955 L 126.91110528396342 26.00006173651836 A 64 64 0 1 0 126.98696491496351 26.00000132744878 Z" stroke="#055281" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(0,0) scale(1 1)"></g></g><g class="highcharts-legend" zIndex="7"><g zIndex="1"><g></g></g></g><g class="highcharts-tooltip" zIndex="8" style="cursor:default;padding:0;white-space:nowrap;" transform="translate(0,-9999)"><path fill="transparent" d="M 0 0 L 16 0 C 16 0 16 0 16 0 L 16 16 C 16 16 16 16 16 16 L 0 16 C 0 16 0 16 0 16 L 0 0 C 0 0 0 0 0 0"></path></g></svg><div class="highcharts-tooltip" style="position: absolute; left: 0px; top: -9999px;"><span style="position: absolute; font-family: Arial, Helvetica, sans-serif; font-size: 12px; white-space: nowrap; color: rgb(51, 51, 51); margin-left: 0px; margin-top: 0px; left: 8px; top: 8px;" zindex="1"></span></div><span style="position: absolute; font-family: Arial, Helvetica, sans-serif; font-size: 18px; white-space: nowrap; color: rgb(51, 51, 51); margin-left: 0px; margin-top: 0px; left: 106px; top: 73px;" class="highcharts-title" zindex="4" transform="translate(0,0)"><div class="capacity-donut-chart-center"><div class="capacity-donut-chart-top-label">   <span class="number">0</span>   <span class="sign">%</span></div><div class="capacity-donut-chart-bottom-label">   <span class="text">Free</span></div></div></span></div></div>
+      <div class="chart-total ng-binding" ng-show="showTotal &amp;&amp; totalValue">
+         <b class="ng-binding">48204.00 GiB</b> Total
+      </div>
+   </div>
+   <div class="legend-area toggle-legend-area" ng-show="showChartLegend" ng-class="showChartLegend ? 'toggle-legend-area' : ''">
+      <div ng-show="displayLegend" class="">
+         <!-- ngRepeat: point in chartOptions.series[0].data --><div ng-repeat="point in chartOptions.series[0].data" class="legend-row ng-scope">
+            <div>
+               <div class="legend-symbol" ng-style="{'background-color' : point.color}" style="background-color: rgb(195, 220, 237);"></div>
+               <div class="legend-label ng-binding">Allocated</div>
+               <d-quick-help data-content="Capacity currently dedicated to volumes and copy services features." ng-show="point.quickHelp" class="ng-scope"><div d-popover="popoverOptions" d-link="" aria-disabled="false" tabindex="0" class="cursor-pointer">
+   <span class="sr-only ng-binding">Quick help</span>
+   <span style="background-color:#0056AC; color:#fff; font-weight: bolder; border-radius: 30px; padding:0 4px; font-size: 15px; font-family: 'Arial';">&quest;</span>
+</div></d-quick-help>
+            </div>
+            <div class="legend-info ng-binding">
+               0.00 GiB (<i class="ng-binding">0</i>%)
+            </div>
+         </div><!-- end ngRepeat: point in chartOptions.series[0].data --><div ng-repeat="point in chartOptions.series[0].data" class="legend-row ng-scope">
+            <div>
+               <div class="legend-symbol" ng-style="{'background-color' : point.color}" style="background-color: rgb(255, 255, 255);"></div>
+               <div class="legend-label ng-binding">Free</div>
+               <d-quick-help data-content="Capacity available for creating new volumes and copy services features." ng-show="point.quickHelp" class="ng-scope"><div d-popover="popoverOptions" d-link="" aria-disabled="false" tabindex="0" class="cursor-pointer">
+   <span class="sr-only ng-binding">Quick help</span>
+   <span style="background-color:#0056AC; color:#fff; font-weight: bolder; border-radius: 30px; padding:0 4px; font-size: 15px; font-family: 'Arial';">&quest;</span>
+</div></d-quick-help>
+            </div>
+            <div class="legend-info ng-binding">
+               0.00 GiB (<i class="ng-binding">0</i>%)
+            </div>
+         </div><!-- end ngRepeat: point in chartOptions.series[0].data --><div ng-repeat="point in chartOptions.series[0].data" class="legend-row ng-scope">
+            <div>
+               <div class="legend-symbol" ng-style="{'background-color' : point.color}" style="background-color: rgb(220, 220, 220);"></div>
+               <div class="legend-label ng-binding">Unassigned</div>
+               <d-quick-help data-content="The total capacities of the drives currently in an unassigned state. These drives have not been assigned to a pool, volume group, or hot spare drive." ng-show="point.quickHelp" class="ng-scope"><div d-popover="popoverOptions" d-link="" aria-disabled="false" tabindex="0" class="cursor-pointer">
+   <span class="sr-only ng-binding">Quick help</span>
+   <span style="background-color:#0056AC; color:#fff; font-weight: bolder; border-radius: 30px; padding:0 4px; font-size: 15px; font-family: 'Arial';">&quest;</span>
+</div></d-quick-help>
+            </div>
+            <div class="legend-info ng-binding">
+               48204.00 GiB (<i class="ng-binding">100</i>%)
+            </div>
+         </div><!-- end ngRepeat: point in chartOptions.series[0].data -->
+      </div>
+   </div>
+</div></div>
+            </div>
+            <button class="info-toggle btn btn-actionicon" type="button" ng-click="capacityChart.legend = !capacityChart.legend" title="Toggle legend information" aria-label="Toggle legend information">
+               <span style="color:#0056AC; font-weight:bold; font-family:sans-serif;">&#8942;&#9776;</span>
+            </button>
+         </div><!-- end ngIf: isDataLoaded && capacityChart.series.data.length > 0 -->
+      <div class="ng-scope">   <!-- ngInclude: 'widget/loadingOverlay/loadingOverlay.tpl.html' --><div ng-include="'widget/loadingOverlay/loadingOverlay.tpl.html'" class="ng-scope"><div ng-class="classes" class="loading-overlay ng-scope">
+   <div class="loading-overlay-backdrop"></div>
+   <div class="loading-overlay-graphic-text-container">
+      <div class="loading-overlay-graphic-text-background"></div>
+      <!-- ngIf: !!cancelCallback -->
+      <div class="loading-overlay-graphic" ng-switch="type">
+         <!-- ngSwitchWhen: spinner --><div ng-switch-when="spinner" class="loading-overlay-spinner ng-scope">
+            <i class="icon-spinner icon-spin icon-pulse"></i>
+         </div><!-- end ngSwitchWhen: -->
+         <!-- ngSwitchWhen: progressBar -->
+      </div>
+      <div class="loading-overlay-text ng-binding" ng-bind-html="text"></div>
+      <div ng-bind-html="srText" class="sr-only ng-binding" tabindex="-1"></div>
+   </div>
+</div></div></div></div>
+   </div>
+</div></div>     </div><!-- end ngRepeat: tile in tiles --><div ng-repeat="tile in tiles" class="ng-scope">        <!-- ngInclude: tile.url --><div ng-include="tile.url" class="ng-scope"><div ng-controller="hierarchyCtrl" class="col-xs-7 hierarchy-panel ng-scope" d-loading-overlay="loading" aria-disabled="false">
+   <div class="panel panel-default hierarchy-panel-body">
+      <!-- Panel header -->
+      <div class="panel-title ng-binding">STORAGE HIERARCHY</div>
+      <!-- Panel body -->
+      <div class="panel-body row-parent">
+         <!--Storage Array Item-->
+         <div class="child column-parent storage-array-column">
+            <div class="child graphic-hierarchy-storagearray"></div>
+            <div class="dropdown dropdown-child">
+               <button class="btn btn-default btn-sm dropdown-toggle button ng-binding" data-toggle="dropdown" ng-bind-html="'STORAGE_ARRAY_MENU' | localize">Storage Array <span class="caret"></span></button>
+               <ul class="dropdown-menu">
+                  <li>
+                     <a d-link="" d-dispatch="{view: 'settings', tile: 'Settings-Tile-Alerts'}" class="ng-binding ng-isolate-scope cursor-pointer" tabindex="0" aria-disabled="false">
+                        Configure alerts
+                     </a>
+                  </li>
+                  <li ng-show="initialSetup.show" class="ng-hide">
+                     <a d-link="" d-dialog-open="initialSetupWizard" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                        Launch initial setup
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <hr class="dash">
+         <!--Shelf Item-->
+         <div class="child column-parent shelf-column">
+            <div class="child graphic-hierarchy-shelf"></div>
+            <div class="dropdown dropdown-child">
+               <!-- ngIf: trayCount === 1 -->
+               <!-- ngIf: trayCount !== 1 --><button ng-if="trayCount !== 1" class="btn btn-default btn-sm dropdown-toggle button double-menu-height ng-binding ng-scope" data-toggle="dropdown" ng-bind-html="'SHELVES_MENU' | localize:trayCount:driveCount"><b>3</b> Shelves <span class="caret"></span><br>(<b>48</b> Drives)</button><!-- end ngIf: trayCount !== 1 -->
+               <ul class="dropdown-menu">
+                  <li>
+                     <a d-link="" d-dispatch="{view: 'hardware'}" class="ng-binding ng-isolate-scope cursor-pointer" tabindex="0" aria-disabled="false">
+                        View hardware
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="graphic-hierarchy-bracket-left bracket"></div>
+         <!--Pool Item-->
+         <div class="child column-parent mid-sized-column">
+            <div class="child graphic-hierarchy-pool"></div>
+            <div class="dropdown dropdown-child">
+               <!-- ngIf: storagePoolCount === 1 -->
+               <!-- ngIf: storagePoolCount !== 1 --><button ng-if="storagePoolCount !== 1" class="btn btn-default btn-sm dropdown-toggle button ng-binding ng-scope" data-toggle="dropdown" ng-bind-html="'POOLS_MENU' | localize:storagePoolCount"><b>0</b> Pools <span class="caret"></span></button><!-- end ngIf: storagePoolCount !== 1 -->
+               <ul class="dropdown-menu">
+                  <li>
+                     <a d-link="" d-dialog-open="createPoolDialog" data-dialog-data="diskPool" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                        Create
+                     </a>
+                  </li>
+               </ul>
+            </div>
+            <!--Volume Group Item-->
+            <div class="child graphic-hierarchy-volumegroup offset"></div>
+            <div class="dropdown dropdown-child">
+               <!-- ngIf: volumeGroupCount === 1 -->
+               <!-- ngIf: volumeGroupCount !== 1 --><button ng-if="volumeGroupCount !== 1" class="btn btn-default btn-sm dropdown-toggle button ng-binding ng-scope" data-toggle="dropdown" ng-bind-html="'VOLUME_GROUPS_MENU' | localize:volumeGroupCount"><b>0</b> Volume Groups <span class="caret"></span></button><!-- end ngIf: volumeGroupCount !== 1 -->
+               <ul class="dropdown-menu">
+                  <li>
+                     <a d-link="" d-dialog-open="createPoolDialog" data-dialog-data="volumeGroup" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                        Create
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="graphic-hierarchy-bracket-right bracket"></div>
+
+         <!--Volume Item-->
+         <div class="child column-parent mid-sized-column">
+            <div class="child graphic-hierarchy-volume"></div>
+            <div class="dropdown dropdown-child">
+               <!-- ngIf: volumeCount === 1 -->
+               <!-- ngIf: volumeCount !== 1 --><button ng-if="volumeCount !== 1" class="btn btn-default btn-sm dropdown-toggle button ng-binding ng-scope" data-toggle="dropdown" ng-bind-html="'VOLUMES_MENU' | localize:volumeCount"><b>0</b> Volumes <span class="caret"></span></button><!-- end ngIf: volumeCount !== 1 -->
+               <ul class="dropdown-menu">
+                  <li>
+                     <a d-link="" d-dialog-open="createVolumeWizard" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                        Create new volumes
+                     </a>
+                  </li>
+                  <li>
+                     <a d-link="" d-dialog-open="createScheduleSelector" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                        Create snapshot schedule
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="graphic-hierarchy-bracket-left bracket"></div>
+         <!--Host Group (Cluster) Item-->
+            <div class="child column-parent host-column">
+            <div class="child graphic-hierarchy-hostgroup host-group"></div>
+            <div class="dropdown dropdown-child">
+               <!-- ngIf: hostGroupCount === 1 -->
+               <!-- ngIf: hostGroupCount !== 1 --><button ng-if="hostGroupCount !== 1" class="btn btn-default btn-sm dropdown-toggle button ng-binding ng-scope" data-toggle="dropdown" ng-bind-html="'HOST_CLUSTERS_MENU' | localize:hostGroupCount"><b>0</b> Host Clusters <span class="caret"></span></button><!-- end ngIf: hostGroupCount !== 1 -->
+               <ul class="dropdown-menu">
+                  <li>
+                     <a d-link="" d-dialog-open="createHostGroupDialog" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                        Create
+                     </a>
+                  </li>
+               </ul>
+            </div>
+            <!--Host Item-->
+            <div class="child graphic-hierarchy-host offset"></div>
+            <div class="dropdown dropdown-child">
+               <!-- ngIf: hostCount === 1 -->
+               <!-- ngIf: hostCount !== 1 --><button ng-if="hostCount !== 1" class="btn btn-default btn-sm dropdown-toggle button ng-binding ng-scope" data-toggle="dropdown" ng-bind-html="'HOSTS_MENU' | localize:hostCount"><b>0</b> Hosts <span class="caret"></span></button><!-- end ngIf: hostCount !== 1 -->
+               <ul class="dropdown-menu">
+                  <li>
+                     <a d-link="" d-dialog-open="createHostDialog" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                        Create
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <!--Workload Item-->
+         <div class="child column-parent mid-sized-column">
+            <div class="child graphic-hierarchy-workload"></div>
+            <div class="dropdown dropdown-child">
+               <!-- ngIf: workloadCount === 1 -->
+               <!-- ngIf: workloadCount !== 1 --><button ng-if="workloadCount !== 1" class="btn btn-default btn-sm dropdown-toggle button ng-binding ng-scope" data-toggle="dropdown" ng-bind-html="'WORKLOADS_MENU' | localize:workloadCount"><b>0</b> Workloads <span class="caret"></span></button><!-- end ngIf: workloadCount !== 1 -->
+               <ul class="dropdown-menu">
+                  <li>
+                     <a d-link="" d-dialog-open="createNewWorkload" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                        Create
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+<div class="ng-scope">   <!-- ngInclude: 'widget/loadingOverlay/loadingOverlay.tpl.html' --><div ng-include="'widget/loadingOverlay/loadingOverlay.tpl.html'" class="ng-scope"><div ng-class="classes" class="loading-overlay ng-scope">
+   <div class="loading-overlay-backdrop"></div>
+   <div class="loading-overlay-graphic-text-container">
+      <div class="loading-overlay-graphic-text-background"></div>
+      <!-- ngIf: !!cancelCallback -->
+      <div class="loading-overlay-graphic" ng-switch="type">
+         <!-- ngSwitchWhen: spinner --><div ng-switch-when="spinner" class="loading-overlay-spinner ng-scope">
+            <i class="icon-spinner icon-spin icon-pulse"></i>
+         </div><!-- end ngSwitchWhen: -->
+         <!-- ngSwitchWhen: progressBar -->
+      </div>
+      <div class="loading-overlay-text ng-binding" ng-bind-html="text"></div>
+      <div ng-bind-html="srText" class="sr-only ng-binding" tabindex="-1"></div>
+   </div>
+</div></div></div></div>
+</div>     </div><!-- end ngRepeat: tile in tiles -->  </div></div></div>
+</div>
+         </div>
+      </div>
+   </section>
+</div>
+<div d-dialog-container="" class="ng-scope"><!-- ngIf: dialogList.length > 0 -->
+<!-- ngRepeat: dialogData in dialogList --></div>
+<div d-frame-container="" class="ng-scope"><!-- ngIf: showBackdrop() -->
+<div class="modeless-container" ng-class="getContainerClass()">
+   <!-- ngRepeat: frame in openFrames -->
+</div>
+</div>
+</div>
+
+   <!--JavaScript is not enabled-->
+   <noscript>
+      &lt;div class="login-body"&gt;
+         &lt;div class="table"&gt;
+            &lt;div class="table-cell"&gt;
+               &lt;div class="horizontal-center-javascript-cookies"&gt;
+                  &lt;div class="inline"&gt;
+                     &lt;div class="logo"&gt;&lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;div class="inline2"&gt;
+                     &lt;div class="login-content"&gt;
+                        &lt;div class="col-xs-12 col-xs-offset-1"&gt;
+                           &lt;div class="box-content"&gt;
+                              &lt;div class="row"&gt;
+                                 &lt;div class="form-group"&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class="row"&gt;
+                                 &lt;div class="form-group"&gt;
+                                    &lt;div class="font-JavaScript-cookies" style="margin-left: 0px"&gt;SANtricity&lt;sup&gt;®&lt;/sup&gt; System Manager&lt;/div&gt;
+                                 &lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class="row"&gt;
+                                 &lt;div class="form-group"&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class="text-cookies-javascript"&gt;
+                                 &lt;div class="row"&gt;
+                                    &lt;div class="form-group"&gt;
+                                       &lt;div&gt;&lt;b&gt;Enable JavaScript&lt;/b&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
+                                 &lt;/div&gt;
+                                 &lt;div class="row"&gt;
+                                    &lt;div class="form-group"&gt;
+                                       &lt;div&gt;
+                                       JavaScript is currently disabled in your browser. You must
+                                       enable JavaScript to use the SANtricity&lt;sup&gt;®&lt;/sup&gt; System Manager.
+                                       &lt;/div&gt;
+                                    &lt;/div&gt;
+                                 &lt;/div&gt;
+                                 &lt;div class="row"&gt;
+                                    &lt;div class="form-group"&gt;
+                                       &lt;div&gt;
+                                       Follow this link to learn how to enable JavaScript in your
+                                       browser of choice:
+                                       &lt;a href="http://www.enable-javascript.com/" target="_blank"
+                                          style="color: #0000CC"&gt;http://www.enable-javascript.com/&lt;/a&gt;.
+                                       &lt;/div&gt;
+                                    &lt;/div&gt;
+                                 &lt;/div&gt;
+                                 &lt;div class="row"&gt;
+                                    &lt;div class="form-group"&gt;
+                                       &lt;div&gt;
+                                       Remember to refresh your browser after enabling JavaScript.
+                                       &lt;/div&gt;
+                                    &lt;/div&gt;
+                                 &lt;/div&gt;
+                              &lt;/div&gt;
+                           &lt;/div&gt;
+                        &lt;/div&gt;
+                     &lt;/div&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
+            &lt;/div&gt;
+         &lt;/div&gt;
+      &lt;/div&gt;
+   </noscript>
+
+
+
+<div id="popoverContainer" aria-live="polite" aria-atomic="false"></div></body></html>

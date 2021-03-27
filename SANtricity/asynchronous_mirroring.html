@@ -1,0 +1,615 @@
+<html xml:lang="en" ng-app="sam.app" ng-controller="AppCtrl" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+   <title ng-bind-html="getTitle()" class="ng-binding">Array1 - SANtricity System Manager</title>
+   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+   <meta content="text/html;charset=utf-8" http-equiv="content-type">
+   <meta content="" name="description">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+   <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+   <!-- compiled CSS -->
+   <link rel="stylesheet" type="text/css" href="SAMClient-11.30.0G00.0001.css">
+   
+
+<style type="text/css" rel="stylesheet">.table_18 > .table-container > .table-header-container > div > .c0, .table_18 > .table-container > .table-content> .table-row-container > .table-row > .c0, .table_18 > .table-container> .table-footer-row-container > .table-footer-row > .c0 { width: 150px; }.table_18 > .table-container > .table-header-container > div > .c1, .table_18 > .table-container > .table-content> .table-row-container > .table-row > .c1, .table_18 > .table-container> .table-footer-row-container > .table-footer-row > .c1 { width: 200px; }.table_18 > .table-container > .table-header-container > div > .c2, .table_18 > .table-container > .table-content> .table-row-container > .table-row > .c2, .table_18 > .table-container> .table-footer-row-container > .table-footer-row > .c2 { width: 122px; }.table_18 > .table-container > .table-header-container > div > .c3, .table_18 > .table-container > .table-content> .table-row-container > .table-row > .c3, .table_18 > .table-container> .table-footer-row-container > .table-footer-row > .c3 { width: 99px; }.table_18 > .table-container > .table-header-container > div > .c4, .table_18 > .table-container > .table-content> .table-row-container > .table-row > .c4, .table_18 > .table-container> .table-footer-row-container > .table-footer-row > .c4 { width: 118px; }.table_18 > .table-container > .table-header-container > div > .c5, .table_18 > .table-container > .table-content> .table-row-container > .table-row > .c5, .table_18 > .table-container> .table-footer-row-container > .table-footer-row > .c5 { width: 86px; }.table_18 > .table-container > .table-header-container > div > .c6, .table_18 > .table-container > .table-content> .table-row-container > .table-row > .c6, .table_18 > .table-container> .table-footer-row-container > .table-footer-row > .c6 { width: 117px; }.table_18 > .table-container > .table-header-container > div > .c7, .table_18 > .table-container > .table-content> .table-row-container > .table-row > .c7, .table_18 > .table-container> .table-footer-row-container > .table-footer-row > .c7 { width: 180px; }.table_18 > .table-container > .table-header-container > div > .c8, .table_18 > .table-container > .table-content> .table-row-container > .table-row > .c8, .table_18 > .table-container> .table-footer-row-container > .table-footer-row > .c8 { width: 60px; }.table_18 > .table-container > .table-content> .table-row-container > .table-row { width: 1132px; }.table_18 > .table-container > .table-header-container > div, .table_18 > .table-container> .table-footer-row-container > .table-footer-row { width: 1132px; }.table_18 > .table-container > .table-content { overflow-x: scroll !important; }</style><style type="text/css" rel="stylesheet">.table_19 > .table-container > .table-header-container > div > .c0, .table_19 > .table-container > .table-content> .table-row-container > .table-row > .c0, .table_19 > .table-container> .table-footer-row-container > .table-footer-row > .c0 { width: 209px; }.table_19 > .table-container > .table-header-container > div > .c1, .table_19 > .table-container > .table-content> .table-row-container > .table-row > .c1, .table_19 > .table-container> .table-footer-row-container > .table-footer-row > .c1 { width: 200px; }.table_19 > .table-container > .table-header-container > div > .c2, .table_19 > .table-container > .table-content> .table-row-container > .table-row > .c2, .table_19 > .table-container> .table-footer-row-container > .table-footer-row > .c2 { width: 209px; }.table_19 > .table-container > .table-header-container > div > .c3, .table_19 > .table-container > .table-content> .table-row-container > .table-row > .c3, .table_19 > .table-container> .table-footer-row-container > .table-footer-row > .c3 { width: 209px; }.table_19 > .table-container > .table-header-container > div > .c4, .table_19 > .table-container > .table-content> .table-row-container > .table-row > .c4, .table_19 > .table-container> .table-footer-row-container > .table-footer-row > .c4 { width: 210px; }.table_19 > .table-container > .table-content> .table-row-container > .table-row { width: 1037px; }.table_19 > .table-container > .table-header-container > div, .table_19 > .table-container> .table-footer-row-container > .table-footer-row { width: 1037px; }</style></head>
+<body class="contrast-blue" ng-class="::{'fullscreen': APP_CONSTANTS.FULLSCREEN}">
+   <!--JavaScript is enabled-->
+   <!-- ngInclude: getCtrlState() --><div ng-include="getCtrlState()" class="ng-scope"><!-- ngInclude: 'header.tpl.html' --><div ng-include="'header.tpl.html'" class="ng-scope"><header class="ng-scope">
+   <nav class="navbar navbar-default">
+      <div class="nav-indenting">
+         <div class="override-margin-right row">
+            <div class="col-xs-4">
+               <button class="toggle-nav btn pull-left" title="Toggle expanded navigation" aria-label="Toggle expanded navigation" d-nav-control="" id="nav-control">
+                  <span>&#9776;</span>
+               </button>
+               <span class="navbar-branding ng-binding" ng-bind-html="'SANTRICITY_SYSTEM_MANAGER_NAME'|localize">SANtricity<sup>&#174;</sup> System Manager</span>
+            </div>
+            <div class="col-xs-4 navbar-array">
+               <span class="ng-binding">Array1</span>
+            </div>
+            <div class="col-xs-4">
+               <ul class="navbar-link">
+                  <li class="dropdown">
+                     <a class="dropdown-toggle ng-binding cursor-pointer" data-toggle="dropdown" id="preferences" d-link="" aria-disabled="false" tabindex="0">
+                        Preferences<span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li>
+                           <a d-link="" d-dialog-open="changePassword" id="changePassword" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                              Change password
+                           </a>
+                        </li>
+                        <li>
+                           <a d-link="" d-dialog-open="setDisplayPreferences" id="setDisplayPreferences" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                              Set preferences
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <span class="navbar-divider">|</span>
+                  <li class="dropdown">
+                     <a class="dropdown-toggle ng-binding cursor-pointer" data-toggle="dropdown" id="help" d-link="" aria-disabled="false" tabindex="0">
+                        Help<span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li>
+                           <a d-link="" ng-click="launchOnlineHelp()" id="online-help" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                              Help Contents
+                           </a>
+                        </li>
+                        <li>
+                           <a d-link="" ng-click="launchApiDocumentation()" id="api-documentation" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                              API Documentation
+                           </a>
+                        </li>
+                        <li>
+                           <a d-link="" d-dialog-open="aboutDialog" id="about" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                              About
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <span class="navbar-divider">|</span>
+                  <li>
+                     <a d-link="" ng-click="logOut()" id="logout" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                        Log Out
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </nav>
+</header></div>
+<div id="wrapper" ng-controller="ViewCtrl" class="ng-scope">
+   <div id="main-nav-bg"></div>
+   <nav id="main-nav">
+      <div class="navigation">
+         <ul d-nav-update="" class="nav nav-stacked">
+            <li data-nav-key="home">
+               <a href="santricity.html" id="home" aria-label="Home">
+                  <i class="icon-home status-icon-container" aria-hidden="true">
+                     <div class="status-dot" ng-class="statusDotClass" aria-hidden="true">
+                     </div>
+                  </i>
+                  <span class="ng-binding">Home</span>
+               </a>
+            </li>
+            <li data-nav-key="storage" class="active">
+               <a href="storage.html" id="storage" aria-label="Storage">
+                  <i class="icon-storage" aria-hidden="true"></i>
+                  <span class="ng-binding">Storage</span>
+               </a>
+            </li>
+            <li data-nav-key="hardware" class="">
+               <a href="hardware.html" id="hardware" aria-label="Hardware">
+                  <i class="icon-hardware" aria-hidden="true"></i>
+                  <span class="ng-binding">Hardware</span>
+               </a>
+            </li>
+            <li data-nav-key="settings">
+               <a href="settings.html" id="settings" aria-label="Settings">
+                  <i class="icon-gear" aria-hidden="true"></i>
+                  <span class="ng-binding">Settings</span>
+               </a>
+            </li>
+            <!-- TODO: Re-enable the Add-ons page when needed -->
+            <!--<li data-nav-key="addons">-->
+               <!--<a href="#/addons" id="addons" aria-label="{{'NAVIGATION_ADDONS_LABEL' | localize}}">-->
+                  <!--<i class="icon-addons" aria-hidden="true"></i>-->
+                  <!--<span>{{'NAVIGATION_ADDONS_LABEL' | localize}}</span>-->
+               <!--</a>-->
+            <!--</li>-->
+            <li data-nav-key="support">
+               <a href="support.html" id="support" aria-label="Support">
+                  <i class="icon-support" aria-hidden="true"></i>
+                  <span class="ng-binding">Support</span>
+               </a>
+            </li>
+         </ul>
+      </div>
+   </nav>
+   <section id="content">
+      <div class="container">
+         <div class="row" id="content-wrapper">
+            <div d-notification-container="main" class="ng-isolate-scope"><div class="notification-container">
+<!-- ngRepeat: notificationData in notifications | orderBy:'id':true -->
+</div></div>
+            <!-- ngView:  --><div ng-controller="notificationAreaCtrl" ng-view="" class="ng-scope"><div class="ng-scope">
+   <d-breadcrumb data-page-id="storage" class="ng-isolate-scope"><ol class="breadcrumb">
+   <!-- ngRepeat: item in breadcrumb --><li ng-repeat="item in breadcrumb" ng-class="{'active': false}" ng-switch="$last" class="ng-scope">
+      <!-- ngSwitchWhen: false --><a ng-click="select($index)" ng-href="#/home" ng-switch-when="false" class="ng-binding ng-scope" href="santricity.html">
+         Home
+      </a><!-- end ngSwitchWhen: -->
+      <!-- ngSwitchWhen: true -->
+   </li><!-- end ngRepeat: item in breadcrumb --><li ng-repeat="item in breadcrumb" ng-class="{'active': false}" ng-switch="$last" class="ng-scope active">
+      <!-- ngSwitchWhen: false --><a ng-click="select($index)" ng-href="#/storage" ng-switch-when="false" class="ng-binding ng-scope" href="storage.html">
+         Storage
+      </a><!-- end ngSwitchWhen: -->
+      <!-- ngSwitchWhen: true -->
+   </li><!-- end ngRepeat: item in breadcrumb --><li ng-repeat="item in breadcrumb" ng-class="{'active': true}" ng-switch="$last" class="ng-scope active">
+      <!-- ngSwitchWhen: false -->
+      <!-- ngSwitchWhen: true --><span ng-switch-when="true" class="ng-binding ng-scope">Asynchronous Mirroring</span><!-- end ngSwitchWhen: -->
+   </li><!-- end ngRepeat: item in breadcrumb -->
+</ol>
+</d-breadcrumb>
+   <div d-tile-container="storage" class="ng-isolate-scope angular-animate animate-maximize-tile" style=""><!-- ngRepeat: tile in tiles --><div ng-repeat="tile in tiles" class="ng-scope"><div class="angular-animate animate-maximize-tile" ng-animate-children="">   <d-tile id="storage-maximized" data-title="ASYNCHRONOUS MIRRORING" data-tile-index="0" data-main-url="arvm/arvm.tpl.html" data-learn-more-guid="FAQ_LEARN_MORE_STORAGE_ARVM" data-hover-url="" data-expanded="max" data-selected-index="selectedIndex" data-maximize="maximizeTile" data-close-semi-expanded="closeSemiExpandedTile" data-close-semi-expanded-by-clicked="closeSemiExpandedTileByClicked" data-close-maximized-by-clicked="closeMaximizedTileByClicked" data-reduce-maximized="reduceMaximizedTile" data-controller="" data-expand-tile="expandTile" class="ng-isolate-scope"><!-- ngIf: tile.visible --><div ng-if="tile.visible" ng-class="getClass()" class="tile ng-scope tile-max-expanded">
+   <div ng-mouseenter="hover=true" ng-mouseleave="hover=false" class="tile-inner">
+      <div class="tile-body-container" tabindex="-1">
+         <div ng-class="{'tile-body-hover':showHover(hover) &amp;&amp; !hoverUrl}" class="tile-default">
+            <div class="tile-body" d-loading-overlay="tile.loading &amp;&amp; (expanded !== 'semi' &amp;&amp; expanded !== 'max')" data-overlay-options="{backdrop: false, center: expanded === 'semi' || expanded === 'max'}" style="position: relative;">
+               <div class="tile-header">
+                  <div class="tile-title ng-binding" data-qaid="ASYNCHRONOUS MIRRORING">
+                     ASYNCHRONOUS MIRRORING
+                     <!-- ngIf: expanded === 'semi' || expanded === 'max' --><div ng-if="expanded === 'semi' || expanded === 'max'" class="form-group ng-scope ng-isolate-scope" d-faq-help="" data-content="FAQ_LEARN_MORE_STORAGE_ARVM"><span class="faqHelp cursor-pointer" d-link="" ng-click="launchOnlineHelp($event)" aria-disabled="false" tabindex="0"><ng-transclude>
+                        <p class="ng-binding ng-scope">Learn More <i class="icon-angle-right"></i></p>
+                     </ng-transclude></span></div><!-- end ngIf: expanded === 'semi' || expanded === 'max' -->
+                  </div>
+                  <!-- ngIf: expanded === 'semi' || expanded === 'max' --><!-- ngInclude:  --><div class="tile-control ng-scope" ng-if="expanded === 'semi' || expanded === 'max'" ng-include="" src="'widget/tile/expandedHeader.tpl.html'"><div ng-switch="expanded" class="ng-scope">
+   <!-- ngSwitchWhen: semi -->
+   <!-- ngSwitchWhen: max --><span ng-switch-when="max" class="ng-scope">
+      <button ng-show="!expandMaximizes" id="tileHeaderResize" class="btn btn-actionicon ng-hide" ng-click="reduceMaximizedTile()" title="Reduce Tile">
+          <i aria-hidden="true" class="icon-resize-small"></i>
+      </button>
+      <button id="tileHeaderRemove" class="btn btn-actionicon" ng-click="closeMaximizedTileByClicked()" title="Close Tile">
+          <i aria-hidden="true" class="icon-remove"></i>
+      </button>
+   </span><!-- end ngSwitchWhen: -->
+</div></div><!-- end ngIf: expanded === 'semi' || expanded === 'max' -->
+               </div>
+               <!-- ngInclude: mainUrl --><div ng-include="mainUrl" class="tile-content-area ng-scope" d-loading-overlay="tile.loading &amp;&amp; (expanded === 'semi' || expanded === 'max')" style="position: relative;"><div ng-controller="arvmCtrl" class="ng-scope">
+    <div d-tabs="tabConfig" class="ng-scope"><div class="tabs">
+   <div class="tabs-container">
+      <ul class="nav nav-tabs nav-tabs-centered" ng-class="getAlignClass()" role="tablist">
+         <!-- ngRepeat: tab in tabConfig.tabs --><!-- ngIf: isTabVisible(tab) --><li ng-repeat="tab in tabConfig.tabs" ng-if="isTabVisible(tab)" ng-class="{'active': tabConfig.selectedIndex === $index}" role="presentation" class="ng-scope active">
+            <a ng-click="tabConfig.selectedIndex = $index" d-link="" role="tab" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+               Mirror Consistency Groups
+            </a>
+         </li><!-- end ngIf: isTabVisible(tab) --><!-- end ngRepeat: tab in tabConfig.tabs --><!-- ngIf: isTabVisible(tab) --><li ng-repeat="tab in tabConfig.tabs" ng-if="isTabVisible(tab)" ng-class="{'active': tabConfig.selectedIndex === $index}" role="presentation" class="ng-scope">
+            <a ng-click="tabConfig.selectedIndex = $index" d-link="" role="tab" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+               Mirrored Pairs
+            </a>
+         </li><!-- end ngIf: isTabVisible(tab) --><!-- end ngRepeat: tab in tabConfig.tabs -->
+      </ul>
+   </div>
+   <div class="tabs-content-container" d-loading-overlay="hasTabOverlay()" style="position: relative;">
+      <!-- ngRepeat: tab in tabConfig.tabs --><div ng-repeat="tab in tabConfig.tabs" class="ng-scope">
+         <!-- ngIf: isTabLoaded(tab, $index) --><div ng-if="isTabLoaded(tab, $index)" ng-show="tabConfig.selectedIndex === $index" role="tabpanel" class="ng-scope">
+            <!-- ngInclude: tab.templateUrl --><div ng-include="tab.templateUrl" class="ng-scope"><div ng-controller="mirrorConsistencyGroupsTableCtrl" class="arvm-table ng-scope">
+   <div d-table2="mirrorGroupsTable.options" data-table-control="mirrorGroupsTable.table" class="table-rows-all ng-isolate-scope"><div class="table-widget table_18 table-pager-hidden" d-loading-overlay="table.loadingOverlay.visible || !table.enabled" data-overlay-options="{text: table.loadingOverlay.text, graphic: table.enabled}" aria-disabled="false">
+   <input class="form-control search-input ng-pristine ng-untouched ng-valid" type="search" ng-model="table.search.inputValue" ng-disabled="!table.search.enabled" placeholder="Filter" title="Filter" disabled="disabled">
+
+   <div class="transcluded-content">
+      <div class="btn-row ng-scope">
+         <!-- Create mirrored pair -->
+         <div class="tooltip-wrapper">
+            <button type="button" class="btn btn-primary ng-binding" d-tooltip="" data-content="Select object first" data-disable-only="true" data-options="{placement: 'top'}" d-dialog-open="createMirroredPairWizard">
+               Create Mirrored pair
+            </button>
+         </div>
+
+         <!-- Test Communication -->
+         <div class="tooltip-wrapper">
+            <button type="button" class="btn btn-primary ng-binding" d-tooltip="" data-content="Select object first" data-disable-only="true" data-options="{placement: 'top'}" ng-disabled="!getSelectedRowId()" ng-click="testCommunication()" disabled="disabled" data-original-title="" title="">
+               Test Communication
+            </button>
+         </div>
+         <!-- More -->
+         <div class="tooltip-wrapper">
+            <div class="btn-group dropdown">
+               <button class="btn btn-primary dropdown-toggle ng-binding" data-toggle="dropdown" d-tooltip="" data-content="Select object first" data-disable-only="true" data-options="{placement: 'top'}" ng-disabled="!getSelectedRowId()" disabled="disabled" data-original-title="" title="">
+                  More
+                  <span class="caret"></span>
+               </button>
+               <ul class="dropdown-menu">
+                  <li ng-class="{disabled: !canSuspendMirrorConsistencyGroup()}" class="disabled">
+                     <a d-link="" d-dialog-open="suspendMirrorConsistencyGroup" data-dialog-data="{groupRef: getSelectedRowId()}" class="ng-binding" aria-disabled="true">
+                        Suspend
+                     </a>
+                  </li>
+                  <li ng-class="{disabled: !canResumeMirrorConsistencyGroup()}" class="disabled">
+                     <a d-link="" d-dialog-open="resumeMirrorConsistencyGroup" data-dialog-data="{groupRef: getSelectedRowId()}" class="ng-binding" aria-disabled="true">
+                        Resume
+                     </a>
+                  </li>
+                  <li ng-class="{disabled: !canSynchronizeMirrorConsistencyGroup()}" class="disabled">
+                     <a d-link="" d-dialog-open="synchronizeMirrorConsistencyGroup" data-dialog-data="{mirrorGroupId: getSelectedRowId()}" class="ng-binding" aria-disabled="true">
+                        Manually resynchronize
+                     </a>
+                  </li>
+                  <li ng-class="{disabled: !enableMirrorConsistencyGroupRoleChange()}" class="disabled">
+                     <a d-link="" d-conditional-click="changeMirrorConsistencyGroupRole()" class="ng-binding" aria-disabled="true">
+                        Change role
+                     </a>
+                  </li>
+                  <li>
+                     <a d-link="" d-dialog-open="editMirrorConsistencyGroupPolicySettings" data-dialog-data="{amgRef: getSelectedRowId()}" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                        Edit settings
+                     </a>
+                  </li>
+                  <li ng-class="{disabled: !isUpdateRemoteIpEnabled(getSelectedMirrorGroup())}" class="disabled">
+                     <a d-link="" d-dialog-open="updateRemoteIp" data-dialog-data="{mirrorGroup: getSelectedMirrorGroup()}" class="ng-binding" aria-disabled="true">
+                        Update remote IP address
+                     </a>
+                  </li>
+                  <li ng-class="{disabled: !canViewUnsynchronizedData()}" class="disabled">
+                     <a d-link="" d-conditional-click="launchViewUnsynchronizedData()" class="ng-binding" aria-disabled="true">
+                        View unsynchronized data amount
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <!-- Uncommon -->
+         <div class="tooltip-wrapper pull-right">
+            <div class="btn-group dropdown">
+               <button type="button" class="btn btn-primary dropdown-toggle btn-delete ng-binding" data-toggle="dropdown" d-tooltip="" data-content="Select object first" data-disable-only="true" data-options="{placement: 'top'}" ng-disabled="false" aria-expanded="false">
+                  Uncommon Tasks
+                  <span class="caret"></span>
+               </button>
+               <ul class="dropdown-menu dropdown-menu-right">
+                  <li ng-class="{'disabled': !isDeactivateEnabled()}" class="disabled">
+                     <a d-link="" d-dialog-open="deactivateArvm" class="ng-binding" aria-disabled="true">
+                        Deactivate
+                     </a>
+                  </li>
+                  <li ng-class="{'disabled': !getSelectedRowId()}" class="disabled">
+                     <a d-link="" d-dialog-open="deleteMirrorConsistencyGroup" data-dialog-data="{MirrorConsistencyGroupRef: getSelectedRowId()}" class="ng-binding" aria-disabled="true">
+                           Delete
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="table-container ng-hide" role="grid" ng-show="table.visible">
+      <div class="table-header-container">
+         <div class="table-header" role="row"><div class="table-header-cell c0 sortable" role="columnheader" data-index="0" tabindex="0">Name<div class="sort-icon"><i class="icon-caret-up sort-asc-icon"></i><i class="icon-caret-down sort-desc-icon"></i></div><div class="resize-handle"></div></div><div class="table-header-cell c1 sortable ng-scope" role="columnheader" data-index="1" draggable="true" tabindex="0">Status<div class="sort-icon"><i class="icon-caret-up sort-asc-icon"></i><i class="icon-caret-down sort-desc-icon"></i></div><div class="resize-handle"></div></div><div class="table-header-cell c2 sortable" role="columnheader" data-index="2" draggable="true" tabindex="0">Number of
+Mirrored Pairs<div class="sort-icon"><i class="icon-caret-up sort-asc-icon"></i><i class="icon-caret-down sort-desc-icon"></i></div><div class="resize-handle"></div></div><div class="table-header-cell c3 sortable" role="columnheader" data-index="3" draggable="true" tabindex="0">Local Role<div class="sort-icon"><i class="icon-caret-up sort-asc-icon"></i><i class="icon-caret-down sort-desc-icon"></i></div><div class="resize-handle"></div></div><div class="table-header-cell c4 sortable" role="columnheader" data-index="4" draggable="true" tabindex="0">Remote
+Storage Array<div class="sort-icon"><i class="icon-caret-up sort-asc-icon"></i><i class="icon-caret-down sort-desc-icon"></i></div><div class="resize-handle"></div></div><div class="table-header-cell c5 sortable" role="columnheader" data-index="5" draggable="true" tabindex="0">Connection
+Type<div class="sort-icon"><i class="icon-caret-up sort-asc-icon"></i><i class="icon-caret-down sort-desc-icon"></i></div><div class="resize-handle"></div></div><div class="table-header-cell c6 sortable" role="columnheader" data-index="6" draggable="true" tabindex="0">Synchronization
+Interval<div class="sort-icon"><i class="icon-caret-up sort-asc-icon"></i><i class="icon-caret-down sort-desc-icon"></i></div><div class="resize-handle"></div></div><div class="table-header-cell c7 sortable" role="columnheader" data-index="7" draggable="true" tabindex="0">Last Known
+Recovery Point<div class="sort-icon"><i class="icon-caret-up sort-asc-icon"></i><i class="icon-caret-down sort-desc-icon"></i></div><div class="resize-handle"></div></div><div class="table-header-cell c8 align-center edit-column" role="columnheader" data-index="8">Edit</div></div>
+         <div class="table-column-search" role="row"></div>
+      </div>
+      <div class="table-content table-preserve-scroll">
+         <div class="table-row-container"></div>
+      </div>
+      <div class="table-footer-row-container">
+         <div class="table-footer-row" role="row"></div>
+      </div>
+      <div class="table-footer pager-first-last-hidden table-column-filter-hidden">
+         <div class="table-control">
+               <div class="selected-caption ng-binding">Total rows: 0</div>
+                  <div class="separator"></div>
+                  <div class="footer-buttons">
+                     <button class="btn btn-actionicon filter-column" type="button" ng-click="showColumnFilterDialog()" title="Select columns" aria-label="Select columns">
+                        <i class="icon-columns" aria-hidden="true"></i>
+                     </button>
+                     <button class="btn btn-actionicon refresh-table" type="button" ng-click="clearSettings()" title="Undo table configuration changes" aria-label="Undo table configuration changes">
+                        <i class="icon-rotate" aria-hidden="true"></i>
+                     </button>
+                     <!-- ngIf: table.options.export -->
+                  </div>
+         </div>
+         <div class="table-pager">
+            <div d-table2-pager="" class="ng-scope"><div class="pager-back">
+    <button class="btn btn-actionicon first-page" type="button" ng-disabled="table.pager.page === 1" ng-click="moveToPage($event, 1)" title="Go to first page" aria-label="Go to first page" disabled="disabled">
+        <i class="icon-double-angle-left" aria-hidden="true"></i>
+    </button>
+    <button class="btn btn-actionicon previous-page" type="button" ng-disabled="table.pager.page === 1" ng-click="moveToPage($event, table.pager.page - 1)" title="Go to previous page" aria-label="Go to previous page" disabled="disabled">
+        <i class="icon-angle-left" aria-hidden="true"></i>
+    </button>
+</div>
+<div class="separator"></div>
+<div class="pager-status ng-binding">
+    Page
+    <input class="form-control current-page prevent-form-submit ng-pristine ng-untouched ng-valid" type="text" ng-model="pager.page" title="Current page">
+    of 1
+</div>
+<div class="separator"></div>
+<div class="pager-next">
+    <button class="btn btn-actionicon next-page" type="button" ng-disabled="table.pager.page === table.pager.pageCount" ng-click="moveToPage($event, table.pager.page + 1)" title="Go to next page" aria-label="Go to next page" disabled="disabled">
+        <i class="icon-angle-right" aria-hidden="true"></i>
+    </button>
+    <button class="btn btn-actionicon last-page" type="button" ng-disabled="table.pager.page === table.pager.pageCount" ng-click="moveToPage($event, table.pager.pageCount)" title="Go to last page" aria-label="Go to last page" disabled="disabled">
+        <i class="icon-double-angle-right" aria-hidden="true"></i>
+    </button>
+</div>
+</div>
+         </div>
+         <div class="table-page-count ng-binding">
+            Showing 50 rows per page
+         </div>
+      </div>
+   </div>
+<div class="ng-scope">   <!-- ngInclude: 'widget/loadingOverlay/loadingOverlay.tpl.html' --><div ng-include="'widget/loadingOverlay/loadingOverlay.tpl.html'" class="ng-scope"><div ng-class="classes" class="loading-overlay ng-scope">
+   <div class="loading-overlay-backdrop"></div>
+   <div class="loading-overlay-graphic-text-container">
+      <div class="loading-overlay-graphic-text-background"></div>
+      <!-- ngIf: !!cancelCallback -->
+      <div class="loading-overlay-graphic" ng-switch="type">
+         <!-- ngSwitchWhen: spinner --><div ng-switch-when="spinner" class="loading-overlay-spinner ng-scope">
+            <i class="icon-spinner icon-spin icon-pulse"></i>
+         </div><!-- end ngSwitchWhen: -->
+         <!-- ngSwitchWhen: progressBar -->
+      </div>
+      <div class="loading-overlay-text ng-binding" ng-bind-html="text"></div>
+      <div ng-bind-html="srText" class="sr-only ng-binding" tabindex="-1"></div>
+   </div>
+</div></div></div></div></div>
+   <div d-dialog-open="createMirrorConsistencyGroup" ng-show="mirrorGroupsTable.options.data &amp;&amp; mirrorGroupsTable.options.data.length === 0" class="">
+      <div d-create-object="" data-label="Mirror Consistency Group" class="arvm-create-object ng-isolate-scope"><div d-link="" class="create-object-container cursor-pointer" ng-click="create()" aria-disabled="false" tabindex="0">  <div class="create-object-table">     <div class="create-object-row">        <div class="create-object-cell">           <div class="action-wrapper">              <i class="icon-plus-sign"></i>              <span class="ng-binding">Create Mirror Consistency Group</span>           </div>        </div>     </div>  </div></div></div>
+   </div>
+   <div class="arvm-not-available">
+      <div d-faq-help="" data-content="FAQ_ARVM_DATA_NOT_AVAILABLE" class="arvm-not-available-faq ng-isolate-scope ng-hide" ng-hide="mirrorGroupsTable.options.data &amp;&amp; mirrorGroupsTable.options.data.length === 0"><span class="faqHelp cursor-pointer" d-link="" ng-click="launchOnlineHelp($event)" aria-disabled="false" tabindex="0"><ng-transclude><span class="ng-binding ng-scope">
+         Why do I see Not Available values displayed in the table?
+      </span></ng-transclude></span></div>
+   </div>
+</div>
+</div>
+         </div><!-- end ngIf: isTabLoaded(tab, $index) -->
+      </div><!-- end ngRepeat: tab in tabConfig.tabs --><div ng-repeat="tab in tabConfig.tabs" class="ng-scope">
+         <!-- ngIf: isTabLoaded(tab, $index) --><div ng-if="isTabLoaded(tab, $index)" ng-show="tabConfig.selectedIndex === $index" role="tabpanel" class="ng-scope ng-hide">
+            <!-- ngInclude: tab.templateUrl --><div ng-include="tab.templateUrl" class="ng-scope"><div ng-controller="MirroredPairsTableCtrl" class="arvm-table ng-scope">
+   <div d-table2="mirroredPairsTable.options" data-table-control="mirroredPairsTable.table" class="table-rows-all ng-isolate-scope"><div class="table-widget table_19 table-pager-hidden" d-loading-overlay="table.loadingOverlay.visible || !table.enabled" data-overlay-options="{text: table.loadingOverlay.text, graphic: table.enabled}" aria-disabled="false">
+   <input class="form-control search-input ng-pristine ng-untouched ng-valid" type="search" ng-model="table.search.inputValue" ng-disabled="!table.search.enabled" placeholder="Filter" title="Filter" disabled="disabled">
+
+   <div class="transcluded-content">
+      <div class="btn-row ng-scope">
+         <!-- Create mirrored pair -->
+         <div class="tooltip-wrapper">
+            <button type="button" class="btn btn-primary ng-binding" d-tooltip="" data-content="Select object first" data-disable-only="true" data-options="{placement: 'top'}" d-dialog-open="createMirroredPairWizard">
+               Create Mirrored pair
+            </button>
+         </div>
+         <!-- Remove -->
+         <div class="tooltip-wrapper pull-right">
+            <button type="button" class="btn btn-primary delete-button ng-binding" d-tooltip="" data-content="Select object first" data-disable-only="true" data-options="{placement: 'top'}" ng-disabled="!getSelectedRowId()" ng-click="removeMirroredPair()" disabled="disabled" data-original-title="" title="">
+               Remove
+            </button>
+         </div>
+      </div>
+   </div>
+   <div class="table-container ng-hide" role="grid" ng-show="table.visible">
+      <div class="table-header-container">
+         <div class="table-header" role="row"><div class="table-header-cell c0 sortable ng-scope" role="columnheader" data-index="0" tabindex="0">Mirrored Pairs
+(Primary, Secondary)<div class="sort-icon"><i class="icon-caret-up sort-asc-icon"></i><i class="icon-caret-down sort-desc-icon"></i></div><div class="resize-handle"></div></div><div class="table-header-cell c1 sortable" role="columnheader" data-index="1" draggable="true" tabindex="0">Status<div class="sort-icon"><i class="icon-caret-up sort-asc-icon"></i><i class="icon-caret-down sort-desc-icon"></i></div><div class="resize-handle"></div></div><div class="table-header-cell c2 sortable" role="columnheader" data-index="2" draggable="true" tabindex="0">Local Role<div class="sort-icon"><i class="icon-caret-up sort-asc-icon"></i><i class="icon-caret-down sort-desc-icon"></i></div><div class="resize-handle"></div></div><div class="table-header-cell c3 sortable" role="columnheader" data-index="3" draggable="true" tabindex="0">Remote Storage Array<div class="sort-icon"><i class="icon-caret-up sort-asc-icon"></i><i class="icon-caret-down sort-desc-icon"></i></div><div class="resize-handle"></div></div><div class="table-header-cell c4 sortable" role="columnheader" data-index="4" draggable="true" tabindex="0">Mirror Consistency
+Group<div class="sort-icon"><i class="icon-caret-up sort-asc-icon"></i><i class="icon-caret-down sort-desc-icon"></i></div><div class="resize-handle"></div></div></div>
+         <div class="table-column-search" role="row"></div>
+      </div>
+      <div class="table-content table-preserve-scroll">
+         <div class="table-row-container"></div>
+      </div>
+      <div class="table-footer-row-container">
+         <div class="table-footer-row" role="row"></div>
+      </div>
+      <div class="table-footer pager-first-last-hidden table-column-filter-hidden">
+         <div class="table-control">
+               <div class="selected-caption ng-binding">Total rows: 0</div>
+                  <div class="separator"></div>
+                  <div class="footer-buttons">
+                     <button class="btn btn-actionicon filter-column" type="button" ng-click="showColumnFilterDialog()" title="Select columns" aria-label="Select columns">
+                        <i class="icon-columns" aria-hidden="true"></i>
+                     </button>
+                     <button class="btn btn-actionicon refresh-table" type="button" ng-click="clearSettings()" title="Undo table configuration changes" aria-label="Undo table configuration changes">
+                        <i class="icon-rotate" aria-hidden="true"></i>
+                     </button>
+                     <!-- ngIf: table.options.export -->
+                  </div>
+         </div>
+         <div class="table-pager">
+            <div d-table2-pager="" class="ng-scope"><div class="pager-back">
+    <button class="btn btn-actionicon first-page" type="button" ng-disabled="table.pager.page === 1" ng-click="moveToPage($event, 1)" title="Go to first page" aria-label="Go to first page" disabled="disabled">
+        <i class="icon-double-angle-left" aria-hidden="true"></i>
+    </button>
+    <button class="btn btn-actionicon previous-page" type="button" ng-disabled="table.pager.page === 1" ng-click="moveToPage($event, table.pager.page - 1)" title="Go to previous page" aria-label="Go to previous page" disabled="disabled">
+        <i class="icon-angle-left" aria-hidden="true"></i>
+    </button>
+</div>
+<div class="separator"></div>
+<div class="pager-status ng-binding">
+    Page
+    <input class="form-control current-page prevent-form-submit ng-pristine ng-untouched ng-valid" type="text" ng-model="pager.page" title="Current page">
+    of 1
+</div>
+<div class="separator"></div>
+<div class="pager-next">
+    <button class="btn btn-actionicon next-page" type="button" ng-disabled="table.pager.page === table.pager.pageCount" ng-click="moveToPage($event, table.pager.page + 1)" title="Go to next page" aria-label="Go to next page" disabled="disabled">
+        <i class="icon-angle-right" aria-hidden="true"></i>
+    </button>
+    <button class="btn btn-actionicon last-page" type="button" ng-disabled="table.pager.page === table.pager.pageCount" ng-click="moveToPage($event, table.pager.pageCount)" title="Go to last page" aria-label="Go to last page" disabled="disabled">
+        <i class="icon-double-angle-right" aria-hidden="true"></i>
+    </button>
+</div>
+</div>
+         </div>
+         <div class="table-page-count ng-binding">
+            Showing 50 rows per page
+         </div>
+      </div>
+   </div>
+<div class="ng-scope">   <!-- ngInclude: 'widget/loadingOverlay/loadingOverlay.tpl.html' --><div ng-include="'widget/loadingOverlay/loadingOverlay.tpl.html'" class="ng-scope"><div ng-class="classes" class="loading-overlay ng-scope">
+   <div class="loading-overlay-backdrop"></div>
+   <div class="loading-overlay-graphic-text-container">
+      <div class="loading-overlay-graphic-text-background"></div>
+      <!-- ngIf: !!cancelCallback -->
+      <div class="loading-overlay-graphic" ng-switch="type">
+         <!-- ngSwitchWhen: spinner --><div ng-switch-when="spinner" class="loading-overlay-spinner ng-scope">
+            <i class="icon-spinner icon-spin icon-pulse"></i>
+         </div><!-- end ngSwitchWhen: -->
+         <!-- ngSwitchWhen: progressBar -->
+      </div>
+      <div class="loading-overlay-text ng-binding" ng-bind-html="text"></div>
+      <div ng-bind-html="srText" class="sr-only ng-binding" tabindex="-1"></div>
+   </div>
+</div></div></div></div></div>
+   <div d-dialog-open="createMirroredPairWizard" ng-show="mirroredPairsTable.options.data &amp;&amp; mirroredPairsTable.options.data.length === 0" class="">
+      <div d-create-object="" data-label="Mirrored pair" class="arvm-create-object ng-isolate-scope"><div d-link="" class="create-object-container cursor-pointer" ng-click="create()" aria-disabled="false" tabindex="0">  <div class="create-object-table">     <div class="create-object-row">        <div class="create-object-cell">           <div class="action-wrapper">              <i class="icon-plus-sign"></i>              <span class="ng-binding">Create Mirrored pair</span>           </div>        </div>     </div>  </div></div></div>
+   </div>
+   <div class="arvm-not-available">
+      <div d-faq-help="" data-content="FAQ_ARVM_DATA_NOT_AVAILABLE" class="arvm-not-available-faq ng-isolate-scope ng-hide" ng-hide="mirroredPairsTable.options.data &amp;&amp; mirroredPairsTable.options.data.length === 0"><span class="faqHelp cursor-pointer" d-link="" ng-click="launchOnlineHelp($event)" aria-disabled="false" tabindex="0"><ng-transclude><span class="ng-binding ng-scope">
+         Why do I see Not Available values displayed in the table?
+      </span></ng-transclude></span></div>
+   </div>
+</div></div>
+         </div><!-- end ngIf: isTabLoaded(tab, $index) -->
+      </div><!-- end ngRepeat: tab in tabConfig.tabs -->
+   <div class="ng-scope">   <!-- ngInclude: 'widget/loadingOverlay/loadingOverlay.tpl.html' --><div ng-include="'widget/loadingOverlay/loadingOverlay.tpl.html'" class="ng-scope"><div ng-class="classes" class="loading-overlay ng-scope">
+   <div class="loading-overlay-backdrop"></div>
+   <div class="loading-overlay-graphic-text-container">
+      <div class="loading-overlay-graphic-text-background"></div>
+      <!-- ngIf: !!cancelCallback -->
+      <div class="loading-overlay-graphic" ng-switch="type">
+         <!-- ngSwitchWhen: spinner -->
+         <!-- ngSwitchWhen: progressBar -->
+      </div>
+      <div class="loading-overlay-text ng-binding" ng-bind-html="text"></div>
+      <div ng-bind-html="srText" class="sr-only ng-binding" tabindex="-1"></div>
+   </div>
+</div></div></div></div>
+</div></div>
+</div><div class="ng-scope">   <!-- ngInclude: 'widget/loadingOverlay/loadingOverlay.tpl.html' --><div ng-include="'widget/loadingOverlay/loadingOverlay.tpl.html'" class="ng-scope"><div ng-class="classes" class="loading-overlay ng-scope">
+   <div class="loading-overlay-backdrop"></div>
+   <div class="loading-overlay-graphic-text-container">
+      <div class="loading-overlay-graphic-text-background"></div>
+      <!-- ngIf: !!cancelCallback -->
+      <div class="loading-overlay-graphic" ng-switch="type">
+         <!-- ngSwitchWhen: spinner -->
+         <!-- ngSwitchWhen: progressBar -->
+      </div>
+      <div class="loading-overlay-text ng-binding" ng-bind-html="text"></div>
+      <div ng-bind-html="srText" class="sr-only ng-binding" tabindex="-1"></div>
+   </div>
+</div></div></div></div>
+            <div class="ng-scope">   <!-- ngInclude: 'widget/loadingOverlay/loadingOverlay.tpl.html' --><div ng-include="'widget/loadingOverlay/loadingOverlay.tpl.html'" class="ng-scope"><div ng-class="classes" class="loading-overlay ng-scope">
+   <div class="loading-overlay-backdrop"></div>
+   <div class="loading-overlay-graphic-text-container">
+      <div class="loading-overlay-graphic-text-background"></div>
+      <!-- ngIf: !!cancelCallback -->
+      <div class="loading-overlay-graphic" ng-switch="type">
+         <!-- ngSwitchWhen: spinner -->
+         <!-- ngSwitchWhen: progressBar -->
+      </div>
+      <div class="loading-overlay-text ng-binding" ng-bind-html="text"></div>
+      <div ng-bind-html="srText" class="sr-only ng-binding" tabindex="-1"></div>
+   </div>
+</div></div></div></div>
+         </div>
+         <div class="tile-hover ng-hide" ng-show="showHover(hover) &amp;&amp; hoverUrl">
+            <div class="tile-body">
+               <div class="tile-header">
+                  <div class="tile-title ng-binding">
+                     ASYNCHRONOUS MIRRORING
+                  </div>
+               </div>
+               <!-- ngInclude: hoverUrl -->
+            </div>
+         </div>
+      </div>
+      <div class="tile-bottom ng-hide" ng-show="expanded !== 'max' &amp;&amp; expanded !== 'semi' &amp;&amp; (tileIndex==selectedIndex)">
+         <div class="graphic-expanded-view-arrow"></div>
+      </div>
+   </div>
+</div><!-- end ngIf: tile.visible --></d-tile></div></div><!-- end ngRepeat: tile in tiles --></div>
+</div></div>
+         </div>
+      </div>
+   </section>
+</div>
+<div d-dialog-container="" class="ng-scope"><!-- ngIf: dialogList.length > 0 -->
+<!-- ngRepeat: dialogData in dialogList --></div>
+<div d-frame-container="" class="ng-scope"><!-- ngIf: showBackdrop() -->
+<div class="modeless-container" ng-class="getContainerClass()">
+   <!-- ngRepeat: frame in openFrames -->
+</div>
+</div>
+</div>
+
+   <!--JavaScript is not enabled-->
+   <noscript>
+      &lt;div class="login-body"&gt;
+         &lt;div class="table"&gt;
+            &lt;div class="table-cell"&gt;
+               &lt;div class="horizontal-center-javascript-cookies"&gt;
+                  &lt;div class="inline"&gt;
+                     &lt;div class="logo"&gt;&lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;div class="inline2"&gt;
+                     &lt;div class="login-content"&gt;
+                        &lt;div class="col-xs-12 col-xs-offset-1"&gt;
+                           &lt;div class="box-content"&gt;
+                              &lt;div class="row"&gt;
+                                 &lt;div class="form-group"&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class="row"&gt;
+                                 &lt;div class="form-group"&gt;
+                                    &lt;div class="font-JavaScript-cookies" style="margin-left: 0px"&gt;SANtricity&lt;sup&gt;®&lt;/sup&gt; System Manager&lt;/div&gt;
+                                 &lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class="row"&gt;
+                                 &lt;div class="form-group"&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class="text-cookies-javascript"&gt;
+                                 &lt;div class="row"&gt;
+                                    &lt;div class="form-group"&gt;
+                                       &lt;div&gt;&lt;b&gt;Enable JavaScript&lt;/b&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
+                                 &lt;/div&gt;
+                                 &lt;div class="row"&gt;
+                                    &lt;div class="form-group"&gt;
+                                       &lt;div&gt;
+                                       JavaScript is currently disabled in your browser. You must
+                                       enable JavaScript to use the SANtricity&lt;sup&gt;®&lt;/sup&gt; System Manager.
+                                       &lt;/div&gt;
+                                    &lt;/div&gt;
+                                 &lt;/div&gt;
+                                 &lt;div class="row"&gt;
+                                    &lt;div class="form-group"&gt;
+                                       &lt;div&gt;
+                                       Follow this link to learn how to enable JavaScript in your
+                                       browser of choice:
+                                       &lt;a href="http://www.enable-javascript.com/" target="_blank"
+                                          style="color: #0000CC"&gt;http://www.enable-javascript.com/&lt;/a&gt;.
+                                       &lt;/div&gt;
+                                    &lt;/div&gt;
+                                 &lt;/div&gt;
+                                 &lt;div class="row"&gt;
+                                    &lt;div class="form-group"&gt;
+                                       &lt;div&gt;
+                                       Remember to refresh your browser after enabling JavaScript.
+                                       &lt;/div&gt;
+                                    &lt;/div&gt;
+                                 &lt;/div&gt;
+                              &lt;/div&gt;
+                           &lt;/div&gt;
+                        &lt;/div&gt;
+                     &lt;/div&gt;
+                  &lt;/div&gt;
+               &lt;/div&gt;
+            &lt;/div&gt;
+         &lt;/div&gt;
+      &lt;/div&gt;
+   </noscript>
+
+
+
+<div id="popoverContainer" aria-live="polite" aria-atomic="false"></div><div id="select2-drop-mask" class="select2-drop-mask" style="display: none;"></div></body></html>

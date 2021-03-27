@@ -1,0 +1,2010 @@
+<html xml:lang="en" ng-app="sam.app" ng-controller="AppCtrl" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+   <title ng-bind-html="getTitle()" class="ng-binding">Array1 - SANtricity System Manager</title>
+   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+   <meta content="text/html;charset=utf-8" http-equiv="content-type">
+   <meta content="" name="description">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+   <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+   <!-- compiled CSS -->
+   <link rel="stylesheet" type="text/css" href="SAMClient-11.30.0G00.0001.css">
+   
+
+ 
+
+<style type="text/css" rel="stylesheet"></style><style type="text/css" rel="stylesheet">.table_1 > .table-container > .table-header-container > div > .c0, .table_1 > .table-container > .table-content> .table-row-container > .table-row > .c0, .table_1 > .table-container> .table-footer-row-container > .table-footer-row > .c0 { width: 318px; }.table_1 > .table-container > .table-header-container > div > .c1, .table_1 > .table-container > .table-content> .table-row-container > .table-row > .c1, .table_1 > .table-container> .table-footer-row-container > .table-footer-row > .c1 { width: 319px; }.table_1 > .table-container > .table-content> .table-row-container > .table-row { width: 637px; }.table_1 > .table-container > .table-header-container > div, .table_1 > .table-container> .table-footer-row-container > .table-footer-row { width: 654px; }</style></head>
+<body class="contrast-blue modal-open" ng-class="::{'fullscreen': APP_CONSTANTS.FULLSCREEN}">
+   <!--JavaScript is enabled-->
+   <!-- ngInclude: getCtrlState() --><div ng-include="getCtrlState()" class="ng-scope"><!-- ngInclude: 'header.tpl.html' --><div ng-include="'header.tpl.html'" class="ng-scope"><header class="ng-scope">
+   <nav class="navbar navbar-default">
+      <div class="nav-indenting">
+         <div class="override-margin-right row">
+            <div class="col-xs-4">
+               <button class="toggle-nav btn pull-left" title="Toggle expanded navigation" aria-label="Toggle expanded navigation" d-nav-control="" id="nav-control">
+                  <i aria-hidden="true" class="icon-reorder"></i>
+               </button>
+               <span class="navbar-branding ng-binding" ng-bind-html="'SANTRICITY_SYSTEM_MANAGER_NAME'|localize">SANtricity<sup>®</sup> System Manager</span>
+            </div>
+            <div class="col-xs-4 navbar-array">
+               <span class="ng-binding">Array1</span>
+            </div>
+            <div class="col-xs-4">
+               <ul class="navbar-link">
+                  <li class="dropdown">
+                     <a class="dropdown-toggle ng-binding cursor-pointer" data-toggle="dropdown" id="preferences" d-link="" aria-disabled="false" tabindex="0">
+                        Preferences<span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li>
+                           <a d-link="" d-dialog-open="changePassword" id="changePassword" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                              Change password
+                           </a>
+                        </li>
+                        <li>
+                           <a d-link="" d-dialog-open="setDisplayPreferences" id="setDisplayPreferences" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                              Set preferences
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <span class="navbar-divider">|</span>
+                  <li class="dropdown">
+                     <a class="dropdown-toggle ng-binding cursor-pointer" data-toggle="dropdown" id="help" d-link="" aria-disabled="false" tabindex="0">
+                        Help<span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li>
+                           <a d-link="" ng-click="launchOnlineHelp()" id="online-help" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                              Help Contents
+                           </a>
+                        </li>
+                        <li>
+                           <a d-link="" ng-click="launchApiDocumentation()" id="api-documentation" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                              API Documentation
+                           </a>
+                        </li>
+                        <li>
+                           <a d-link="" d-dialog-open="aboutDialog" id="about" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                              About
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <span class="navbar-divider">|</span>
+                  <li>
+                     <a d-link="" ng-click="logOut()" id="logout" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                        Log Out
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </nav>
+</header></div>
+<div id="wrapper" ng-controller="ViewCtrl" class="ng-scope">
+   <div id="main-nav-bg"></div>
+   <nav id="main-nav">
+      <div class="navigation">
+         <ul d-nav-update="" class="nav nav-stacked">
+            <li data-nav-key="home" class="">
+               <a href="#/home" id="home" aria-label="Home">
+                  <i class="icon-home status-icon-container" aria-hidden="true">
+                     <div class="status-dot" ng-class="statusDotClass" aria-hidden="true">
+                     </div>
+                  </i>
+                  <span class="ng-binding">Home</span>
+               </a>
+            </li>
+            <li data-nav-key="storage">
+               <a href="#/storage" id="storage" aria-label="Storage">
+                  <i class="icon-storage" aria-hidden="true"></i>
+                  <span class="ng-binding">Storage</span>
+               </a>
+            </li>
+            <li data-nav-key="hardware" class="active">
+               <a href="#/hardware" id="hardware" aria-label="Hardware">
+                  <i class="icon-hardware" aria-hidden="true"></i>
+                  <span class="ng-binding">Hardware</span>
+               </a>
+            </li>
+            <li data-nav-key="settings">
+               <a href="#/settings" id="settings" aria-label="Settings">
+                  <i class="icon-gear" aria-hidden="true"></i>
+                  <span class="ng-binding">Settings</span>
+               </a>
+            </li>
+            <!-- TODO: Re-enable the Add-ons page when needed -->
+            <!--<li data-nav-key="addons">-->
+               <!--<a href="#/addons" id="addons" aria-label="{{'NAVIGATION_ADDONS_LABEL' | localize}}">-->
+                  <!--<i class="icon-addons" aria-hidden="true"></i>-->
+                  <!--<span>{{'NAVIGATION_ADDONS_LABEL' | localize}}</span>-->
+               <!--</a>-->
+            <!--</li>-->
+            <li data-nav-key="support">
+               <a href="#/support" id="support" aria-label="Support">
+                  <i class="icon-support" aria-hidden="true"></i>
+                  <span class="ng-binding">Support</span>
+               </a>
+            </li>
+         </ul>
+      </div>
+   </nav>
+   <section id="content">
+      <div class="container">
+         <div class="row" id="content-wrapper">
+            <div d-notification-container="main" class="ng-isolate-scope"><div class="notification-container">
+<!-- ngRepeat: notificationData in notifications | orderBy:'id':true -->
+</div></div>
+            <!-- ngView:  --><div ng-controller="notificationAreaCtrl" ng-view="" class="ng-scope"><!-- ngInclude: 'hardware/components/graphical/componentsGraphical.tpl.html' --><div ng-include="'hardware/components/graphical/componentsGraphical.tpl.html'" class="ng-scope"><div ng-controller="ComponentsGraphicalCtrl" class="hardware-components ng-scope">
+   <d-breadcrumb data-page-id="hardware" class="ng-isolate-scope"><ol class="breadcrumb">
+   <!-- ngRepeat: item in breadcrumb --><li ng-repeat="item in breadcrumb" ng-class="{'active': false}" ng-switch="$last" class="ng-scope">
+      <!-- ngSwitchWhen: false --><a ng-click="select($index)" ng-href="#/home" ng-switch-when="false" class="ng-binding ng-scope" href="#/home">
+         Home
+      </a><!-- end ngSwitchWhen: -->
+      <!-- ngSwitchWhen: true -->
+   </li><!-- end ngRepeat: item in breadcrumb --><li ng-repeat="item in breadcrumb" ng-class="{'active': true}" ng-switch="$last" class="ng-scope active">
+      <!-- ngSwitchWhen: false -->
+      <!-- ngSwitchWhen: true --><span ng-switch-when="true" class="ng-binding ng-scope">Hardware</span><!-- end ngSwitchWhen: -->
+   </li><!-- end ngRepeat: item in breadcrumb -->
+</ol>
+</d-breadcrumb>
+   <div class="panel panel-default" d-loading-overlay="loading" aria-disabled="false" style="position: relative;">
+      <div class="title ng-binding">
+         HARDWARE
+         <div d-faq-help="" data-content="FAQ_LEARN_MORE_COMPONENTS" class="ng-isolate-scope"><span class="faqHelp cursor-pointer" d-link="" ng-click="launchOnlineHelp($event)" aria-disabled="false" tabindex="0"><ng-transclude>
+            <p class="ng-binding ng-scope">Learn More <i class="icon-angle-right"></i></p>
+         </ng-transclude></span></div>
+      </div>
+
+      <div class="panel-body">
+         <!-- ngIf: !loading --><div ng-if="!loading" class="ng-scope">
+            <div class="margin-top-2 ng-scope" d-drive-filter=""><!-- ngIf: driveFilter.driveType.visible || driveFilter.driveLocation.visible --><div class="components-drive-filter ng-scope" ng-if="driveFilter.driveType.visible || driveFilter.driveLocation.visible">
+   <div class="ng-binding">Show drives that are...</div>
+   <div class="drive-filter-container">
+      <!-- ngIf: driveFilter.driveType.visible --><div class="drive-type-select ng-scope ng-isolate-scope" ng-if="driveFilter.driveType.visible" d-select="driveFilter.driveType.selectOptions" data-selected="driveFilter.driveType.selected"><div class="select2-container form-control" id="s2id_autogen1" style="width: 100%;"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-2"><div class="component-drive-filter-option"><div class="drive-filter-text">Any drive type</div></div></span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen2" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-2" id="s2id_autogen2"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen2_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-2" id="s2id_autogen2_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-2">   </ul></div></div><input class="form-control" type="hidden" style="width: 100%; display: none;" tabindex="-1" title="" value="all"></div><!-- end ngIf: driveFilter.driveType.visible -->
+      <!-- ngIf: driveFilter.driveLocation.visible -->
+      <div class="drive-filter-control">
+         <!-- ngIf: driveFilter.hasFilter() -->
+      </div>
+   </div>
+</div><!-- end ngIf: driveFilter.driveType.visible || driveFilter.driveLocation.visible --></div>
+            <div class="margin-top-2 margin-bottom-2 ng-scope" d-component-legend=""><div class="component-legend">
+   <div d-collapsible-panel="legend.collapsiblePanelOptions" class="ng-isolate-scope"><div class="collapsible-panel" id="collapsiblePanel2">
+   <!-- ngIf: !panel.options.hideHeader --><div class="collapsible-panel-header ng-scope" ng-if="!panel.options.hideHeader">
+      <button class="toggle-collapsible-panel" type="button" ng-click="togglePanel()">
+         <span ng-bind-html="panel.header" class="ng-binding">Legend</span>
+         <i class="collapse-icon icon-angle-down" aria-hidden="true" ng-class="panel.expanded ? 'icon-angle-up' : 'icon-angle-down'"></i>
+      </button>
+      <!-- ngIf: panel.quickHelp -->
+   </div><!-- end ngIf: !panel.options.hideHeader -->
+   <div class="angular-animate collapsible-panel-content-container">
+      <!-- ngIf: panel.expanded || panel.keepLoaded -->
+   </div>
+</div>
+</div>
+   <div class="component-legend-show-status">
+      <div class="checkbox">
+         <label class="ng-binding">
+            <input type="checkbox" ng-model="legend.componentStatusDetails" ng-model-options="{getterSetter: true}" class="ng-pristine ng-untouched ng-valid">
+            Show status icon details
+         </label>
+      </div>
+      <d-quick-help data-content="<p>When selected, any component displaying a status icon (typically, denoted by a <i class=&quot;component-legend-popover-icon graphic-caution&quot;></i> or a <i class=&quot;component-legend-popover-icon graphic-failed&quot;></i>) will show its associated status text.</p>This information can also be accessed by selecting a component and then selecting View Settings." class="ng-scope"><div d-popover="popoverOptions" d-link="" aria-disabled="false" tabindex="0" class="cursor-pointer">
+   <span class="sr-only ng-binding">Quick help</span>
+   <i class="icon-question-sign"></i>
+</div></d-quick-help>
+   </div>
+</div></div>
+            <!-- ngRepeat: tray in graphical.trays track by tray.trayRef --><div class="shelf-component-container ng-scope" ng-repeat="tray in graphical.trays track by tray.trayRef">
+               <div d-shelf="{tray: tray}" class="ng-scope"><div class="shelf-component" ng-attr-id="{{'shelf_' + shelf.options.tray.trayRef}}" id="shelf_3231343336353837303932313400000000000000">
+   <div class="shelf-header">
+      <div class="btn-group dropdown">
+         <button class="btn btn-default btn-small dropdown-toggle" data-toggle="dropdown">
+            <span ng-bind-html="'SHELF_WITH_BOLD_NAME' | localize:
+               (shelf.options.tray.trayId | pad: 2: 0: false)" class="ng-binding">Shelf <b>99</b></span>
+            <span class="caret"></span>
+         </button>
+         <ul class="dropdown-menu">
+            <li>
+               <a d-link="" d-dialog-open="locateShelf" data-dialog-data="{trayRef: shelf.options.tray.trayRef}" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                  Turn on locator light
+               </a>
+            </li>
+            <li>
+               <a d-link="" d-dialog-open="changeShelfId" data-dialog-data="{trayRef: shelf.options.tray.trayRef}" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                  Change ID
+               </a>
+            </li>
+            <li>
+               <a d-link="" d-dialog-open="shelfComponentSettings" data-dialog-data="{trayRef: shelf.options.tray.trayRef}" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                  View settings
+               </a>
+            </li>
+         </ul>
+      </div>
+      <div class="separator"></div>
+      <div class="shelf-component-icons">
+         <!-- ngRepeat: component in shelf.components --><div ng-repeat="component in shelf.components" class="ng-scope">
+            <button class="btn btn-actionicon ng-isolate-scope" d-popover="shelf.popoverOptions" data-popover-content="component.popoverContent" d-component-icon="component.iconClass" data-component-optimal="component.optimal" ng-click="showSettings(component)"><i class="component-icon icon-controller" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></button>
+         </div><!-- end ngRepeat: component in shelf.components --><div ng-repeat="component in shelf.components" class="ng-scope">
+            <button class="btn btn-actionicon ng-isolate-scope" d-popover="shelf.popoverOptions" data-popover-content="component.popoverContent" d-component-icon="component.iconClass" data-component-optimal="component.optimal" ng-click="showSettings(component)"><i class="component-icon icon-power" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></button>
+         </div><!-- end ngRepeat: component in shelf.components --><div ng-repeat="component in shelf.components" class="ng-scope">
+            <button class="btn btn-actionicon ng-isolate-scope" d-popover="shelf.popoverOptions" data-popover-content="component.popoverContent" d-component-icon="component.iconClass" data-component-optimal="component.optimal" ng-click="showSettings(component)"><i class="component-icon icon-fan" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></button>
+         </div><!-- end ngRepeat: component in shelf.components --><div ng-repeat="component in shelf.components" class="ng-scope">
+            <button class="btn btn-actionicon ng-isolate-scope" d-popover="shelf.popoverOptions" data-popover-content="component.popoverContent" d-component-icon="component.iconClass" data-component-optimal="component.optimal" ng-click="showSettings(component)"><i class="component-icon icon-temperature" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></button>
+         </div><!-- end ngRepeat: component in shelf.components --><div ng-repeat="component in shelf.components" class="ng-scope">
+            <button class="btn btn-actionicon ng-isolate-scope" d-popover="shelf.popoverOptions" data-popover-content="component.popoverContent" d-component-icon="component.iconClass" data-component-optimal="component.optimal" ng-click="showSettings(component)"><i class="component-icon icon-battery" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></button>
+         </div><!-- end ngRepeat: component in shelf.components -->
+      </div>
+      <div class="pull-right shelf-control">
+         <!-- ngIf: shelf.drawers && shelf.isShowingFront() -->
+         <!-- ngIf: graphical.trays.length > 1 --><div ng-if="graphical.trays.length > 1" class="ng-scope">
+            <button class="btn btn-actionicon shelf-up-button" ng-click="graphical.moveShelf(shelf.options.tray, true)" ng-disabled="!graphical.canMoveShelf(shelf.options.tray, true)" d-popover="shelf.popoverOptions" data-popover-content="'SHELF_CONTROL_MOVE_UP_TOOLTIP' | localize" disabled="disabled">
+               <i class="icon-arrow-up"></i>
+            </button>
+            <button class="btn btn-actionicon shelf-down-button" ng-click="graphical.moveShelf(shelf.options.tray, false)" ng-disabled="!graphical.canMoveShelf(shelf.options.tray, false)" d-popover="shelf.popoverOptions" data-popover-content="'SHELF_CONTROL_MOVE_DOWN_TOOLTIP' | localize">
+               <i class="icon-arrow-down"></i>
+            </button>
+            <div class="separator"></div>
+         </div><!-- end ngIf: graphical.trays.length > 1 -->
+         <div>
+            <a d-link="" ng-click="shelf.flip()" class="flip-shelf-link ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+               Show back of shelf
+            </a>
+         </div>
+      </div>
+   </div>
+   <div ng-switch="shelf.isShowingFront()" class="shelf-content">
+      <!-- ngSwitchWhen: true --><div ng-switch-when="true" class="shelf-front ng-scope">
+         <!-- ngInclude: 'hardware/components/graphical/shelf/shelfFront.tpl.html' --><div ng-include="'hardware/components/graphical/shelf/shelfFront.tpl.html'" class="ng-scope"><div ng-switch="!!shelf.drawers" class="ng-scope">
+   <!-- ngSwitchWhen: true -->
+   <!-- ngSwitchWhen: false --><div ng-switch-when="false" class="shelf-drives ng-scope">
+      <div class="shelf-drive-container">
+         <!-- ngRepeat: driveRow in shelf.driveLayout track by $index --><div ng-repeat="driveRow in shelf.driveLayout track by $index" ng-init="rowNumber = $index" class="shelf-drive-row ng-scope">
+            <!-- ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component horizontal-drive drive-mode-unassigned" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 99, Bay 0, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         0
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component horizontal-drive drive-mode-unassigned" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 99, Bay 1, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         1
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component horizontal-drive drive-mode-unassigned" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 99, Bay 2, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         2
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component horizontal-drive drive-mode-unassigned" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 99, Bay 3, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         3
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) -->
+         </div><!-- end ngRepeat: driveRow in shelf.driveLayout track by $index --><div ng-repeat="driveRow in shelf.driveLayout track by $index" ng-init="rowNumber = $index" class="shelf-drive-row ng-scope">
+            <!-- ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component horizontal-drive drive-mode-unassigned" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 99, Bay 4, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         4
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component horizontal-drive drive-mode-unassigned" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 99, Bay 5, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         5
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component horizontal-drive drive-mode-unassigned" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 99, Bay 6, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         6
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component horizontal-drive drive-mode-unassigned" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 99, Bay 7, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         7
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) -->
+         </div><!-- end ngRepeat: driveRow in shelf.driveLayout track by $index --><div ng-repeat="driveRow in shelf.driveLayout track by $index" ng-init="rowNumber = $index" class="shelf-drive-row ng-scope">
+            <!-- ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component horizontal-drive drive-mode-unassigned" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 99, Bay 8, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         8
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component horizontal-drive drive-mode-unassigned" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 99, Bay 9, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         9
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component horizontal-drive drive-mode-unassigned" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 99, Bay 10, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         10
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component horizontal-drive drive-mode-unassigned" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 99, Bay 11, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         11
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) -->
+         </div><!-- end ngRepeat: driveRow in shelf.driveLayout track by $index -->
+      </div>
+   </div><!-- end ngSwitchWhen: -->
+</div>
+</div>
+      </div><!-- end ngSwitchWhen: -->
+      <!-- ngSwitchWhen: false -->
+   </div>
+</div>
+</div>
+            </div><!-- end ngRepeat: tray in graphical.trays track by tray.trayRef --><div class="shelf-component-container ng-scope" ng-repeat="tray in graphical.trays track by tray.trayRef">
+               <div d-shelf="{tray: tray}" class="ng-scope"><div class="shelf-component" ng-attr-id="{{'shelf_' + shelf.options.tray.trayRef}}" id="shelf_3231343336353837303932393000000000000000">
+   <div class="shelf-header">
+      <div class="btn-group dropdown">
+         <button class="btn btn-default btn-small dropdown-toggle" data-toggle="dropdown">
+            <span ng-bind-html="'SHELF_WITH_BOLD_NAME' | localize:
+               (shelf.options.tray.trayId | pad: 2: 0: false)" class="ng-binding">Shelf <b>01</b></span>
+            <span class="caret"></span>
+         </button>
+         <ul class="dropdown-menu">
+            <li>
+               <a d-link="" d-dialog-open="locateShelf" data-dialog-data="{trayRef: shelf.options.tray.trayRef}" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                  Turn on locator light
+               </a>
+            </li>
+            <li>
+               <a d-link="" d-dialog-open="changeShelfId" data-dialog-data="{trayRef: shelf.options.tray.trayRef}" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                  Change ID
+               </a>
+            </li>
+            <li>
+               <a d-link="" d-dialog-open="shelfComponentSettings" data-dialog-data="{trayRef: shelf.options.tray.trayRef}" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                  View settings
+               </a>
+            </li>
+         </ul>
+      </div>
+      <div class="separator"></div>
+      <div class="shelf-component-icons">
+         <!-- ngRepeat: component in shelf.components --><div ng-repeat="component in shelf.components" class="ng-scope">
+            <button class="btn btn-actionicon ng-isolate-scope" d-popover="shelf.popoverOptions" data-popover-content="component.popoverContent" d-component-icon="component.iconClass" data-component-optimal="component.optimal" ng-click="showSettings(component)"><i class="component-icon icon-esm" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></button>
+         </div><!-- end ngRepeat: component in shelf.components --><div ng-repeat="component in shelf.components" class="ng-scope">
+            <button class="btn btn-actionicon ng-isolate-scope" d-popover="shelf.popoverOptions" data-popover-content="component.popoverContent" d-component-icon="component.iconClass" data-component-optimal="component.optimal" ng-click="showSettings(component)"><i class="component-icon icon-power" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></button>
+         </div><!-- end ngRepeat: component in shelf.components --><div ng-repeat="component in shelf.components" class="ng-scope">
+            <button class="btn btn-actionicon ng-isolate-scope" d-popover="shelf.popoverOptions" data-popover-content="component.popoverContent" d-component-icon="component.iconClass" data-component-optimal="component.optimal" ng-click="showSettings(component)"><i class="component-icon icon-fan" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></button>
+         </div><!-- end ngRepeat: component in shelf.components --><div ng-repeat="component in shelf.components" class="ng-scope">
+            <button class="btn btn-actionicon ng-isolate-scope" d-popover="shelf.popoverOptions" data-popover-content="component.popoverContent" d-component-icon="component.iconClass" data-component-optimal="component.optimal" ng-click="showSettings(component)"><i class="component-icon icon-temperature" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></button>
+         </div><!-- end ngRepeat: component in shelf.components -->
+      </div>
+      <div class="pull-right shelf-control">
+         <!-- ngIf: shelf.drawers && shelf.isShowingFront() -->
+         <!-- ngIf: graphical.trays.length > 1 --><div ng-if="graphical.trays.length > 1" class="ng-scope">
+            <button class="btn btn-actionicon shelf-up-button" ng-click="graphical.moveShelf(shelf.options.tray, true)" ng-disabled="!graphical.canMoveShelf(shelf.options.tray, true)" d-popover="shelf.popoverOptions" data-popover-content="'SHELF_CONTROL_MOVE_UP_TOOLTIP' | localize">
+               <i class="icon-arrow-up"></i>
+            </button>
+            <button class="btn btn-actionicon shelf-down-button" ng-click="graphical.moveShelf(shelf.options.tray, false)" ng-disabled="!graphical.canMoveShelf(shelf.options.tray, false)" d-popover="shelf.popoverOptions" data-popover-content="'SHELF_CONTROL_MOVE_DOWN_TOOLTIP' | localize">
+               <i class="icon-arrow-down"></i>
+            </button>
+            <div class="separator"></div>
+         </div><!-- end ngIf: graphical.trays.length > 1 -->
+         <div>
+            <a d-link="" ng-click="shelf.flip()" class="flip-shelf-link ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+               Show front of shelf
+            </a>
+         </div>
+      </div>
+   </div>
+   <div ng-switch="shelf.isShowingFront()" class="shelf-content">
+      <!-- ngSwitchWhen: true -->
+      <!-- ngSwitchWhen: false --><div ng-switch-when="false" class="shelf-back ng-scope">
+         <!-- ngInclude: 'hardware/components/graphical/shelf/shelfBack.tpl.html' --><div ng-include="'hardware/components/graphical/shelf/shelfBack.tpl.html'" class="ng-scope"><!-- ngInclude: shelf.getBackTemplate() --><div ng-include="shelf.getBackTemplate()" ng-class="!!shelf.drawers ? 'shelf-drawers' : 'shelf-drives'" class="ng-scope shelf-drives"><!--
+---------------------------------------------
+| Controller or ESM A | Controller or ESM B |
+---------------------------------------------
+| Power/Fan A         | Power/Fan B         |
+---------------------------------------------
+
+This template is used for the back of the Joshua, Ebbets, Alder, and Camden trays.
+ -->
+<div class="shelf-back-container shelf-back-1 ng-scope" ng-switch="!!shelf.arrayControllers">
+   <!-- ngSwitchWhen: true -->
+   <!-- ngSwitchWhen: false --><div class="top-container ng-scope" ng-switch-when="false">
+      <div class="shelf-esm">
+         <div d-esm="shelf.getESMOptions({slot: 1})" class="ng-scope"><div class="esm-component esm-available cursor-pointer" role="button" ng-class="esm.classes" d-link="" d-conditional-click="showSettings()" aria-disabled="false" tabindex="0">
+   <span class="sr-only ng-binding">IOM (ESM) located in Shelf 1, Bay A, Status Optimal</span>
+
+   <div aria-hidden="true">
+      <div class="esm-component-label ng-binding" ng-bind-html="esm.label">IOM (ESM) <b>A</b></div>
+      <!-- ngIf: esm.options.esm --><div ng-if="esm.options.esm" class="center-element esm-component-icon ng-scope ng-isolate-scope" d-component-icon="'icon-esm'" data-component-optimal="esm.optimal" d-tooltip="" data-content="" data-manual-trigger="graphical.componentStatusDetails &amp;&amp; !esm.optimal" data-options="esm.popoverOptions" data-original-title="" title=""><i class="component-icon icon-esm" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></div><!-- end ngIf: esm.options.esm -->
+   </div>
+</div></div>
+      </div>
+      <div class="shelf-esm">
+         <div d-esm="shelf.getESMOptions({slot: 2})" class="ng-scope"><div class="esm-component esm-available cursor-pointer" role="button" ng-class="esm.classes" d-link="" d-conditional-click="showSettings()" aria-disabled="false" tabindex="0">
+   <span class="sr-only ng-binding">IOM (ESM) located in Shelf 1, Bay B, Status Optimal</span>
+
+   <div aria-hidden="true">
+      <div class="esm-component-label ng-binding" ng-bind-html="esm.label">IOM (ESM) <b>B</b></div>
+      <!-- ngIf: esm.options.esm --><div ng-if="esm.options.esm" class="center-element esm-component-icon ng-scope ng-isolate-scope" d-component-icon="'icon-esm'" data-component-optimal="esm.optimal" d-tooltip="" data-content="" data-manual-trigger="graphical.componentStatusDetails &amp;&amp; !esm.optimal" data-options="esm.popoverOptions" data-original-title="" title=""><i class="component-icon icon-esm" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></div><!-- end ngIf: esm.options.esm -->
+   </div>
+</div></div>
+      </div>
+   </div><!-- end ngSwitchWhen: -->
+   <div class="bottom-container">
+      <div class="shelf-cru">
+         <div d-cru="shelf.getCRUOptions({slot: 1, type: shelf.SupportCruType.powerFan})" class="ng-scope"><div class="cru-component cru-available cursor-pointer" role="button" ng-class="cru.classes" d-link="" d-conditional-click="showSettings()" aria-disabled="false" tabindex="0">
+   <span class="sr-only ng-binding">Power / Fan Canister  located in Shelf 1, Bay 1, Status Optimal</span>
+
+   <div aria-hidden="true">
+   <span class="cru-component-label ng-binding" ng-bind-html="cru.label" d-tooltip="" data-content="" data-manual-trigger="graphical.componentStatusDetails &amp;&amp; !!cru.popoverContent" data-options="cru.popoverOptions" data-original-title="" title="">Power / Fan Canister <b>1</b></span>
+
+      <div class="cru-component-icons center-element">
+         <!-- ngRepeat: component in cru.components --><div ng-repeat="component in cru.components" class="cru-component-icon-container ng-scope">
+            <div class="cru-component-icon ng-isolate-scope" d-component-icon="component.iconClass" data-component-optimal="component.optimal" d-tooltip="" data-content="" data-manual-trigger="graphical.componentStatusDetails &amp;&amp; !component.optimal" data-options="component.popoverOptions" data-original-title="" title=""><i class="component-icon icon-power" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></div>
+         </div><!-- end ngRepeat: component in cru.components --><div ng-repeat="component in cru.components" class="cru-component-icon-container ng-scope">
+            <div class="cru-component-icon ng-isolate-scope" d-component-icon="component.iconClass" data-component-optimal="component.optimal" d-tooltip="" data-content="" data-manual-trigger="graphical.componentStatusDetails &amp;&amp; !component.optimal" data-options="component.popoverOptions" data-original-title="" title=""><i class="component-icon icon-fan" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></div>
+         </div><!-- end ngRepeat: component in cru.components -->
+      </div>
+   </div>
+</div>
+</div>
+      </div>
+      <div class="shelf-cru">
+         <div d-cru="shelf.getCRUOptions({slot: 2, type: shelf.SupportCruType.powerFan})" class="ng-scope"><div class="cru-component cru-available cursor-pointer" role="button" ng-class="cru.classes" d-link="" d-conditional-click="showSettings()" aria-disabled="false" tabindex="0">
+   <span class="sr-only ng-binding">Power / Fan Canister  located in Shelf 1, Bay 2, Status Optimal</span>
+
+   <div aria-hidden="true">
+   <span class="cru-component-label ng-binding" ng-bind-html="cru.label" d-tooltip="" data-content="" data-manual-trigger="graphical.componentStatusDetails &amp;&amp; !!cru.popoverContent" data-options="cru.popoverOptions" data-original-title="" title="">Power / Fan Canister <b>2</b></span>
+
+      <div class="cru-component-icons center-element">
+         <!-- ngRepeat: component in cru.components --><div ng-repeat="component in cru.components" class="cru-component-icon-container ng-scope">
+            <div class="cru-component-icon ng-isolate-scope" d-component-icon="component.iconClass" data-component-optimal="component.optimal" d-tooltip="" data-content="" data-manual-trigger="graphical.componentStatusDetails &amp;&amp; !component.optimal" data-options="component.popoverOptions" data-original-title="" title=""><i class="component-icon icon-power" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></div>
+         </div><!-- end ngRepeat: component in cru.components --><div ng-repeat="component in cru.components" class="cru-component-icon-container ng-scope">
+            <div class="cru-component-icon ng-isolate-scope" d-component-icon="component.iconClass" data-component-optimal="component.optimal" d-tooltip="" data-content="" data-manual-trigger="graphical.componentStatusDetails &amp;&amp; !component.optimal" data-options="component.popoverOptions" data-original-title="" title=""><i class="component-icon icon-fan" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></div>
+         </div><!-- end ngRepeat: component in cru.components -->
+      </div>
+   </div>
+</div>
+</div>
+      </div>
+   </div>
+</div></div>
+</div>
+      </div><!-- end ngSwitchWhen: -->
+   </div>
+</div>
+</div>
+            </div><!-- end ngRepeat: tray in graphical.trays track by tray.trayRef --><div class="shelf-component-container ng-scope" ng-repeat="tray in graphical.trays track by tray.trayRef">
+               <div d-shelf="{tray: tray}" class="ng-scope"><div class="shelf-component" ng-attr-id="{{'shelf_' + shelf.options.tray.trayRef}}" id="shelf_3231343336353837303933303600000000000000">
+   <div class="shelf-header">
+      <div class="btn-group dropdown">
+         <button class="btn btn-default btn-small dropdown-toggle" data-toggle="dropdown">
+            <span ng-bind-html="'SHELF_WITH_BOLD_NAME' | localize:
+               (shelf.options.tray.trayId | pad: 2: 0: false)" class="ng-binding">Shelf <b>02</b></span>
+            <span class="caret"></span>
+         </button>
+         <ul class="dropdown-menu">
+            <li>
+               <a d-link="" d-dialog-open="locateShelf" data-dialog-data="{trayRef: shelf.options.tray.trayRef}" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                  Turn on locator light
+               </a>
+            </li>
+            <li>
+               <a d-link="" d-dialog-open="changeShelfId" data-dialog-data="{trayRef: shelf.options.tray.trayRef}" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                  Change ID
+               </a>
+            </li>
+            <li>
+               <a d-link="" d-dialog-open="shelfComponentSettings" data-dialog-data="{trayRef: shelf.options.tray.trayRef}" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                  View settings
+               </a>
+            </li>
+         </ul>
+      </div>
+      <div class="separator"></div>
+      <div class="shelf-component-icons">
+         <!-- ngRepeat: component in shelf.components --><div ng-repeat="component in shelf.components" class="ng-scope">
+            <button class="btn btn-actionicon ng-isolate-scope" d-popover="shelf.popoverOptions" data-popover-content="component.popoverContent" d-component-icon="component.iconClass" data-component-optimal="component.optimal" ng-click="showSettings(component)"><i class="component-icon icon-esm" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></button>
+         </div><!-- end ngRepeat: component in shelf.components --><div ng-repeat="component in shelf.components" class="ng-scope">
+            <button class="btn btn-actionicon ng-isolate-scope" d-popover="shelf.popoverOptions" data-popover-content="component.popoverContent" d-component-icon="component.iconClass" data-component-optimal="component.optimal" ng-click="showSettings(component)"><i class="component-icon icon-power" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></button>
+         </div><!-- end ngRepeat: component in shelf.components --><div ng-repeat="component in shelf.components" class="ng-scope">
+            <button class="btn btn-actionicon ng-isolate-scope" d-popover="shelf.popoverOptions" data-popover-content="component.popoverContent" d-component-icon="component.iconClass" data-component-optimal="component.optimal" ng-click="showSettings(component)"><i class="component-icon icon-fan" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></button>
+         </div><!-- end ngRepeat: component in shelf.components --><div ng-repeat="component in shelf.components" class="ng-scope">
+            <button class="btn btn-actionicon ng-isolate-scope" d-popover="shelf.popoverOptions" data-popover-content="component.popoverContent" d-component-icon="component.iconClass" data-component-optimal="component.optimal" ng-click="showSettings(component)"><i class="component-icon icon-temperature" ng-class="getClasses()">
+   <div class="component-non-optimal-icon">
+      <i class="graphic-failed"></i>
+   </div>
+</i></button>
+         </div><!-- end ngRepeat: component in shelf.components -->
+      </div>
+      <div class="pull-right shelf-control">
+         <!-- ngIf: shelf.drawers && shelf.isShowingFront() -->
+         <!-- ngIf: graphical.trays.length > 1 --><div ng-if="graphical.trays.length > 1" class="ng-scope">
+            <button class="btn btn-actionicon shelf-up-button" ng-click="graphical.moveShelf(shelf.options.tray, true)" ng-disabled="!graphical.canMoveShelf(shelf.options.tray, true)" d-popover="shelf.popoverOptions" data-popover-content="'SHELF_CONTROL_MOVE_UP_TOOLTIP' | localize">
+               <i class="icon-arrow-up"></i>
+            </button>
+            <button class="btn btn-actionicon shelf-down-button" ng-click="graphical.moveShelf(shelf.options.tray, false)" ng-disabled="!graphical.canMoveShelf(shelf.options.tray, false)" d-popover="shelf.popoverOptions" data-popover-content="'SHELF_CONTROL_MOVE_DOWN_TOOLTIP' | localize" disabled="disabled">
+               <i class="icon-arrow-down"></i>
+            </button>
+            <div class="separator"></div>
+         </div><!-- end ngIf: graphical.trays.length > 1 -->
+         <div>
+            <a d-link="" ng-click="shelf.flip()" class="flip-shelf-link ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+               Show back of shelf
+            </a>
+         </div>
+      </div>
+   </div>
+   <div ng-switch="shelf.isShowingFront()" class="shelf-content">
+      <!-- ngSwitchWhen: true --><div ng-switch-when="true" class="shelf-front ng-scope">
+         <!-- ngInclude: 'hardware/components/graphical/shelf/shelfFront.tpl.html' --><div ng-include="'hardware/components/graphical/shelf/shelfFront.tpl.html'" class="ng-scope"><div ng-switch="!!shelf.drawers" class="ng-scope">
+   <!-- ngSwitchWhen: true -->
+   <!-- ngSwitchWhen: false --><div ng-switch-when="false" class="shelf-drives ng-scope">
+      <div class="shelf-drive-container">
+         <!-- ngRepeat: driveRow in shelf.driveLayout track by $index --><div ng-repeat="driveRow in shelf.driveLayout track by $index" ng-init="rowNumber = $index" class="shelf-drive-row ng-scope">
+            <!-- ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 0, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         0
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 1, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         1
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 2, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         2
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 3, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         3
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 4, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         4
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 5, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         5
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 6, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         6
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 7, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         7
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 8, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         8
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 9, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         9
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 10, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         10
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 11, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         11
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 12, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         12
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 13, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         13
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 14, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         14
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 15, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         15
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 16, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         16
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 17, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         17
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 18, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         18
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 19, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         19
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 20, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         20
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 21, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         21
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 22, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         22
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) --><div ng-repeat="drive in driveRow track by (drive.id || drive)" class="shelf-drive ng-scope">
+               <div d-drive="{drive: drive, driveRow: rowNumber}" class="ng-scope"><div class="drive-component vertical-drive drive-mode-unassigned drive-ssd" ng-class="classes">
+   <!-- TODO workaround Should be able to remove (and refactor as needed) when IE10 support is dropped.
+        This overlay is here as an alternative to using CSS pointer-events:none in the popup
+        class, which is not supported in Internet Explorer on anything other than
+        SVGs until version 11. The desired behavior is that the popovers and options menus do not
+        cause hover events to fire. -->
+   <!-- ngIf: tabIndex != -1 --><div role="button" class="drive-overlay dropdown-toggle ng-scope cursor-pointer" ng-if="tabIndex != -1" d-link="" ng-attr-tabindex="{{tabIndex}}" data-toggle="dropdown" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()" ng-focus="onFocus()" ng-blur="onBlur()" tabindex="0" aria-disabled="false">
+      <span class="sr-only ng-binding">Drive located in Shelf 2, Bay 23, Status Optimal</span>
+   </div><!-- end ngIf: tabIndex != -1 -->
+
+   <div class="drive">
+      <div class="drive-slot ng-binding">
+         23
+      </div>
+
+      <div class="drive-ssd-icon">
+         <i class="icon-bolt"></i>
+      </div>
+
+      <!-- ngIf: driveStatus.icon -->
+   </div>
+
+   <ul class="dropdown-menu" role="menu" d-dropdown=""></ul>
+</div>
+</div>
+            </div><!-- end ngRepeat: drive in driveRow track by (drive.id || drive) -->
+         </div><!-- end ngRepeat: driveRow in shelf.driveLayout track by $index -->
+      </div>
+   </div><!-- end ngSwitchWhen: -->
+</div>
+</div>
+      </div><!-- end ngSwitchWhen: -->
+      <!-- ngSwitchWhen: false -->
+   </div>
+</div>
+</div>
+            </div><!-- end ngRepeat: tray in graphical.trays track by tray.trayRef -->
+            <!-- ngIf: graphical.trays.length > 1 --><div class="hardware-components-footer ng-scope" ng-if="graphical.trays.length > 1">
+               <a d-link="" ng-click="graphical.flipAllShelves(true)" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                  Show all front
+               </a>
+               <div class="separator"></div>
+               <a d-link="" ng-click="graphical.flipAllShelves(false)" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+                  Show all back
+               </a>
+            </div><!-- end ngIf: graphical.trays.length > 1 -->
+         </div><!-- end ngIf: !loading -->
+      </div>
+   <div class="ng-scope">   <!-- ngInclude: 'widget/loadingOverlay/loadingOverlay.tpl.html' --><div ng-include="'widget/loadingOverlay/loadingOverlay.tpl.html'" class="ng-scope"><div ng-class="classes" class="loading-overlay ng-scope">
+   <div class="loading-overlay-backdrop"></div>
+   <div class="loading-overlay-graphic-text-container">
+      <div class="loading-overlay-graphic-text-background"></div>
+      <!-- ngIf: !!cancelCallback -->
+      <div class="loading-overlay-graphic" ng-switch="type">
+         <!-- ngSwitchWhen: spinner --><div ng-switch-when="spinner" class="loading-overlay-spinner ng-scope">
+            <i class="icon-spinner icon-spin icon-pulse"></i>
+         </div><!-- end ngSwitchWhen: -->
+         <!-- ngSwitchWhen: progressBar -->
+      </div>
+      <div class="loading-overlay-text ng-binding" ng-bind-html="text"></div>
+      <div ng-bind-html="srText" class="sr-only ng-binding" tabindex="-1"></div>
+   </div>
+</div></div></div></div>
+</div></div></div>
+         </div>
+      </div>
+   </section>
+</div>
+<div d-dialog-container="" class="ng-scope"><!-- ngIf: dialogList.length > 0 --><div ng-if="dialogList.length > 0" class="modal-backdrop-container angular-animate ng-scope" d-loading-overlay="!dialogList[dialogList.length-1].options.visible" data-overlay-options="{backdrop: false, srTextKey: 'DIALOG_LOADING_DESCRIPTION', focus: true}" style="">
+   <div class="modal-backdrop"></div>
+<div class="ng-scope">   <!-- ngInclude: 'widget/loadingOverlay/loadingOverlay.tpl.html' --><div ng-include="'widget/loadingOverlay/loadingOverlay.tpl.html'" class="ng-scope"><div ng-class="classes" class="loading-overlay ng-scope">
+   <div class="loading-overlay-backdrop"></div>
+   <div class="loading-overlay-graphic-text-container">
+      <div class="loading-overlay-graphic-text-background"></div>
+      <!-- ngIf: !!cancelCallback -->
+      <div class="loading-overlay-graphic" ng-switch="type">
+         <!-- ngSwitchWhen: spinner --><div ng-switch-when="spinner" class="loading-overlay-spinner ng-scope">
+            <i class="icon-spinner icon-spin icon-pulse"></i>
+         </div><!-- end ngSwitchWhen: -->
+         <!-- ngSwitchWhen: progressBar -->
+      </div>
+      <div class="loading-overlay-text ng-binding" ng-bind-html="text"></div>
+      <div ng-bind-html="srText" class="sr-only ng-binding" tabindex="-1"></div>
+   </div>
+</div></div></div></div><!-- end ngIf: dialogList.length > 0 -->
+<!-- ngRepeat: dialogData in dialogList --><div ng-repeat="dialogData in dialogList" class="modal angular-animate ng-scope" ng-style="!$last ? {'z-index': 1029} : ''" role="dialog" ng-attr-id="{{'dialog' + dialogData.id}}" ng-attr-aria-labelledby="{{'dialog' + dialogData.id + '-title'}}" ng-animate-children="" id="dialog2" aria-labelledby="dialog2-title" style="">
+   <div d-dialog="" ng-init="init(dialogData)" class="ng-scope"><div class="modal-template angular-animate modal-visible" ng-animate-children="" style="">
+   <div class="focus-holder sr-only" tabindex="-1"></div>
+   <!-- ngInclude: dialog.options.templateUrl --><div ng-include="dialog.options.templateUrl" ng-animate-children="" class="ng-scope"><div class="modal-dialog ng-scope modal-size-5" ng-controller="DialogResourceCtrl" ng-class="dialog.options.classes">
+   <div class="modal-content">
+      <div d-dialog-header="Shelf Component Settings" data-close-handler="closeDialogResource()" class="ng-scope"><div class="modal-header">
+   <button class="close" type="button" aria-label="Close dialog" d-dialog-disable="working">
+      <a href="back_shelf_iom1.html"><span aria-hidden="true">×</span></a>
+   </button>
+   <h1 class="modal-title ng-binding" ng-attr-id="{{'dialog' + dialog.id + '-title'}}" ng-bind-html="getDialogTitle()" id="dialog2-title">Shelf Component Settings</h1>
+</div>
+<div d-notification-container="dialog2" class="ng-isolate-scope"><div class="notification-container">
+<!-- ngRepeat: notificationData in notifications | orderBy:'id':true -->
+</div></div></div>
+      <form class="form ng-pristine ng-valid">
+         <div class="modal-body" d-dialog-overlay="" d-loading-overlay="getOverlayState()" overlay-options="{text: getOverlayText(), srText: getOverlaySrText(), focus: true, cancelWorkingCallback: getCancelWorkingCallback()}" aria-disabled="false">
+            <!-- ngIf: dialog.options.iconClass -->
+            <div ng-class="{'has-icon': dialog.options.iconClass}" ng-switch="!!dialog.options.dialogTemplate">
+               <!-- ngIf: hasHeader() -->
+
+               <!-- ngSwitchWhen: true --><div ng-switch-when="true" class="ng-scope">
+                  <!-- ngInclude: dialog.options.dialogTemplate --><div ng-include="dialog.options.dialogTemplate" class="ng-scope"><div ng-controller="ShelfComponentSettingsCtrl" class="ng-scope">
+   <!-- ngIf: dialog.options.visible --><div ng-if="dialog.options.visible" class="ng-scope">
+      <div d-tabs="tabConfig" class="ng-scope"><div class="tabs">
+   <div class="tabs-container">
+      <ul class="nav nav-tabs" ng-class="getAlignClass()" role="tablist">
+         <!-- ngRepeat: tab in tabConfig.tabs --><!-- ngIf: isTabVisible(tab) --><li ng-repeat="tab in tabConfig.tabs" ng-if="isTabVisible(tab)" ng-class="{'active': tabConfig.selectedIndex === $index}" role="presentation" class="ng-scope">
+            <a href="esmMenuShelf.html" ng-click="tabConfig.selectedIndex = $index" d-link="" role="tab" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+               Shelf
+            </a>
+         </li><!-- end ngIf: isTabVisible(tab) --><!-- end ngRepeat: tab in tabConfig.tabs --><!-- ngIf: isTabVisible(tab) --><li ng-repeat="tab in tabConfig.tabs" ng-if="isTabVisible(tab)" ng-class="{'active': tabConfig.selectedIndex === $index}" role="presentation" class="ng-scope">
+            <a href="esmMenu.html" ng-click="tabConfig.selectedIndex = $index" d-link="" role="tab" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+               IOMs (ESMs)
+            </a>
+         </li><!-- end ngIf: isTabVisible(tab) --><!-- end ngRepeat: tab in tabConfig.tabs --><!-- ngIf: isTabVisible(tab) --><li ng-repeat="tab in tabConfig.tabs" ng-if="isTabVisible(tab)" ng-class="{'active': tabConfig.selectedIndex === $index}" role="presentation" class="ng-scope active">
+            <a href="esmMenuPowerSupply.html" ng-click="tabConfig.selectedIndex = $index" d-link="" role="tab" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+               Power Supplies
+            </a>
+         </li><!-- end ngIf: isTabVisible(tab) --><!-- end ngRepeat: tab in tabConfig.tabs --><!-- ngIf: isTabVisible(tab) --><li ng-repeat="tab in tabConfig.tabs" ng-if="isTabVisible(tab)" ng-class="{'active': tabConfig.selectedIndex === $index}" role="presentation" class="ng-scope">
+            <a href="esmMenuFans.html" ng-click="tabConfig.selectedIndex = $index" d-link="" role="tab" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+               Fans
+            </a>
+         </li><!-- end ngIf: isTabVisible(tab) --><!-- end ngRepeat: tab in tabConfig.tabs --><!-- ngIf: isTabVisible(tab) --><li ng-repeat="tab in tabConfig.tabs" ng-if="isTabVisible(tab)" ng-class="{'active': tabConfig.selectedIndex === $index}" role="presentation" class="ng-scope">
+            <a href="esmMenuTemperature.html" ng-click="tabConfig.selectedIndex = $index" d-link="" role="tab" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">
+               Temperature
+            </a>
+         </li><!-- end ngIf: isTabVisible(tab) --><!-- end ngRepeat: tab in tabConfig.tabs --><!-- ngIf: isTabVisible(tab) --><!-- end ngRepeat: tab in tabConfig.tabs --><!-- ngIf: isTabVisible(tab) --><!-- end ngRepeat: tab in tabConfig.tabs -->
+      </ul>
+   </div>
+   <div class="tabs-content-container" d-loading-overlay="hasTabOverlay()" style="position: relative;">
+      <!-- ngRepeat: tab in tabConfig.tabs --><div ng-repeat="tab in tabConfig.tabs" class="ng-scope">
+         <!-- ngIf: isTabLoaded(tab, $index) --><div ng-if="isTabLoaded(tab, $index)" ng-show="tabConfig.selectedIndex === $index" role="tabpanel" class="ng-scope ng-hide">
+            <!-- ngInclude: tab.templateUrl --><div ng-include="tab.templateUrl" class="ng-scope"><div class="ng-scope">
+   <div class="form-horizontal">
+      <div class="form-group">
+         <div class="col-xs-3 control-label ng-binding">
+            Shelf ID:
+         </div>
+         <div class="col-xs-9 value-label ng-binding">
+            1
+         </div>
+      </div>
+      <div class="form-group">
+         <div class="col-xs-3 control-label ng-binding">
+            Shelf path redundancy:
+         </div>
+         <div class="col-xs-9 value-label ng-binding">
+            Yes
+         </div>
+      </div>
+      <div class="form-group">
+         <div class="col-xs-3 control-label ng-binding">
+            Current drive types:
+         </div>
+         <div class="col-xs-9 value-label ng-binding" ng-bind-html="shelfTab.driveTypes">SAS - Secure-capable</div>
+      </div>
+      <div class="form-group">
+         <div class="col-xs-3 control-label ng-binding">
+            Serial number:
+         </div>
+         <div class="col-xs-9 value-label ng-binding">
+            1T94810026
+         </div>
+      </div>
+   </div>
+</div></div>
+         </div><!-- end ngIf: isTabLoaded(tab, $index) -->
+      </div><!-- end ngRepeat: tab in tabConfig.tabs --><div ng-repeat="tab in tabConfig.tabs" class="ng-scope">
+         <!-- ngIf: isTabLoaded(tab, $index) --><div ng-if="isTabLoaded(tab, $index)" ng-show="tabConfig.selectedIndex === $index" role="tabpanel" class="ng-scope ng-hide">
+            <!-- ngInclude: tab.templateUrl --><div ng-include="tab.templateUrl" class="ng-scope"><div class="ng-scope">
+   <div d-show-more-link="iomTab.showMore" class="pull-right ng-isolate-scope"><a class="show-more-link-component ng-binding cursor-pointer" d-link="" ng-click="toggleShowMore()" ng-bind-html="getText()" aria-disabled="false" tabindex="0">Show more settings</a></div>
+   <!-- ngRepeat: iom in iomTab.ioms --><div ng-repeat="iom in iomTab.ioms" class="ng-scope">
+      <div class="groupbox-header ng-binding">
+         IOM (ESM) A
+      </div>
+      <div class="groupbox-body form-horizontal">
+         <div class="form-group">
+            <div class="col-xs-4 control-label ng-binding">
+               Status:
+            </div>
+            <div class="col-xs-8 value-label ng-binding">
+               Optimal
+            </div>
+         </div>
+         <div class="form-group">
+            <div class="col-xs-4 control-label ng-binding">
+               Firmware version:
+            </div>
+            <div class="col-xs-8 value-label ng-binding">
+               9815
+            </div>
+         </div>
+         <div class="form-group">
+            <div class="col-xs-4 control-label ng-binding">
+               Part number:
+            </div>
+            <div class="col-xs-8 value-label ng-binding">
+               13667-00
+            </div>
+         </div>
+         <div class="form-group">
+            <div class="col-xs-4 control-label ng-binding">
+               Serial number:
+            </div>
+            <div class="col-xs-8 value-label ng-binding">
+               1T94810039
+            </div>
+         </div>
+         <!-- ngIf: iomTab.showMore -->
+      </div>
+   </div><!-- end ngRepeat: iom in iomTab.ioms --><div ng-repeat="iom in iomTab.ioms" class="ng-scope">
+      <div class="groupbox-header ng-binding">
+         IOM (ESM) B
+      </div>
+      <div class="groupbox-body form-horizontal">
+         <div class="form-group">
+            <div class="col-xs-4 control-label ng-binding">
+               Status:
+            </div>
+            <div class="col-xs-8 value-label ng-binding">
+               Optimal
+            </div>
+         </div>
+         <div class="form-group">
+            <div class="col-xs-4 control-label ng-binding">
+               Firmware version:
+            </div>
+            <div class="col-xs-8 value-label ng-binding">
+               9815
+            </div>
+         </div>
+         <div class="form-group">
+            <div class="col-xs-4 control-label ng-binding">
+               Part number:
+            </div>
+            <div class="col-xs-8 value-label ng-binding">
+               13667-00
+            </div>
+         </div>
+         <div class="form-group">
+            <div class="col-xs-4 control-label ng-binding">
+               Serial number:
+            </div>
+            <div class="col-xs-8 value-label ng-binding">
+               1T94810039
+            </div>
+         </div>
+         <!-- ngIf: iomTab.showMore -->
+      </div>
+   </div><!-- end ngRepeat: iom in iomTab.ioms -->
+</div></div>
+         </div><!-- end ngIf: isTabLoaded(tab, $index) -->
+      </div><!-- end ngRepeat: tab in tabConfig.tabs --><div ng-repeat="tab in tabConfig.tabs" class="ng-scope">
+         <!-- ngIf: isTabLoaded(tab, $index) --><div ng-if="isTabLoaded(tab, $index)" ng-show="tabConfig.selectedIndex === $index" role="tabpanel" class="ng-scope">
+            <!-- ngInclude: tab.templateUrl --><div ng-include="tab.templateUrl" class="ng-scope"><div class="ng-scope">
+   <!-- ngRepeat: cru in powerSupplyTab.supportCRUs --><div ng-repeat="cru in powerSupplyTab.supportCRUs" class="ng-scope">
+      <div class="groupbox-header ng-binding">
+         Power / fan canister 1
+      </div>
+      <div class="groupbox-body form-horizontal">
+         <div class="form-group">
+            <div class="col-xs-4 control-label ng-binding">
+               Power / fan canister status:
+            </div>
+            <div class="col-xs-8 value-label ng-binding">
+               Optimal
+            </div>
+         </div>
+         <!-- ngRepeat: powerSupply in cru.powerSupplies -->
+      </div>
+   </div><!-- end ngRepeat: cru in powerSupplyTab.supportCRUs --><div ng-repeat="cru in powerSupplyTab.supportCRUs" class="ng-scope">
+      <div class="groupbox-header ng-binding">
+         Power / fan canister 2
+      </div>
+      <div class="groupbox-body form-horizontal">
+         <div class="form-group">
+            <div class="col-xs-4 control-label ng-binding">
+               Power / fan canister status:
+            </div>
+            <div class="col-xs-8 value-label ng-binding">
+               Optimal
+            </div>
+         </div>
+         <!-- ngRepeat: powerSupply in cru.powerSupplies -->
+      </div>
+   </div><!-- end ngRepeat: cru in powerSupplyTab.supportCRUs -->
+</div></div>
+         </div><!-- end ngIf: isTabLoaded(tab, $index) -->
+      </div><!-- end ngRepeat: tab in tabConfig.tabs --><div ng-repeat="tab in tabConfig.tabs" class="ng-scope">
+         <!-- ngIf: isTabLoaded(tab, $index) --><div ng-if="isTabLoaded(tab, $index)" ng-show="tabConfig.selectedIndex === $index" role="tabpanel" class="ng-scope ng-hide">
+            <!-- ngInclude: tab.templateUrl --><div ng-include="tab.templateUrl" class="ng-scope"><div class="ng-scope">
+   <!-- ngRepeat: cru in fanTab.supportCRUs --><div ng-repeat="cru in fanTab.supportCRUs" class="ng-scope">
+      <div class="groupbox-header ng-binding">
+         Power / fan canister 1
+      </div>
+      <div class="groupbox-body form-horizontal">
+         <div class="form-group">
+            <div class="col-xs-4 control-label ng-binding">
+               Power / fan canister status:
+            </div>
+            <div class="col-xs-8 value-label ng-binding">
+               Optimal
+            </div>
+         </div>
+         <!-- track by $index is required by Angular since fanStatus values could be duplicates -->
+         <!-- ngRepeat: fanStatus in cru.fanStatuses track by $index -->
+      </div>
+   </div><!-- end ngRepeat: cru in fanTab.supportCRUs --><div ng-repeat="cru in fanTab.supportCRUs" class="ng-scope">
+      <div class="groupbox-header ng-binding">
+         Power / fan canister 2
+      </div>
+      <div class="groupbox-body form-horizontal">
+         <div class="form-group">
+            <div class="col-xs-4 control-label ng-binding">
+               Power / fan canister status:
+            </div>
+            <div class="col-xs-8 value-label ng-binding">
+               Optimal
+            </div>
+         </div>
+         <!-- track by $index is required by Angular since fanStatus values could be duplicates -->
+         <!-- ngRepeat: fanStatus in cru.fanStatuses track by $index -->
+      </div>
+   </div><!-- end ngRepeat: cru in fanTab.supportCRUs -->
+</div></div>
+         </div><!-- end ngIf: isTabLoaded(tab, $index) -->
+      </div><!-- end ngRepeat: tab in tabConfig.tabs --><div ng-repeat="tab in tabConfig.tabs" class="ng-scope">
+         <!-- ngIf: isTabLoaded(tab, $index) --><div ng-if="isTabLoaded(tab, $index)" ng-show="tabConfig.selectedIndex === $index" role="tabpanel" class="ng-scope ng-hide">
+            <!-- ngInclude: tab.templateUrl --><div ng-include="tab.templateUrl" class="ng-scope"><div class="ng-scope">
+   <div class="groupbox-header ng-binding">
+      Temperature sensors
+   </div>
+   <div class="groupbox-body">
+      <div d-table2="temperatureTab.sensorTable.options" data-table-control="temperatureTab.sensorTable.table" class="ng-isolate-scope"><div class="table-widget table_1 table-pager-hidden table-select-disabled table-search-hidden table-footer-hidden" d-loading-overlay="table.loadingOverlay.visible || !table.enabled" data-overlay-options="{text: table.loadingOverlay.text, graphic: table.enabled}">
+   <input class="form-control search-input ng-pristine ng-untouched ng-valid" type="search" ng-model="table.search.inputValue" ng-disabled="!table.search.enabled" placeholder="Filter" title="Filter">
+
+   <div class="transcluded-content"></div>
+   <div class="table-container" role="grid" ng-show="table.visible">
+      <div class="table-header-container">
+         <div class="table-header" role="row"><div class="table-header-cell c0 sort-asc sortable" role="columnheader" data-index="0" draggable="true" tabindex="0">Location<div class="sort-icon"><i class="icon-caret-up sort-asc-icon"></i><i class="icon-caret-down sort-desc-icon"></i></div><div class="resize-handle"></div></div><div class="table-header-cell c1 sortable" role="columnheader" data-index="1" draggable="true" tabindex="0">Status<div class="sort-icon"><i class="icon-caret-up sort-asc-icon"></i><i class="icon-caret-down sort-desc-icon"></i></div><div class="resize-handle"></div></div></div>
+         <div class="table-column-search" role="row"></div>
+      </div>
+      <div class="table-content table-preserve-scroll">
+         <div class="table-row-container"><div class="table-row" role="row" tabindex="0" data-id="3231343336353837303932393400000000000000"><div class="table-cell c0" role="gridcell">Shelf sensor 1</div><div class="table-cell c1" role="gridcell">Optimal</div></div><div class="table-row" role="row" tabindex="0" data-id="3231343336353837303932393500000000000000"><div class="table-cell c0" role="gridcell">Shelf sensor 2</div><div class="table-cell c1" role="gridcell">Optimal</div></div><div class="table-row" role="row" tabindex="0" data-id="3231343336353837303932393600000000000000"><div class="table-cell c0" role="gridcell">Shelf sensor 3</div><div class="table-cell c1" role="gridcell">Optimal</div></div><div class="table-row" role="row" tabindex="0" data-id="3231343336353837303932393700000000000000"><div class="table-cell c0" role="gridcell">Shelf sensor 4</div><div class="table-cell c1" role="gridcell">Optimal</div></div></div>
+      </div>
+      <div class="table-footer-row-container">
+         <div class="table-footer-row" role="row"></div>
+      </div>
+      <div class="table-footer pager-first-last-hidden">
+         <div class="table-control">
+               <div class="selected-caption ng-binding">Total rows: 4</div>
+                  <div class="separator"></div>
+                  <div class="footer-buttons">
+                     <button class="btn btn-actionicon filter-column" type="button" ng-click="showColumnFilterDialog()" title="Select columns" aria-label="Select columns">
+                        <i class="icon-columns" aria-hidden="true"></i>
+                     </button>
+                     <button class="btn btn-actionicon refresh-table" type="button" ng-click="clearSettings()" title="Undo table configuration changes" aria-label="Undo table configuration changes">
+                        <i class="icon-rotate" aria-hidden="true"></i>
+                     </button>
+                     <!-- ngIf: table.options.export -->
+                  </div>
+         </div>
+         <div class="table-pager">
+            <div d-table2-pager="" class="ng-scope"><div class="pager-back">
+    <button class="btn btn-actionicon first-page" type="button" ng-disabled="table.pager.page === 1" ng-click="moveToPage($event, 1)" title="Go to first page" aria-label="Go to first page" disabled="disabled">
+        <i class="icon-double-angle-left" aria-hidden="true"></i>
+    </button>
+    <button class="btn btn-actionicon previous-page" type="button" ng-disabled="table.pager.page === 1" ng-click="moveToPage($event, table.pager.page - 1)" title="Go to previous page" aria-label="Go to previous page" disabled="disabled">
+        <i class="icon-angle-left" aria-hidden="true"></i>
+    </button>
+</div>
+<div class="separator"></div>
+<div class="pager-status ng-binding">
+    Page
+    <input class="form-control current-page prevent-form-submit ng-pristine ng-untouched ng-valid" type="text" ng-model="pager.page" title="Current page">
+    of 1
+</div>
+<div class="separator"></div>
+<div class="pager-next">
+    <button class="btn btn-actionicon next-page" type="button" ng-disabled="table.pager.page === table.pager.pageCount" ng-click="moveToPage($event, table.pager.page + 1)" title="Go to next page" aria-label="Go to next page" disabled="disabled">
+        <i class="icon-angle-right" aria-hidden="true"></i>
+    </button>
+    <button class="btn btn-actionicon last-page" type="button" ng-disabled="table.pager.page === table.pager.pageCount" ng-click="moveToPage($event, table.pager.pageCount)" title="Go to last page" aria-label="Go to last page" disabled="disabled">
+        <i class="icon-double-angle-right" aria-hidden="true"></i>
+    </button>
+</div>
+</div>
+         </div>
+         <div class="table-page-count ng-binding">
+            Showing 50 rows per page
+         </div>
+      </div>
+   </div>
+<div class="ng-scope">   <!-- ngInclude: 'widget/loadingOverlay/loadingOverlay.tpl.html' --><div ng-include="'widget/loadingOverlay/loadingOverlay.tpl.html'" class="ng-scope"><div ng-class="classes" class="loading-overlay ng-scope">
+   <div class="loading-overlay-backdrop"></div>
+   <div class="loading-overlay-graphic-text-container">
+      <div class="loading-overlay-graphic-text-background"></div>
+      <!-- ngIf: !!cancelCallback -->
+      <div class="loading-overlay-graphic" ng-switch="type">
+         <!-- ngSwitchWhen: spinner -->
+         <!-- ngSwitchWhen: progressBar -->
+      </div>
+      <div class="loading-overlay-text ng-binding" ng-bind-html="text"></div>
+      <div ng-bind-html="srText" class="sr-only ng-binding" tabindex="-1"></div>
+   </div>
+</div></div></div></div></div>
+   </div>
+</div></div>
+         </div><!-- end ngIf: isTabLoaded(tab, $index) -->
+      </div><!-- end ngRepeat: tab in tabConfig.tabs --><div ng-repeat="tab in tabConfig.tabs" class="ng-scope">
+         <!-- ngIf: isTabLoaded(tab, $index) -->
+      </div><!-- end ngRepeat: tab in tabConfig.tabs --><div ng-repeat="tab in tabConfig.tabs" class="ng-scope">
+         <!-- ngIf: isTabLoaded(tab, $index) -->
+      </div><!-- end ngRepeat: tab in tabConfig.tabs -->
+   <div class="ng-scope">   <!-- ngInclude: 'widget/loadingOverlay/loadingOverlay.tpl.html' --><div ng-include="'widget/loadingOverlay/loadingOverlay.tpl.html'" class="ng-scope"><div ng-class="classes" class="loading-overlay ng-scope">
+   <div class="loading-overlay-backdrop"></div>
+   <div class="loading-overlay-graphic-text-container">
+      <div class="loading-overlay-graphic-text-background"></div>
+      <!-- ngIf: !!cancelCallback -->
+      <div class="loading-overlay-graphic" ng-switch="type">
+         <!-- ngSwitchWhen: spinner -->
+         <!-- ngSwitchWhen: progressBar -->
+      </div>
+      <div class="loading-overlay-text ng-binding" ng-bind-html="text"></div>
+      <div ng-bind-html="srText" class="sr-only ng-binding" tabindex="-1"></div>
+   </div>
+</div></div></div></div>
+</div></div>
+   </div><!-- end ngIf: dialog.options.visible -->
+</div></div>
+               </div><!-- end ngSwitchWhen: -->
+               <!-- ngSwitchWhen: false -->
+               <!-- ngIf: confirmOptions -->
+            </div>
+         <div class="ng-scope">   <!-- ngInclude: 'widget/loadingOverlay/loadingOverlay.tpl.html' --><div ng-include="'widget/loadingOverlay/loadingOverlay.tpl.html'" class="ng-scope"><div ng-class="classes" class="loading-overlay ng-scope">
+   <div class="loading-overlay-backdrop"></div>
+   <div class="loading-overlay-graphic-text-container">
+      <div class="loading-overlay-graphic-text-background"></div>
+      <!-- ngIf: !!cancelCallback -->
+      <div class="loading-overlay-graphic" ng-switch="type">
+         <!-- ngSwitchWhen: spinner --><div ng-switch-when="spinner" class="loading-overlay-spinner ng-scope">
+            <i class="icon-spinner icon-spin icon-pulse"></i>
+         </div><!-- end ngSwitchWhen: -->
+         <!-- ngSwitchWhen: progressBar -->
+      </div>
+      <div class="loading-overlay-text ng-binding" ng-bind-html="text"></div>
+      <div ng-bind-html="srText" class="sr-only ng-binding" tabindex="-1"></div>
+   </div>
+</div></div></div></div>
+         <div class="modal-footer" ng-switch="!!dialog.options.commit || !!dialog.options.reject">
+            <!-- ngSwitchWhen: true -->
+            <!-- ngSwitchWhen: false --><div ng-switch-when="false" class="ng-scope">
+               <a href="back_shelf_iom1.html">
+               <button class="btn btn-default btn-primary ng-binding" type="button" d-dialog-close="" d-dialog-disable="working" d-dialog-focus="" ng-bind-html="getCloseButtonLabel()">Close</button>
+               </a>
+            </div><!-- end ngSwitchWhen: -->
+         </div>
+      </form>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- end ngRepeat: dialogData in dialogList --></div>
+<div d-frame-container="" class="ng-scope"><!-- ngIf: showBackdrop() -->
+<div class="modeless-container" ng-class="getContainerClass()">
+   <!-- ngRepeat: frame in openFrames -->
+</div>
+</div>
+</div>
+
+   <!--JavaScript is not enabled-->
+   <noscript>
+      <div class="login-body">
+         <div class="table">
+            <div class="table-cell">
+               <div class="horizontal-center-javascript-cookies">
+                  <div class="inline">
+                     <div class="logo"></div>
+                  </div>
+                  <div class="inline2">
+                     <div class="login-content">
+                        <div class="col-xs-12 col-xs-offset-1">
+                           <div class="box-content">
+                              <div class="row">
+                                 <div class="form-group"></div>
+                              </div>
+                              <div class="row">
+                                 <div class="form-group">
+                                    <div class="font-JavaScript-cookies" style="margin-left: 0px">SANtricity<sup>®</sup> System Manager</div>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="form-group"></div>
+                              </div>
+                              <div class="text-cookies-javascript">
+                                 <div class="row">
+                                    <div class="form-group">
+                                       <div><b>Enable JavaScript</b></div>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="form-group">
+                                       <div>
+                                       JavaScript is currently disabled in your browser. You must
+                                       enable JavaScript to use the SANtricity<sup>®</sup> System Manager.
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="form-group">
+                                       <div>
+                                       Follow this link to learn how to enable JavaScript in your
+                                       browser of choice:
+                                       <a href="http://www.enable-javascript.com/" target="_blank"
+                                          style="color: #0000CC">http://www.enable-javascript.com/</a>.
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="form-group">
+                                       <div>
+                                       Remember to refresh your browser after enabling JavaScript.
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </noscript>
+
+
+
+<div id="popoverContainer" aria-live="polite" aria-atomic="false"></div><span role="status" aria-live="polite" class="select2-hidden-accessible"></span></body></html>
