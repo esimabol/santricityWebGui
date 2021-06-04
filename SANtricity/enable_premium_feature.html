@@ -5,7 +5,7 @@
    <meta content="" name="description">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-   <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+   <link rel="shortcut icon" type="image/ico" href="assets/img/favicon.ico">
    <!-- compiled CSS -->
    <link rel="stylesheet" type="text/css" href="SAMClient-11.30.0G00.0001.css">
    
@@ -14,9 +14,61 @@
    <script type="text/javascript" src="assets/js/SAMClient-11.30.0G00.0001.js"></script>
    
 
-   
+   <script>
+      // Put the encoded password in local storage and remove the sid param from the URL.
+      if (window.location.search.indexOf('sid=') >= 0) {
+         // Extract the sid parameter from the URL.
+         var regex = new RegExp('[\\?&]sid=([^&]+)($|&)');
+         // Capture sid value.
+         var sidParam = regex.exec(window.location.href);
+         try {
+            sessionStorage.setItem('sid', sidParam[1]);
+            //Remove the sid param from the search string.
+            var newHref = window.location.href.replace(/([\\?&])sid=[^&]+($|&)/,
+                  function(searchValue, replaceValue1, replaceValue2) {
+                     // sid is not the first param. Leave in the sign following it, if there is one.
+                     if (replaceValue1 === '&') {
+                        return replaceValue2;
+                     } else {
+                        // sid is first param. If it is followed by a param, keep the '?', otherwise
+                        // remove everything.
+                        return replaceValue2 === '&' ? '?' : '';
+                     }
+                  });
+            window.history.replaceState({}, '', newHref);
+         } catch (e) {
+            console.log('Could not set the sid.');
+         }
+      }
+   </script>
+   <script>
+      /**
+       * When application is loaded, it checks if the application can be bootstrapped with Angular.
+       * In the case it fails to bootstrap the application (on old and unsupported browser), display an
+       * unsupported browser message.
+       */
+      window.onload = function() {
+         try {
+            window.jQuery();
+            angular.module('sam.app');
+         } catch (exception) {
+            var message = '<h2><b>Unsupported Browser</b></h2>';
+            message += '<br>';
+            message += '<h2>We have detected that you are attempting to access the ' +
+                  'SANtricity<sup>®</sup> System Manager with an unsupported browser.</h2>';
+            message += '<br>';
+            message += '<h2>You must upgrade to the latest version or use an alternate browser.</h2>';
+
+            var body = document.getElementsByTagName('body')[0];
+            var div = document.createElement('div');
+            div.innerHTML = message;
+            body.appendChild(div);
+         }
+      };
+   </script>
+
 </head>
-<body class="contrast-blue" ng-class="::{'fullscreen': APP_CONSTANTS.FULLSCREEN}">
+<body class="contrast-blue modal-open" ng-class="::{'fullscreen': APP_CONSTANTS.FULLSCREEN}">
    <!--JavaScript is enabled-->
    <!-- ngInclude: getCtrlState() --><div ng-include="getCtrlState()" class="ng-scope"><!-- ngInclude: 'header.tpl.html' --><div ng-include="'header.tpl.html'" class="ng-scope"><header class="ng-scope">
    <nav class="navbar navbar-default">
@@ -24,9 +76,9 @@
          <div class="override-margin-right row">
             <div class="col-xs-4">
                <button class="toggle-nav btn pull-left" title="Toggle expanded navigation" aria-label="Toggle expanded navigation" d-nav-control="" id="nav-control">
-                  <span>&#9776;</span>
+                  <i aria-hidden="true" class="icon-reorder"></i>
                </button>
-               <span class="navbar-branding ng-binding" ng-bind-html="'SANTRICITY_SYSTEM_MANAGER_NAME'|localize">SANtricity<sup>&#174;</sup> System Manager</span>
+               <span class="navbar-branding ng-binding" ng-bind-html="'SANTRICITY_SYSTEM_MANAGER_NAME'|localize">SANtricity<sup>®</sup> System Manager</span>
             </div>
             <div class="col-xs-4 navbar-array">
                <span class="ng-binding">Array1</span>
@@ -88,23 +140,30 @@
    <nav id="main-nav">
       <div class="navigation">
          <ul d-nav-update="" class="nav nav-stacked">
-            <li data-nav-key="home" class="">
-               <a style="text-align: center;" href="santricity.html" id="home" aria-label="Home">                 
+            <li data-nav-key="home">
+               <a href="#/home" id="home" aria-label="Home">
+                  <i class="icon-home status-icon-container" aria-hidden="true">
+                     <div class="status-dot" ng-class="statusDotClass" aria-hidden="true">
+                     </div>
+                  </i>
                   <span class="ng-binding">Home</span>
                </a>
             </li>
-            <li data-nav-key="storage" >
-               <a style="text-align: center;" href="storage.html" id="storage" aria-label="Storage">                
+            <li data-nav-key="storage">
+               <a href="#/storage" id="storage" aria-label="Storage">
+                  <i class="icon-storage" aria-hidden="true"></i>
                   <span class="ng-binding">Storage</span>
                </a>
             </li>
             <li data-nav-key="hardware">
-               <a style="text-align: center;" href="hardware.html" id="hardware" aria-label="Hardware">                  
+               <a href="#/hardware" id="hardware" aria-label="Hardware">
+                  <i class="icon-hardware" aria-hidden="true"></i>
                   <span class="ng-binding">Hardware</span>
                </a>
             </li>
             <li data-nav-key="settings" class="active">
-               <a style="text-align: center;" href="settings.html" id="settings" aria-label="Settings">                  
+               <a href="#/settings" id="settings" aria-label="Settings">
+                  <i class="icon-gear" aria-hidden="true"></i>
                   <span class="ng-binding">Settings</span>
                </a>
             </li>
@@ -116,7 +175,8 @@
                <!--</a>-->
             <!--</li>-->
             <li data-nav-key="support">
-               <a style="text-align: center;" href="support.html" id="support" aria-label="Support">                 
+               <a href="#/support" id="support" aria-label="Support">
+                  <i class="icon-support" aria-hidden="true"></i>
                   <span class="ng-binding">Support</span>
                </a>
             </li>
@@ -132,12 +192,12 @@
             <!-- ngView:  --><div ng-controller="notificationAreaCtrl" ng-view="" class="ng-scope"><div class="ng-scope">
    <d-breadcrumb data-page-id="settings" class="ng-isolate-scope"><ol class="breadcrumb">
    <!-- ngRepeat: item in breadcrumb --><li ng-repeat="item in breadcrumb" ng-class="{'active': false}" ng-switch="$last" class="ng-scope">
-      <!-- ngSwitchWhen: false --><a ng-click="select($index)" ng-href="#/home" ng-switch-when="false" class="ng-binding ng-scope" href="santricity.html">
+      <!-- ngSwitchWhen: false --><a ng-click="select($index)" ng-href="#/home" ng-switch-when="false" class="ng-binding ng-scope" href="#/home">
          Home
       </a><!-- end ngSwitchWhen: -->
       <!-- ngSwitchWhen: true -->
    </li><!-- end ngRepeat: item in breadcrumb --><li ng-repeat="item in breadcrumb" ng-class="{'active': false}" ng-switch="$last" class="ng-scope active">
-      <!-- ngSwitchWhen: false --><a ng-click="select($index)" ng-href="#/settings" ng-switch-when="false" class="ng-binding ng-scope" href="settings.html">
+      <!-- ngSwitchWhen: false --><a ng-click="select($index)" ng-href="#/settings" ng-switch-when="false" class="ng-binding ng-scope" href="#/settings">
          Settings
       </a><!-- end ngSwitchWhen: -->
       <!-- ngSwitchWhen: true -->
@@ -156,7 +216,7 @@
                   <div class="tile-title ng-binding" data-qaid="SYSTEM">
                      SYSTEM
                      <!-- ngIf: expanded === 'semi' || expanded === 'max' --><div ng-if="expanded === 'semi' || expanded === 'max'" class="form-group ng-scope ng-isolate-scope" d-faq-help="" data-content="FAQ_LEARN_MORE_STORAGE_SYSTEM"><span class="faqHelp cursor-pointer" d-link="" ng-click="launchOnlineHelp($event)" aria-disabled="false" tabindex="0"><ng-transclude>
-                        <p class="ng-binding ng-scope">Learn More</p>
+                        <p class="ng-binding ng-scope">Learn More <i class="icon-angle-right"></i></p>
                      </ng-transclude></span></div><!-- end ngIf: expanded === 'semi' || expanded === 'max' -->
                   </div>
                   <!-- ngIf: expanded === 'semi' || expanded === 'max' --><!-- ngInclude:  --><div class="tile-control ng-scope" ng-if="expanded === 'semi' || expanded === 'max'" ng-include="" src="'widget/tile/expandedHeader.tpl.html'"><div ng-switch="expanded" class="ng-scope">
@@ -165,9 +225,9 @@
       <button ng-show="!expandMaximizes" id="tileHeaderResize" class="btn btn-actionicon ng-hide" ng-click="reduceMaximizedTile()" title="Reduce Tile">
           <i aria-hidden="true" class="icon-resize-small"></i>
       </button>
-      <a href="system.html" id="tileHeaderRemove" class="btn btn-actionicon" ng-click="closeMaximizedTileByClicked()" title="Close Tile">
-         <i aria-hidden="true" style="font-weight: bold; font-size: 15px;">X</i>
-      </a>
+      <button id="tileHeaderRemove" class="btn btn-actionicon" ng-click="closeMaximizedTileByClicked()" title="Close Tile">
+          <i aria-hidden="true" class="icon-remove"></i>
+      </button>
    </span><!-- end ngSwitchWhen: -->
 </div></div><!-- end ngIf: expanded === 'semi' || expanded === 'max' -->
                </div>
@@ -180,7 +240,7 @@
          <!-- ngIf: !system.editStorageArrayName --><span ng-if="!system.editStorageArrayName" class="ng-scope">
             <span class="ng-binding">Array1</span>
             <span title="Edit" aria-label="Edit">
-               <i style="font-size: 20px; cursor: pointer;">&#9998;</i>
+               <i d-link="" class="icon-pencil action-icon cursor-pointer" aria-hidden="true" ng-click="editStorageArrayNameClickHandler()" d-form-focus="" aria-disabled="false" tabindex="0"></i>
             </span>
          </span><!-- end ngIf: !system.editStorageArrayName -->
          <!-- ngIf: system.editStorageArrayName -->
@@ -190,16 +250,16 @@
       </div>
 
       <!-- ngRepeat: operation in system.operation.generalSettings --><div ng-repeat="operation in system.operation.generalSettings" class="related-group ng-scope">
-         <a href="/led.html" ng-attr-id="{{operation.id}}" ng-click="operation.action()" class="ng-binding cursor-pointer" id="locateLedForStorageArray" aria-disabled="false" tabindex="0">Turn On Storage Array Locator Lights</a>
+         <a d-link="" ng-attr-id="{{operation.id}}" ng-click="operation.action()" class="ng-binding cursor-pointer" id="locateLedForStorageArray" aria-disabled="false" tabindex="0">Turn On Storage Array Locator Lights</a>
          <div class="margin-left-3 ng-binding">Turn on the appropriate LED lights to physically locate the storage array.</div>
       </div><!-- end ngRepeat: operation in system.operation.generalSettings --><div ng-repeat="operation in system.operation.generalSettings" class="related-group ng-scope">
-         <a href="/synchronize_clocks.html" d-link="" ng-attr-id="{{operation.id}}" ng-click="operation.action()" class="ng-binding cursor-pointer" id="synchronizeControllerClocks" aria-disabled="false" tabindex="0">Synchronize Storage Array Clocks</a>
+         <a d-link="" ng-attr-id="{{operation.id}}" ng-click="operation.action()" class="ng-binding cursor-pointer" id="synchronizeControllerClocks" aria-disabled="false" tabindex="0">Synchronize Storage Array Clocks</a>
          <div class="margin-left-3 ng-binding">Synchronize the storage array's controller clocks to match the time on the management client.</div>
       </div><!-- end ngRepeat: operation in system.operation.generalSettings --><div ng-repeat="operation in system.operation.generalSettings" class="related-group ng-scope">
-         <a href="/save_array_config.html" d-link="" ng-attr-id="{{operation.id}}" ng-click="operation.action()" class="ng-binding cursor-pointer" id="saveStorageArrayConfiguration" aria-disabled="false" tabindex="0">Save Storage Array Configuration</a>
+         <a d-link="" ng-attr-id="{{operation.id}}" ng-click="operation.action()" class="ng-binding cursor-pointer" id="saveStorageArrayConfiguration" aria-disabled="false" tabindex="0">Save Storage Array Configuration</a>
          <div class="margin-left-3 ng-binding">Save your storage array configuration in a script file to save time setting up additional storage arrays with the same configuration.</div>
       </div><!-- end ngRepeat: operation in system.operation.generalSettings --><div ng-repeat="operation in system.operation.generalSettings" class="related-group ng-scope">
-         <a href="/clear_storage_config.html" d-link="" ng-attr-id="{{operation.id}}" ng-click="operation.action()" class="ng-binding cursor-pointer" id="clearStorageArrayConfiguration" aria-disabled="false" tabindex="0">Clear Storage Array Configuration</a>
+         <a d-link="" ng-attr-id="{{operation.id}}" ng-click="operation.action()" class="ng-binding cursor-pointer" id="clearStorageArrayConfiguration" aria-disabled="false" tabindex="0">Clear Storage Array Configuration</a>
          <div class="margin-left-3 ng-binding">Clear your storage array's configuration (such as pools, volume groups, volumes and hosts).</div>
       </div><!-- end ngRepeat: operation in system.operation.generalSettings -->
    </div>
@@ -209,19 +269,19 @@
       <div class="groupbox-header ng-binding">iSCSI settings</div>
       <div class="groupbox-body">
          <!-- ngRepeat: operation in system.operation.iscsiSettings --><div ng-repeat="operation in system.operation.iscsiSettings" class="related-group ng-scope">
-            <a href="configure_iscsi_ports.html" d-link="" ng-click="operation.action()" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">Configure iSCSI Ports</a>
+            <a d-link="" ng-click="operation.action()" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">Configure iSCSI Ports</a>
             <div class="margin-left-3 ng-binding" ng-bind-html="operation.description">Configure your iSCSI host connections on the storage array for I/O connectivity.</div>
          </div><!-- end ngRepeat: operation in system.operation.iscsiSettings --><div ng-repeat="operation in system.operation.iscsiSettings" class="related-group ng-scope">
-            <a  href="configure_authentication.html" d-link="" ng-click="operation.action()" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">Configure Authentication</a>
+            <a d-link="" ng-click="operation.action()" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">Configure Authentication</a>
             <div class="margin-left-3 ng-binding" ng-bind-html="operation.description">Your iSCSI authentication method is currently set to <b>no authentication</b>.</div>
          </div><!-- end ngRepeat: operation in system.operation.iscsiSettings --><div ng-repeat="operation in system.operation.iscsiSettings" class="related-group ng-scope">
             <a d-link="" ng-click="operation.action()" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">View / Edit Target Discovery Settings</a>
             <div class="margin-left-3 ng-binding" ng-bind-html="operation.description">Register your storage array's iSCSI information with an iSNS server and choose whether unnamed iSCSI discovery sessions are allowed.</div>
          </div><!-- end ngRepeat: operation in system.operation.iscsiSettings --><div ng-repeat="operation in system.operation.iscsiSettings" class="related-group ng-scope">
-            <a href="iscsi_statistics.html" d-link="" ng-click="operation.action()" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">View iSCSI Statistics Packages</a>
+            <a d-link="" ng-click="operation.action()" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">View iSCSI Statistics Packages</a>
             <div class="margin-left-3 ng-binding" ng-bind-html="operation.description">View the various types of iSCSI statistics packages available on your storage array.</div>
          </div><!-- end ngRepeat: operation in system.operation.iscsiSettings --><div ng-repeat="operation in system.operation.iscsiSettings" class="related-group ng-scope">
-            <a href="/" d-link="" ng-click="operation.action()" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">View / End iSCSI Sessions</a>
+            <a d-link="" ng-click="operation.action()" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">View / End iSCSI Sessions</a>
             <div class="margin-left-3 ng-binding" ng-bind-html="operation.description">View and/or end iSCSI sessions to force initiators off your storage array.</div>
          </div><!-- end ngRepeat: operation in system.operation.iscsiSettings -->
          <hr>
@@ -233,7 +293,7 @@
    <div class="groupbox-header ng-binding">Certificates</div>
    <div class="groupbox-body">
       <!-- ngRepeat: operation in system.operation.certificates --><div ng-repeat="operation in system.operation.certificates" class="related-group ng-scope">
-         <a href="csr.html" d-link="" ng-attr-id="{{operation.id}}" ng-click="operation.action()" class="ng-binding cursor-pointer" id="signCaCertificate" aria-disabled="false" tabindex="0">Complete CA Certificate Signing Request (CSR)</a>
+         <a d-link="" ng-attr-id="{{operation.id}}" ng-click="operation.action()" class="ng-binding cursor-pointer" id="signCaCertificate" aria-disabled="false" tabindex="0">Complete CA Certificate Signing Request (CSR)</a>
          <div class="margin-left-3 ng-binding">Complete a CSR if you want to obtain a signed certificate from a certificate authority.</div>
       </div><!-- end ngRepeat: operation in system.operation.certificates --><div ng-repeat="operation in system.operation.certificates" class="related-group ng-scope">
          <a d-link="" ng-attr-id="{{operation.id}}" ng-click="operation.action()" class="ng-binding cursor-pointer" id="importRootCertificate" aria-disabled="false" tabindex="0">Import Root/Intermediate Certificates</a>
@@ -335,8 +395,91 @@
       </div>
    </section>
 </div>
-<div d-dialog-container="" class="ng-scope"><!-- ngIf: dialogList.length > 0 -->
-<!-- ngRepeat: dialogData in dialogList --></div>
+<div d-dialog-container="" class="ng-scope"><!-- ngIf: dialogList.length > 0 --><div ng-if="dialogList.length > 0" class="modal-backdrop-container angular-animate ng-scope" d-loading-overlay="!dialogList[dialogList.length-1].options.visible" data-overlay-options="{backdrop: false, srTextKey: 'DIALOG_LOADING_DESCRIPTION', focus: true}" style="">
+   <div class="modal-backdrop"></div>
+<div class="ng-scope">   <!-- ngInclude: 'widget/loadingOverlay/loadingOverlay.tpl.html' --><div ng-include="'widget/loadingOverlay/loadingOverlay.tpl.html'" class="ng-scope"><div ng-class="classes" class="loading-overlay ng-scope">
+   <div class="loading-overlay-backdrop"></div>
+   <div class="loading-overlay-graphic-text-container">
+      <div class="loading-overlay-graphic-text-background"></div>
+      <!-- ngIf: !!cancelCallback -->
+      <div class="loading-overlay-graphic" ng-switch="type">
+         <!-- ngSwitchWhen: spinner --><div ng-switch-when="spinner" class="loading-overlay-spinner ng-scope">
+            <i class="icon-spinner icon-spin icon-pulse"></i>
+         </div><!-- end ngSwitchWhen: -->
+         <!-- ngSwitchWhen: progressBar -->
+      </div>
+      <div class="loading-overlay-text ng-binding" ng-bind-html="text"></div>
+      <div ng-bind-html="srText" class="sr-only ng-binding" tabindex="-1"></div>
+   </div>
+</div></div></div></div><!-- end ngIf: dialogList.length > 0 -->
+<!-- ngRepeat: dialogData in dialogList --><div ng-repeat="dialogData in dialogList" class="modal angular-animate ng-scope" ng-style="!$last ? {'z-index': 1029} : ''" role="dialog" ng-attr-id="{{'dialog' + dialogData.id}}" ng-attr-aria-labelledby="{{'dialog' + dialogData.id + '-title'}}" ng-animate-children="" id="dialog20" aria-labelledby="dialog20-title">
+   <div d-dialog="" ng-init="init(dialogData)" class="ng-scope"><div class="modal-template angular-animate modal-visible" ng-animate-children="" style="">
+   <div class="focus-holder sr-only" tabindex="-1"></div>
+   <!-- ngInclude: dialog.options.templateUrl --><div ng-include="dialog.options.templateUrl" ng-animate-children="" class="ng-scope"><div class="modal-dialog ng-scope" ng-controller="DialogResourceCtrl" ng-class="dialog.options.classes">
+   <div class="modal-content">
+      <div d-dialog-header="Enable a Premium Feature" data-close-handler="closeDialogResource()" class="ng-scope"><div class="modal-header">
+   <button class="close" type="button" aria-label="Close dialog" d-dialog-disable="working">
+      <span aria-hidden="true">×</span>
+   </button>
+   <h1 class="modal-title ng-binding" ng-attr-id="{{'dialog' + dialog.id + '-title'}}" ng-bind-html="getDialogTitle()" id="dialog20-title">Enable a Premium Feature</h1>
+</div>
+<div d-notification-container="dialog20" class="ng-isolate-scope"><div class="notification-container">
+<!-- ngRepeat: notificationData in notifications | orderBy:'id':true -->
+</div></div></div>
+      <form class="form ng-pristine ng-valid">
+         <div class="modal-body" d-dialog-overlay="" d-loading-overlay="getOverlayState()" overlay-options="{text: getOverlayText(), srText: getOverlaySrText(), focus: true, cancelWorkingCallback: getCancelWorkingCallback()}">
+            <!-- ngIf: dialog.options.iconClass -->
+            <div ng-class="{'has-icon': dialog.options.iconClass}" ng-switch="!!dialog.options.dialogTemplate">
+               <!-- ngIf: hasHeader() -->
+
+               <!-- ngSwitchWhen: true --><div ng-switch-when="true" class="ng-scope">
+                  <!-- ngInclude: dialog.options.dialogTemplate --><div ng-include="dialog.options.dialogTemplate" class="ng-scope"><p class="ng-binding ng-scope">Ensure you have obtained a key file from your Technical Support Engineer. After you have obtained the key file, transfer it to the storage array to enable the premium feature associated with the key.</p>
+<div class="related-group ng-binding ng-scope">Feature Enable Identifier: 4A616D65732057656E64656C3C3DDD21</div>
+<div class="related-group ng-scope">
+   <div class="file-selector-inline-label">
+      <span class="ng-binding">Select a key file:</span>
+   </div>
+   <d-file-selector class="margin-left-2 ng-isolate-scope" data-options="enablePremiumFeature.fileSelection.options" data-selected-files="enablePremiumFeature.fileSelection.selected" data-enable="enablePremiumFeature.fileSelection.enable"><div class="file-selector">
+   <button type="button" class="btn btn-primary" ng-disabled="!fileSelector.enable">
+      <span ng-bind-html="fileSelector.label" class="ng-binding">Browse...</span>
+      <input type="file" ng-disabled="!fileSelector.enable" tabindex="-1">
+   </button>
+</div></d-file-selector>
+</div>
+<!-- ngIf: !!enablePremiumFeature.fileSelection.selected && enablePremiumFeature.fileSelection.selected.length !== 0 -->
+</div>
+               </div><!-- end ngSwitchWhen: -->
+               <!-- ngSwitchWhen: false -->
+               <!-- ngIf: confirmOptions -->
+            </div>
+         <div class="ng-scope">   <!-- ngInclude: 'widget/loadingOverlay/loadingOverlay.tpl.html' --><div ng-include="'widget/loadingOverlay/loadingOverlay.tpl.html'" class="ng-scope"><div ng-class="classes" class="loading-overlay ng-scope">
+   <div class="loading-overlay-backdrop"></div>
+   <div class="loading-overlay-graphic-text-container">
+      <div class="loading-overlay-graphic-text-background"></div>
+      <!-- ngIf: !!cancelCallback -->
+      <div class="loading-overlay-graphic" ng-switch="type">
+         <!-- ngSwitchWhen: spinner -->
+         <!-- ngSwitchWhen: progressBar -->
+      </div>
+      <div class="loading-overlay-text ng-binding" ng-bind-html="text"></div>
+      <div ng-bind-html="srText" class="sr-only ng-binding" tabindex="-1"></div>
+   </div>
+</div></div></div></div>
+         <div class="modal-footer" ng-switch="!!dialog.options.commit || !!dialog.options.reject">
+            <!-- ngSwitchWhen: true --><div ng-switch-when="true" class="ng-scope">
+               <!-- ngIf: !dialog.options.hideCommit --><button class="btn btn-primary ng-binding ng-scope" type="submit" ng-if="!dialog.options.hideCommit" d-dialog-disable="loading,working,valid" ng-click="commit()" ng-bind-html="getCommitButtonLabel()" disabled="disabled">Enable</button><!-- end ngIf: !dialog.options.hideCommit -->
+               <!-- close-dialog class is not defined in CSS because it is used by isDialogBeingClosed -->
+               <!-- ngIf: !dialog.options.hideReject --><button class="btn btn-default close-dialog ng-binding ng-scope" type="button" ng-if="!dialog.options.hideReject" d-dialog-disable="working" ng-click="reject()" d-dialog-focus="" ng-bind-html="getRejectButtonLabel()">Cancel</button><!-- end ngIf: !dialog.options.hideReject -->
+            </div><!-- end ngSwitchWhen: -->
+            <!-- ngSwitchWhen: false -->
+         </div>
+      </form>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- end ngRepeat: dialogData in dialogList --></div>
 <div d-frame-container="" class="ng-scope"><!-- ngIf: showBackdrop() -->
 <div class="modeless-container" ng-class="getContainerClass()">
    <!-- ngRepeat: frame in openFrames -->
@@ -412,4 +555,4 @@
 
 
 
-<div id="popoverContainer" aria-live="polite" aria-atomic="false"></div></body></html>
+<div id="popoverContainer" aria-live="polite" aria-atomic="false"></div><div id="select2-drop-mask" class="select2-drop-mask" style="display: none;"></div></body></html>

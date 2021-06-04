@@ -86,30 +86,23 @@
    <nav id="main-nav">
       <div class="navigation">
          <ul d-nav-update="" class="nav nav-stacked">
-            <li data-nav-key="home">
-               <a href="santricity.html" id="home" aria-label="Home">
-                  <i class="icon-home status-icon-container" aria-hidden="true">
-                     <div class="status-dot" ng-class="statusDotClass" aria-hidden="true">
-                     </div>
-                  </i>
+            <li data-nav-key="home" class="">
+               <a style="text-align: center;" href="santricity.html" id="home" aria-label="Home">                 
                   <span class="ng-binding">Home</span>
                </a>
             </li>
             <li data-nav-key="storage" class="active">
-               <a href="storage.html" id="storage" aria-label="Storage">
-                  <i class="icon-storage" aria-hidden="true"></i>
+               <a style="text-align: center;" href="storage.html" id="storage" aria-label="Storage">                
                   <span class="ng-binding">Storage</span>
                </a>
             </li>
-            <li data-nav-key="hardware" class="">
-               <a href="hardware.html" id="hardware" aria-label="Hardware">
-                  <i class="icon-hardware" aria-hidden="true"></i>
+            <li data-nav-key="hardware">
+               <a style="text-align: center;" href="hardware.html" id="hardware" aria-label="Hardware">                  
                   <span class="ng-binding">Hardware</span>
                </a>
             </li>
             <li data-nav-key="settings">
-               <a href="settings.html" id="settings" aria-label="Settings">
-                  <i class="icon-gear" aria-hidden="true"></i>
+               <a style="text-align: center;" href="settings.html" id="settings" aria-label="Settings">                  
                   <span class="ng-binding">Settings</span>
                </a>
             </li>
@@ -121,8 +114,7 @@
                <!--</a>-->
             <!--</li>-->
             <li data-nav-key="support">
-               <a href="support.html" id="support" aria-label="Support">
-                  <i class="icon-support" aria-hidden="true"></i>
+               <a style="text-align: center;" href="support.html" id="support" aria-label="Support">                 
                   <span class="ng-binding">Support</span>
                </a>
             </li>
@@ -162,7 +154,7 @@
                   <div class="tile-title ng-binding" data-qaid="PERFORMANCE">
                      PERFORMANCE
                      <!-- ngIf: expanded === 'semi' || expanded === 'max' --><div ng-if="expanded === 'semi' || expanded === 'max'" class="form-group ng-scope ng-isolate-scope" d-faq-help="" data-content="FAQ_LEARN_MORE_STORAGE_PERFORMANCE"><span class="faqHelp cursor-pointer" d-link="" ng-click="launchOnlineHelp($event)" aria-disabled="false" tabindex="0"><ng-transclude>
-                        <p class="ng-binding ng-scope">Learn More <i class="icon-angle-right"></i></p>
+                        <p class="ng-binding ng-scope">Learn More</p>
                      </ng-transclude></span></div><!-- end ngIf: expanded === 'semi' || expanded === 'max' -->
                   </div>
                   <!-- ngIf: expanded === 'semi' || expanded === 'max' --><!-- ngInclude:  --><div class="tile-control ng-scope" ng-if="expanded === 'semi' || expanded === 'max'" ng-include="" src="'widget/tile/expandedHeader.tpl.html'"><div ng-switch="expanded" class="ng-scope">
@@ -172,7 +164,7 @@
           <i aria-hidden="true" class="icon-resize-small"></i>
       </button>
       <button id="tileHeaderRemove" class="btn btn-actionicon" ng-click="closeMaximizedTileByClicked()" title="Close Tile">
-          <i aria-hidden="true" class="icon-remove"></i>
+         <i aria-hidden="true" style="font-weight: bold; font-size: 15px;">X</i>
       </button>
    </span><!-- end ngSwitchWhen: -->
 </div></div><!-- end ngIf: expanded === 'semi' || expanded === 'max' -->

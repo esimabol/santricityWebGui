@@ -88,30 +88,23 @@
    <nav id="main-nav">
       <div class="navigation">
          <ul d-nav-update="" class="nav nav-stacked">
-            <li data-nav-key="home">
-               <a href="santricity.html" id="home" aria-label="Home">
-                  <i class="icon-home status-icon-container" aria-hidden="true">
-                     <div class="status-dot" ng-class="statusDotClass" aria-hidden="true">
-                     </div>
-                  </i>
+            <li data-nav-key="home" class="">
+               <a style="text-align: center;" href="santricity.html" id="home" aria-label="Home">                 
                   <span class="ng-binding">Home</span>
                </a>
             </li>
-            <li data-nav-key="storage">
-               <a href="storage.html" id="storage" aria-label="Storage">
-                  <i class="icon-storage" aria-hidden="true"></i>
+            <li data-nav-key="storage" >
+               <a style="text-align: center;" href="storage.html" id="storage" aria-label="Storage">                
                   <span class="ng-binding">Storage</span>
                </a>
             </li>
             <li data-nav-key="hardware">
-               <a href="hardware.html" id="hardware" aria-label="Hardware">
-                  <i class="icon-hardware" aria-hidden="true"></i>
+               <a style="text-align: center;" href="hardware.html" id="hardware" aria-label="Hardware">                  
                   <span class="ng-binding">Hardware</span>
                </a>
             </li>
             <li data-nav-key="settings">
-               <a href="settings.html" id="settings" aria-label="Settings">
-                  <i class="icon-gear" aria-hidden="true"></i>
+               <a style="text-align: center;" href="settings.html" id="settings" aria-label="Settings">                  
                   <span class="ng-binding">Settings</span>
                </a>
             </li>
@@ -123,8 +116,7 @@
                <!--</a>-->
             <!--</li>-->
             <li data-nav-key="support" class="active">
-               <a href="support.html" id="support" aria-label="Support">
-                  <i class="icon-support" aria-hidden="true"></i>
+               <a style="text-align: center;" href="support.html" id="support" aria-label="Support">                 
                   <span class="ng-binding">Support</span>
                </a>
             </li>
@@ -164,7 +156,7 @@
                   <div class="tile-title ng-binding" data-qaid="UPGRADE CENTER">
                      UPGRADE CENTER
                      <!-- ngIf: expanded === 'semi' || expanded === 'max' --><div ng-if="expanded === 'semi' || expanded === 'max'" class="form-group ng-scope ng-isolate-scope" d-faq-help="" data-content="FAQ_LEARN_MORE_UPGRADE_CENTER"><span class="faqHelp cursor-pointer" d-link="" ng-click="launchOnlineHelp($event)" aria-disabled="false" tabindex="0"><ng-transclude>
-                        <p class="ng-binding ng-scope">Learn More <i class="icon-angle-right"></i></p>
+                        <p class="ng-binding ng-scope">Learn More</p>
                      </ng-transclude></span></div><!-- end ngIf: expanded === 'semi' || expanded === 'max' -->
                   </div>
                   <!-- ngIf: expanded === 'semi' || expanded === 'max' --><!-- ngInclude:  --><div class="tile-control ng-scope" ng-if="expanded === 'semi' || expanded === 'max'" ng-include="" src="'widget/tile/expandedHeader.tpl.html'"><div ng-switch="expanded" class="ng-scope">
@@ -174,7 +166,7 @@
           <i aria-hidden="true" class="icon-resize-small"></i>
       </button>
       <button id="tileHeaderRemove" class="btn btn-actionicon" ng-click="closeMaximizedTileByClicked()" title="Close Tile">
-          <i aria-hidden="true" class="icon-remove"></i>
+         <i aria-hidden="true" style="font-weight: bold; font-size: 15px;">X</i>
       </button>
    </span><!-- end ngSwitchWhen: -->
 </div></div><!-- end ngIf: expanded === 'semi' || expanded === 'max' -->
@@ -183,7 +175,7 @@
    <!-- ngIf: tile.initialLoad --><div ng-if="tile.initialLoad" class="ng-scope">
       <div class="form-offset-left">
          <p>
-            <span ng-bind-html="'UPGRADE_CENTER_FIND_DOWNLOAD_TEXT' | localize: links.download" class="ng-binding">Find the latest SANtricity downloads by accessing <a target="_blank" href="https://mysupport.netapp.com">NetApp Support <i class="icon-external-link"></i></a>.</span>
+            <span ng-bind-html="'UPGRADE_CENTER_FIND_DOWNLOAD_TEXT' | localize: links.download" class="ng-binding">Find the latest SANtricity downloads by accessing <a target="_blank" href="https://mysupport.netapp.com">NetApp Support</a>.</span>
             <!-- ngIf: lastUpgradeTime -->
          </p>
          <p d-compile-html="'UPGRADE_CENTER_VIEW_FIRMWARE_INVENTORY_TEXT' | localize: links.firmwareInventory"><span class="ng-scope">View your </span><a d-link="" d-dialog-open="firmwareInventory" class="ng-scope cursor-pointer" aria-disabled="false" tabindex="0">Software and Firmware Inventory</a><span class="ng-scope"> to obtain information about the software and firmware versions for your storage array.</span></p>
@@ -200,12 +192,11 @@
                <div class="col-xs-8">
                   <p class="ng-binding">Prerequisites:</p>
                   <ul>
-                     <li ng-bind-html="'UPGRADE_CENTER_FIRMWARE_BUNDLE_PREREQUISITES_DOWNLOAD_IMAGE' | localize: links.download" class="ng-binding">Download and expand a SANtricity OS Software and NVSRAM .zip or .tar file from <a target="_blank" href="https://mysupport.netapp.com">NetApp Support <i class="icon-external-link"></i></a> by navigating to Downloads <i class="icon-angle-right"></i> Software</li>
+                     <li ng-bind-html="'UPGRADE_CENTER_FIRMWARE_BUNDLE_PREREQUISITES_DOWNLOAD_IMAGE' | localize: links.download" class="ng-binding">Download and expand a SANtricity OS Software and NVSRAM .zip or .tar file from <a target="_blank" href="https://mysupport.netapp.com">NetApp Support</a> by navigating to Downloads &gt; Software</li>
                      <li>
                         <span d-compile-html="'UPGRADE_CENTER_PREREQUISITES_HEALTH_CHECK' | localize: links.healthCheck"><span class="ng-scope">Optionally, perform a </span><a d-link="" d-dialog-open="upgradeProgress" class="ng-scope cursor-pointer" aria-disabled="false" tabindex="0">pre-upgrade health check</a><span class="ng-scope"> before upgrading. The health check is also run as part of the upgrade process.</span></span>
                         <d-quick-help data-content="For example, if you were planning to perform an upgrade during a specific maintenance window, you may want to check for any major storage array problems in advance of performing the actual upgrade." class="ng-scope"><div d-popover="popoverOptions" d-link="" aria-disabled="false" tabindex="0" class="cursor-pointer">
-   <span class="sr-only ng-binding">Quick help</span>
-   <i class="icon-question-sign"></i>
+   <span class="sr-only ng-binding">Quick help</span>  
 </div></d-quick-help>
                      </li>
                      <li>
@@ -219,7 +210,7 @@
                            <a d-link="" d-dialog-open="suspendIomService" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">Suspend IOM Auto-Synchronization</a>
                            <d-quick-help data-content="Suspend your IOM Service if you do not want your IOM Firmware to be upgraded as part of the SANtricity OS Software upgrade, or if you wish to perform a downgrade to your IOM Firmware." class="ng-scope"><div d-popover="popoverOptions" d-link="" aria-disabled="false" tabindex="0" class="cursor-pointer">
    <span class="sr-only ng-binding">Quick help</span>
-   <i class="icon-question-sign"></i>
+   
 </div></d-quick-help>
                         </div>
                      </li>
@@ -228,8 +219,7 @@
                <div class="col-xs-4 left-border-separator">
                   <div class="center-element">
                      <a href="beginUpgradeFW.html" class="btn btn-primary btn-label-icon" type="button" d-dialog-open="bundleUpgrade">
-                        <span class="ng-binding">Begin Upgrade</span>
-                        <i aria-hidden="true" class="icon-upload-alt"></i>
+                        <span class="ng-binding">Begin Upgrade</span>                        
                      </a>
                   </div>
                </div>
@@ -248,14 +238,13 @@
             <div class="col-xs-8">
                <p class="ng-binding">Prerequisites:</p>
                <ul>
-                  <li ng-bind-html="'UPGRADE_CENTER_DRIVE_FIRMWARE_PREREQUISITES_DOWNLOAD_IMAGE' | localize: links.download" class="ng-binding">Download one or more Drive Firmware image files from <a target="_blank" href="https://mysupport.netapp.com">NetApp Support <i class="icon-external-link"></i></a></li>
+                  <li ng-bind-html="'UPGRADE_CENTER_DRIVE_FIRMWARE_PREREQUISITES_DOWNLOAD_IMAGE' | localize: links.download" class="ng-binding">Download one or more Drive Firmware image files from <a target="_blank" href="https://mysupport.netapp.com">NetApp Support</a></li>
                </ul>
             </div>
             <div class="col-xs-4 left-border-separator">
                <div class="center-element">
                   <a href="beginUpgradeDFW.html" class="btn btn-primary btn-label-icon" type="button" d-dialog-open="driveFirmwareUpgradeWizard">
-                     <span class="ng-binding">Begin Upgrade</span>
-                     <i aria-hidden="true" class="icon-upload-alt"></i>
+                     <span class="ng-binding">Begin Upgrade</span>                     
                   </a>
                </div>
             </div>

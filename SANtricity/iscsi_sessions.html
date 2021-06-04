@@ -221,7 +221,7 @@
             <a href="iscsi_statistics.html" d-link="" ng-click="operation.action()" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">View iSCSI Statistics Packages</a>
             <div class="margin-left-3 ng-binding" ng-bind-html="operation.description">View the various types of iSCSI statistics packages available on your storage array.</div>
          </div><!-- end ngRepeat: operation in system.operation.iscsiSettings --><div ng-repeat="operation in system.operation.iscsiSettings" class="related-group ng-scope">
-            <a href="/" d-link="" ng-click="operation.action()" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">View / End iSCSI Sessions</a>
+            <a href="iscsi_sessions.html" d-link="" ng-click="operation.action()" class="ng-binding cursor-pointer" aria-disabled="false" tabindex="0">View / End iSCSI Sessions</a>
             <div class="margin-left-3 ng-binding" ng-bind-html="operation.description">View and/or end iSCSI sessions to force initiators off your storage array.</div>
          </div><!-- end ngRepeat: operation in system.operation.iscsiSettings -->
          <hr>
@@ -233,7 +233,7 @@
    <div class="groupbox-header ng-binding">Certificates</div>
    <div class="groupbox-body">
       <!-- ngRepeat: operation in system.operation.certificates --><div ng-repeat="operation in system.operation.certificates" class="related-group ng-scope">
-         <a href="csr.html" d-link="" ng-attr-id="{{operation.id}}" ng-click="operation.action()" class="ng-binding cursor-pointer" id="signCaCertificate" aria-disabled="false" tabindex="0">Complete CA Certificate Signing Request (CSR)</a>
+         <a d-link="" ng-attr-id="{{operation.id}}" ng-click="operation.action()" class="ng-binding cursor-pointer" id="signCaCertificate" aria-disabled="false" tabindex="0">Complete CA Certificate Signing Request (CSR)</a>
          <div class="margin-left-3 ng-binding">Complete a CSR if you want to obtain a signed certificate from a certificate authority.</div>
       </div><!-- end ngRepeat: operation in system.operation.certificates --><div ng-repeat="operation in system.operation.certificates" class="related-group ng-scope">
          <a d-link="" ng-attr-id="{{operation.id}}" ng-click="operation.action()" class="ng-binding cursor-pointer" id="importRootCertificate" aria-disabled="false" tabindex="0">Import Root/Intermediate Certificates</a>

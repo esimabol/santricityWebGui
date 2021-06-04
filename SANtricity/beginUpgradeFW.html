@@ -85,29 +85,22 @@
       <div class="navigation">
          <ul d-nav-update="" class="nav nav-stacked">
             <li data-nav-key="home" class="">
-               <a href="#/home" id="home" aria-label="Home">
-                  <i class="icon-home status-icon-container" aria-hidden="true">
-                     <div class="status-dot" ng-class="statusDotClass" aria-hidden="true">
-                     </div>
-                  </i>
+               <a style="text-align: center;" href="santricity.html" id="home" aria-label="Home">                 
                   <span class="ng-binding">Home</span>
                </a>
             </li>
-            <li data-nav-key="storage">
-               <a href="#/storage" id="storage" aria-label="Storage">
-                  <i class="icon-storage" aria-hidden="true"></i>
+            <li data-nav-key="storage" >
+               <a style="text-align: center;" href="storage.html" id="storage" aria-label="Storage">                
                   <span class="ng-binding">Storage</span>
                </a>
             </li>
-            <li data-nav-key="hardware" class="">
-               <a href="#/hardware" id="hardware" aria-label="Hardware">
-                  <i class="icon-hardware" aria-hidden="true"></i>
+            <li data-nav-key="hardware">
+               <a style="text-align: center;" href="hardware.html" id="hardware" aria-label="Hardware">                  
                   <span class="ng-binding">Hardware</span>
                </a>
             </li>
-            <li data-nav-key="settings" class="">
-               <a href="#/settings" id="settings" aria-label="Settings">
-                  <i class="icon-gear" aria-hidden="true"></i>
+            <li data-nav-key="settings">
+               <a style="text-align: center;" href="settings.html" id="settings" aria-label="Settings">                  
                   <span class="ng-binding">Settings</span>
                </a>
             </li>
@@ -119,8 +112,7 @@
                <!--</a>-->
             <!--</li>-->
             <li data-nav-key="support" class="active">
-               <a href="#/support" id="support" aria-label="Support">
-                  <i class="icon-support" aria-hidden="true"></i>
+               <a style="text-align: center;" href="support.html" id="support" aria-label="Support">                 
                   <span class="ng-binding">Support</span>
                </a>
             </li>
@@ -160,7 +152,7 @@
                   <div class="tile-title ng-binding" data-qaid="UPGRADE CENTER">
                      UPGRADE CENTER
                      <!-- ngIf: expanded === 'semi' || expanded === 'max' --><div ng-if="expanded === 'semi' || expanded === 'max'" class="form-group ng-scope ng-isolate-scope" d-faq-help="" data-content="FAQ_LEARN_MORE_UPGRADE_CENTER"><span class="faqHelp cursor-pointer" d-link="" ng-click="launchOnlineHelp($event)" aria-disabled="false" tabindex="0"><ng-transclude>
-                        <p class="ng-binding ng-scope">Learn More <i class="icon-angle-right"></i></p>
+                        <p class="ng-binding ng-scope">Learn More</p>
                      </ng-transclude></span></div><!-- end ngIf: expanded === 'semi' || expanded === 'max' -->
                   </div>
                   <!-- ngIf: expanded === 'semi' || expanded === 'max' --><!-- ngInclude:  --><div class="tile-control ng-scope" ng-if="expanded === 'semi' || expanded === 'max'" ng-include="" src="'widget/tile/expandedHeader.tpl.html'"><div ng-switch="expanded" class="ng-scope">
@@ -337,7 +329,7 @@
    <div class="modal-content">
       <div d-dialog-header="Upgrade SANtricity OS Software" data-close-handler="closeDialogResource()" class="ng-scope"><div class="modal-header">
    <button class="close" type="button" aria-label="Close dialog" d-dialog-disable="working">
-      <span aria-hidden="true">×</span>
+      <a href="/upgrade_center.html" style ="text-decoration: none; color:#000;"><span aria-hidden="true">×</span></a>
    </button>
    <h1 class="modal-title ng-binding" ng-attr-id="{{'dialog' + dialog.id + '-title'}}" ng-bind-html="getDialogTitle()" id="dialog15-title">Upgrade SANtricity OS Software</h1>
 </div>
@@ -365,8 +357,7 @@
             </label>
          </div>
          <d-quick-help data-content="Select the checkbox option to transfer the files now and complete the activation process later." class="ng-scope"><div d-popover="popoverOptions" d-link="" aria-disabled="false" tabindex="0" class="cursor-pointer">
-   <span class="sr-only ng-binding">Quick help</span>
-   <i class="icon-question-sign"></i>
+   <span class="sr-only ng-binding">Quick help</span>   
 </div></d-quick-help>
       </div>
    </div>
@@ -399,8 +390,7 @@
             </label>
          </div>
          <d-quick-help data-content="Select the checkbox option to also transfer the latest Controller NVSRAM file. You cannot transfer the NVSRAM file by itself. It must be part of the SANtricity OS Software upgrade." class="ng-scope"><div d-popover="popoverOptions" d-link="" aria-disabled="false" tabindex="0" class="cursor-pointer">
-   <span class="sr-only ng-binding">Quick help</span>
-   <i class="icon-question-sign"></i>
+   <span class="sr-only ng-binding">Quick help</span>  
 </div></d-quick-help>
       </div>
       <div class="form-offset-left"><i class="ng-binding">Current version: N280X-830834-414</i></div>
